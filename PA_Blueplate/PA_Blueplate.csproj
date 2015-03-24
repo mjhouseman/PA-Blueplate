@@ -59,6 +59,9 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Img\blueplate.jpg" />
+    <Content Include="Img\car.png" />
+    <Content Include="Img\towtruck.jpg" />
+    <Content Include="Img\wrench.png" />
     <Content Include="ListView.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>

@@ -13,11 +13,12 @@ namespace PA_Blueplate
         {
 
         }
-        protected void MyBtnHandler(object sender, EventArgs e)
+        protected void MyImgBtnHandler(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
+            ImageButton btn = (ImageButton)sender;
 
             Response.Redirect("ListView.aspx?opt=" + btn.CommandArgument.ToString());
         }
+
 }
 }
