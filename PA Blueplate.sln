@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PA Blueplate", "PA Blueplate\PA Blueplate.csproj", "{87F506E4-D222-4C2C-B99D-2CEE9EEE3D0F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PA_Blueplate", "PA_Blueplate\PA_Blueplate.csproj", "{87F506E4-D222-4C2C-B99D-2CEE9EEE3D0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -11,7 +11,14 @@ namespace PA_Blueplate
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(Request.QueryString["opt"]))
+            {
+                label1.Text = Request.QueryString["opt"];
+            }
+            else
+            {
+                label1.Text = "NO DATA PROVIDED OR COULD NOT BE READ";
+            }
         }
     }
 }
