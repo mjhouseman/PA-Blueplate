@@ -18,7 +18,7 @@
             <asp:Label ID="lblTitle" Text="Pennsylvania Department of General Services" runat="server" Font-Bold="true"  />
         </div>
         <div>
-            <asp:Image ID="Image1" runat="server" Height="220px" Width="300px" ImageUrl="img/blueplate.jpg" />
+            <asp:Image ID="Image1" runat="server" Height="220px" Width="300px" ImageUrl="img/blueplate1.jpg" />
         </div>
         <div>
             <asp:ImageButton ID="btnRepair" CommandArgument="Repair Stations" ImageUrl="img/wrench.png" OnClick="MyImgBtnHandler" runat="server"  Width="100" Height="100" />
