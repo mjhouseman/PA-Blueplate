@@ -9,6 +9,7 @@
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
 <meta name="MobileOptimized" content="width" />
 <meta name="HandheldFriendly" content="true" />
+<meta name=viewport content='width=700'>
     <title></title>
 </head>
 <body style=" margin:0px; width:330px;" >
