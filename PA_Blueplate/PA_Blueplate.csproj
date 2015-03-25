@@ -58,8 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="Details.aspx" />
     <Content Include="Img\blueplate.jpg" />
     <Content Include="Img\car.png" />
+    <Content Include="Img\tire.png" />
     <Content Include="Img\towtruck.jpg" />
     <Content Include="Img\wrench.png" />
     <Content Include="ListView.aspx" />
@@ -72,6 +74,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Details.aspx.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Details.aspx.designer.cs">
+      <DependentUpon>Details.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListView.aspx.cs">
       <DependentUpon>ListView.aspx</DependentUpon>

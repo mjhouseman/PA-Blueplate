@@ -15,14 +15,14 @@
             <asp:Image ID="Image1" runat="server" Height="220px" Width="300px" ImageUrl="img/blueplate.jpg" />
         </div>
         <div>
-            <asp:ImageButton ID="btnRepair" CommandArgument="repairs" ImageUrl="img/wrench.png" OnClick="MyImgBtnHandler" runat="server"  Width="100" Height="100" />
-            <asp:ImageButton ID="btnTowing" CommandArgument="towing" ImageUrl="img/towtruck.jpg" OnClick="MyImgBtnHandler" runat="server" Width="100" Height="100" />
-            <asp:ImageButton ID="btnRental" CommandArgument="rental" ImageUrl="img/car.png" OnClick="MyImgBtnHandler" runat="server" Width="100" Height="100" />
+            <asp:ImageButton ID="btnRepair" CommandArgument="Repair Stations" ImageUrl="img/wrench.png" OnClick="MyImgBtnHandler" runat="server"  Width="100" Height="100" />
+            <asp:ImageButton ID="btnTowing" CommandArgument="Towing Centers" ImageUrl="img/towtruck.jpg" OnClick="MyImgBtnHandler" runat="server" Width="100" Height="100" />
+            <asp:ImageButton ID="btnRental" CommandArgument="Tire Services" ImageUrl="img/tire.png" OnClick="MyImgBtnHandler" runat="server" Width="100" Height="100" />
         </div>  
         <div style="text-align: center;">
             <asp:Label ID="lblRepair" Text="Repair" runat="server" Width="100" Font-Bold="true" />
             <asp:Label ID="lblTowing" Text="Towing" runat="server" Width="100" Font-Bold="true" />
-            <asp:Label ID="lblRental" Text="Rental" runat="server" Width="100" Font-Bold="true" />
+            <asp:Label ID="lblRental" Text="Tires" runat="server" Width="100" Font-Bold="true" />
         </div>
     </form>
 </body>
