@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ListView.aspx.cs" Inherits="PA_Blueplate.ListView" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ListView.aspx.cs" Inherits="PA_Blueplate.ListView" %>
 
 <!DOCTYPE html>
 
