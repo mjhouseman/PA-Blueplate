@@ -6,8 +6,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta name="viewport" content="width=device-width, initial-scale=1" /
-    <title>Blue-Plate</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
+<link rel="stylesheet" href="style.css" />
+    <title></title>
 </head>
 <body style=" margin:0px; width:330px;" >
     <form id="form1" runat="server">
