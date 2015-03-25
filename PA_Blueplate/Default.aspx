@@ -1,14 +1,14 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="PA_Blueplate.Default" %>
-<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
-<meta name="MobileOptimized" content="width" />
-<meta name="HandheldFriendly" content="true" />
+
 <!DOCTYPE html>
 
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
     <title></title>
 </head>
 <body style=" margin:0px; width:330px;" >
