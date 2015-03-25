@@ -1,13 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="PA_Blueplate.Default" %>
 
 <!DOCTYPE html>
-@media screen and (max-width: 481px){
-#main{
-float: left;
-padding: 0;
-width: 94%;
-margin: 3%;
-}
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">
