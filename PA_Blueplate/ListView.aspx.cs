@@ -28,18 +28,19 @@ namespace PA_Blueplate
 
                     break;
                 case "Towing Centers":
-                    //ImageButton3.ImageUrl = "img/towtruck.png";
-                    //ImageButton4.ImageUrl = "img/towtruck.png";
-                    //ImageButton5.ImageUrl = "img/towtruck.png";
-                    //ImageButton6.ImageUrl = "img/towtruck.png";
-                    //ImageButton7.ImageUrl = "img/towtruck.png";
+                    ImageButton1.ImageUrl = "img/towtruck.jpg";
+                    ImageButton2.ImageUrl = "img/towtruck.jpg";                   
+                    ImageButton2.ImageUrl = "img/towtruck.jpg";
+                    ImageButton3.ImageUrl = "img/towtruck.jpg";
+                    ImageButton4.ImageUrl = "img/towtruck.jpg";
+                    ImageButton5.ImageUrl = "img/towtruck.jpg";
                     break;
                 case "Tire Services":
-                    //ImageButton3.ImageUrl = "img/tire.png";
-                    //ImageButton4.ImageUrl = "img/tire.png";
-                    //ImageButton5.ImageUrl = "img/tire.png";
-                    //ImageButton6.ImageUrl = "img/tire.png";
-                    //ImageButton7.ImageUrl = "img/tire.png";
+                    ImageButton1.ImageUrl = "img/tire.png";
+                    ImageButton2.ImageUrl = "img/tire.png";
+                    ImageButton3.ImageUrl = "img/tire.png";
+                    ImageButton4.ImageUrl = "img/tire.png";
+                    ImageButton5.ImageUrl = "img/tire.png";
                     break;
                 default:
                     break;
