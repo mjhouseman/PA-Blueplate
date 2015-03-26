@@ -64,7 +64,7 @@
         <asp:Table ID="Table1" runat="server">
             <asp:TableRow>
                 <asp:TableCell RowSpan="2">
-                    <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="img/wrench.png" CommandArgument="MikesStation" OnClick="OnListItemClick" Height="50" Width="50" />
+                    <asp:ImageButton id="ImageButton3" runat="server" ImageUrl="img/wrench.png" CommandArgument="MikesStation" OnClick="OnListItemClick" Height="50" Width="50" />
                 </asp:TableCell>
                 <asp:TableCell>
                     <asp:Label ID="Label11" runat="server" Text="A-B-E Car Care Center LLC" Font-Size="X-Large" Font-Bold="true"/> 
@@ -139,9 +139,10 @@
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="Label25" runat="server" Text="1009 Russellton Road, Cheswick, PA 15024" /> 
+                    <asp:Label ID="Label25" runat="server" Text="1009 Russellton Road, Cheswick, PA 15024" />
                 </asp:TableCell>
             </asp:TableRow>
+            
 
 
 

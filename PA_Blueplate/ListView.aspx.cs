@@ -14,8 +14,8 @@ namespace PA_Blueplate
             if (!string.IsNullOrEmpty(Request.QueryString["opt"]))
             {
                 label1.Text = Request.QueryString["opt"];
-                //ImageButton1.ImageUrl = "img/towtruck.png";
 
+                
             }
             else
             {
@@ -35,7 +35,7 @@ namespace PA_Blueplate
                     //ImageButton7.ImageUrl = "img/towtruck.png";
                     break;
                 case "Tire Services":
-                    //ImageButton3.ImageUrl= "img/tire.png";
+                    //ImageButton3.ImageUrl = "img/tire.png";
                     //ImageButton4.ImageUrl = "img/tire.png";
                     //ImageButton5.ImageUrl = "img/tire.png";
                     //ImageButton6.ImageUrl = "img/tire.png";
