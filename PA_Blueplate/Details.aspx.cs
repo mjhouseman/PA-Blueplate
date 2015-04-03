@@ -9,18 +9,14 @@ namespace PA_Blueplate
 {
     public partial class Details : System.Web.UI.Page
     {
-        String option;
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Request.QueryString["opt"]))
-            {
-                option = Request.QueryString["opt"];
-            }
-            else
-            {
-                option = "none";
-            }
+            String option, userLatitude, userLongitude, userOS;
+
+            option = !string.IsNullOrEmpty(Request.QueryString["opt"]) ? Request.QueryString["opt"] : "none";
+            userLatitude = !string.IsNullOrEmpty(Request.QueryString["lat"]) ? Request.QueryString["lat"] : "none";
+            userLongitude = !string.IsNullOrEmpty(Request.QueryString["long"]) ? Request.QueryString["long"] : "none";
+            userOS = !string.IsNullOrEmpty(Request.QueryString["os"]) ? Request.QueryString["os"] : "none";
 
             switch (option)
             {
@@ -36,8 +32,8 @@ namespace PA_Blueplate
                     lblCityText.Visible = true;
                     break;
                 case "towing" :
-                    lblPhone.Visible = false;
-                    lblPhoneText.Visible = false;
+                    //lblPhone.Visible = false;
+                    //lblPhoneText.Visible = false;
                     tblServices.Visible = false;
                     break;
                 case "rental" :

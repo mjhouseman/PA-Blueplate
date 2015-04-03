@@ -37,10 +37,10 @@
             </asp:TableRow>
         </asp:Table>
         <asp:Label ID="lblPhone" Text="Telephone: " runat="server" Font-Bold="true"  />
-        <asp:Label ID="lblPhoneText" Text="724-274-5755" runat="server" />
+        <a id="phoneNumCall" href="tel:724-274-5755">724-274-5755</a>
         <br />
         <asp:Label ID="lblPhone247" Text="24/7 Telephone: " runat="server" Font-Bold="true"  />
-        <asp:Label ID="lblPhone247Text" Text="724-274-5755" runat="server" />
+        <a id="phoneNum24Call" href="tel:724-274-5755">724-274-5755</a>
     </div>
     <div>
         <br />

@@ -9,18 +9,11 @@ namespace PA_Blueplate
 {
     public partial class ListView : System.Web.UI.Page
     {
+        string option, userOS;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Request.QueryString["opt"]))
-            {
-                label1.Text = Request.QueryString["opt"];
-
-                
-            }
-            else
-            {
-                label1.Text = "NO DATA PROVIDED OR COULD NOT BE READ";
-            }
+            option = !string.IsNullOrEmpty(Request.QueryString["opt"]) ? Request.QueryString["opt"] : "none";
+            userOS = !string.IsNullOrEmpty(Request.QueryString["os"]) ? Request.QueryString["os"] : "none";
 
             switch (label1.Text)
             {
@@ -52,7 +45,7 @@ namespace PA_Blueplate
         {
             ImageButton btn = (ImageButton)sender;
 
-            Response.Redirect("Details.aspx?opt=" + btn.CommandArgument.ToString());
+            Response.Redirect("Details.aspx?opt=" + btn.CommandArgument.ToString() + "&os=" + userOS, false);
         }
 
     }

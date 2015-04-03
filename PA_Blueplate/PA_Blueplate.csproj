@@ -65,6 +65,8 @@
     <Content Include="Img\towtruck.jpg" />
     <Content Include="Img\wrench.png" />
     <Content Include="ListView.aspx" />
+    <Content Include="methods.js" />
+    <Content Include="style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
