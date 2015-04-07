@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\..\..\Downloads\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
@@ -59,8 +62,10 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Details.aspx" />
+    <Content Include="Img\address.png" />
     <Content Include="Img\blueplate.jpg" />
     <Content Include="Img\car.png" />
+    <Content Include="Img\phone.gif" />
     <Content Include="Img\tire.png" />
     <Content Include="Img\towtruck.jpg" />
     <Content Include="Img\wrench.png" />

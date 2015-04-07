@@ -49,13 +49,13 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label LblOtherNameText;
         
         /// <summary>
-        /// lblAddress control.
+        /// ImageButton1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAddress;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
         
         /// <summary>
         /// lblAddress1 control.
@@ -65,6 +65,15 @@ namespace PA_Blueplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAddress1;
+        
+        /// <summary>
+        /// lblAddress1Text control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAddress1Text;
         
         /// <summary>
         /// lblCityText control.
@@ -85,6 +94,15 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label lblZipText;
         
         /// <summary>
+        /// btnPhone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btnPhone;
+        
+        /// <summary>
         /// lblPhone control.
         /// </summary>
         /// <remarks>
@@ -94,13 +112,22 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label lblPhone;
         
         /// <summary>
-        /// lblPhoneText control.
+        /// phoneNumCall control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPhoneText;
+        protected global::System.Web.UI.WebControls.Label phoneNumCall;
+        
+        /// <summary>
+        /// btnPhone24 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btnPhone24;
         
         /// <summary>
         /// lblPhone247 control.
@@ -112,13 +139,13 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label lblPhone247;
         
         /// <summary>
-        /// lblPhone247Text control.
+        /// phoneNum24Call control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPhone247Text;
+        protected global::System.Web.UI.WebControls.Label phoneNum24Call;
         
         /// <summary>
         /// lblServices control.

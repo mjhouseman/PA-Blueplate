@@ -44,8 +44,9 @@ namespace PA_Blueplate
         public void OnListItemClick(object sender, EventArgs e)
         {
             ImageButton btn = (ImageButton)sender;
+            Response.Redirect("Details.aspx");
 
-            Response.Redirect("Details.aspx?opt=" + btn.CommandArgument.ToString() + "&os=" + userOS, false);
+            //Response.Redirect("Details.aspx?opt=" + btn.CommandArgument.ToString() + "&os=" + userOS, false);
         }
 
     }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Details.aspx.cs" Inherits="PA_Blueplate.Details" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="PA_Blueplate.Details" CodeFile="Details.aspx.cs" %>
 
 <!DOCTYPE html>
 
@@ -20,12 +20,16 @@
         <asp:Label ID="LblOtherNameText" Text="BOCHEK'S COLLISION CENTER" runat="server" />
         <br />
         <asp:Table runat="server">
+
             <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label ID="lblAddress" Text="Address: " runat="server" Font-Bold="true"  />
+                <asp:TableCell RowSpan="2">
+                    <asp:ImageButton id="ImageButton1" runat="server" ImageUrl="img/address.png" OnClick="AddressClick" Height="50" Width="50" />
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:Label ID="lblAddress1" Text="1009 RUSSELLTON ROAD" runat="server" />
+                    <asp:Label ID="lblAddress1" Text="Address: " runat="server" Font-Bold="true"  />
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:Label ID="lblAddress1Text" Text="1009 RUSSELLTON ROAD" runat="server" />
                 </asp:TableCell>
             </asp:TableRow>
             
@@ -35,12 +39,29 @@
                     <asp:Label ID="lblCityText" Text="CHESWICK" runat="server" />, PA <asp:Label ID="lblZipText" Text="15024" runat="server" />
                 </asp:TableCell>
             </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:ImageButton id="btnPhone" runat="server" ImageUrl="img/phone.gif" OnClick="PhoneClick" Height="50" Width="50" />
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:Label ID="lblPhone" Text="Telephone: " runat="server" Font-Bold="true"  />
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:Label ID="phoneNumCall" Text="724-274-5755" runat="server" />
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell >
+                    <asp:ImageButton id="btnPhone24" runat="server" ImageUrl="img/phone.gif" OnClick="Phone24Click" Height="50" Width="50" />
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:Label ID="lblPhone247" Text="24/7 Telephone: " runat="server" Font-Bold="true"  />
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:Label ID="phoneNum24Call" Text="724-274-5755" runat="server" />
+            </asp:TableCell> 
+        </asp:TableRow>
         </asp:Table>
-        <asp:Label ID="lblPhone" Text="Telephone: " runat="server" Font-Bold="true"  />
-        <a id="phoneNumCall" href="tel:724-274-5755">724-274-5755</a>
-        <br />
-        <asp:Label ID="lblPhone247" Text="24/7 Telephone: " runat="server" Font-Bold="true"  />
-        <a id="phoneNum24Call" href="tel:724-274-5755">724-274-5755</a>
     </div>
     <div>
         <br />
