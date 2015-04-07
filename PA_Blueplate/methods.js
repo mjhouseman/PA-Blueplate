@@ -8,3 +8,10 @@
         });
     }
 }
+
+function dial(e) {
+    console.log("calling me!");
+    console.log(e.value);
+    alert(e);
+    window.location = 'tel:5555555555';
+}

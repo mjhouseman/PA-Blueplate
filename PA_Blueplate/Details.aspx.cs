@@ -61,25 +61,16 @@ namespace PA_Blueplate
 
         public void PhoneClick(object sender, EventArgs e)
         {
-            //tel:555-123-4567
-            //string tel = Request.Form["phoneNumCall"];
-            //string test = phoneNumCall.InnerText;
-            //Page.ClientScript.RegisterStartupScript(Page.GetType(), "open_window", string.Format("void(window.open('{0}', 'child_window'));", "tel:555-123-2939"), true);
-            Page.ClientScript.RegisterStartupScript(Page.GetType(), "open_window", string.Format("void(window.open('{0}', 'child_window'));", phoneNumCall.Text.ToString()), true);
+            string tel = phoneNumCall.Text.ToString();
+            tel = "tel:" + tel.Replace("-", "");
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "dsadas", "window.open('" + tel + "');", true);
         }
 
         public void Phone24Click(object sender, EventArgs e)
         {
-            //var doc = new HtmlDocument();
-            //doc.LoadHtml("<a href=\"http://www.google.com\"></a>");
-            //var nodes = doc.DocumentNode.SelectNodes("a[@href]");
-            //foreach (var node in nodes)
-            //{
-            //    string x = node.Attributes["href"].Value.ToString();
-            //    string y = "nooo";
-            //}
-            string test = phoneNum24Call.Text.ToString();
-            Page.ClientScript.RegisterStartupScript(Page.GetType(), "open_window", string.Format("void(window.open('{0}', 'child_window'));", phoneNum24Call.Text.ToString()), true);
+            string tel = phoneNum24Call.Text.ToString();
+            tel = "tel:" + tel.Replace("-", "");
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "dsadas", "window.open('" + tel + "');", true);
         }
     }
 }
