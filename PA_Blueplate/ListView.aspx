@@ -15,6 +15,11 @@
         <asp:Label id="label1" runat="server" Font-Bold="true"  />
     </div>
     <div>
+        <asp:DropDownList id="dropdown" runat="server" >
+        </asp:DropDownList>
+    </div>
+    <div>
+        
         <br />
         <%-- 
         <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1"> 
@@ -68,90 +73,49 @@
                 </asp:TableCell>
                 <asp:TableCell>
                     <asp:Label ID="Label11" runat="server" Text="A-B-E Car Care Center LLC" Font-Size="X-Large" Font-Bold="true"/> 
-                </asp:TableCell>
-                <asp:TableCell RowSpan="2">
+                </asp:TableCell><asp:TableCell RowSpan="2">
                     <asp:Label ID="Label12" runat="server" Text="3.2 mi" /> 
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
+                </asp:TableCell></asp:TableRow><asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="Label13" runat="server" Text="1302 W Tilghman Street, Allentown, PA 18102" /> 
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
+                </asp:TableCell></asp:TableRow><asp:TableRow>
                 <asp:TableCell RowSpan="2">
                     <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="img/wrench.png" CommandArgument="MikesStation" OnClick="OnListItemClick" Height="50" Width="50" />
-                </asp:TableCell>
-                <asp:TableCell>
+                </asp:TableCell><asp:TableCell>
                     <asp:Label ID="Label14" runat="server" Text="Modi Moters LLC" Font-Size="X-Large" Font-Bold="true"/> 
-                </asp:TableCell>
-                <asp:TableCell RowSpan="2">
+                </asp:TableCell><asp:TableCell RowSpan="2">
                     <asp:Label ID="Label15" runat="server" Text="5.6 mi" /> 
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
+                </asp:TableCell></asp:TableRow><asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="Label16" runat="server" Text="2530 Walnut Street, Harrisburg, PA 17103" /> 
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
+                </asp:TableCell></asp:TableRow><asp:TableRow>
                 <asp:TableCell RowSpan="2">
                     <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="img/wrench.png" CommandArgument="MikesStation" OnClick="OnListItemClick" Height="50" Width="50" />
-                </asp:TableCell>
-                <asp:TableCell>
+                </asp:TableCell><asp:TableCell>
                     <asp:Label ID="Label17" runat="server" Text="Rabold's Services" Font-Size="X-Large" Font-Bold="true"/> 
-                </asp:TableCell>
-                <asp:TableCell RowSpan="2">
+                </asp:TableCell><asp:TableCell RowSpan="2">
                     <asp:Label ID="Label18" runat="server" Text="8.1 mi" /> 
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
+                </asp:TableCell></asp:TableRow><asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="Label19" runat="server" Text="2034 Boas Street, Harrisburg, PA 17103" /> 
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
+                </asp:TableCell></asp:TableRow><asp:TableRow>
                 <asp:TableCell RowSpan="2">
                     <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="img/wrench.png" CommandArgument="MikesStation" OnClick="OnListItemClick" Height="50" Width="50" />
-                </asp:TableCell>
-                <asp:TableCell>
+                </asp:TableCell><asp:TableCell>
                     <asp:Label ID="Label20" runat="server" Text="Rick's Auto Body" Font-Size="X-Large" Font-Bold="true"/> 
-                </asp:TableCell>
-                <asp:TableCell RowSpan="2">
+                </asp:TableCell><asp:TableCell RowSpan="2">
                     <asp:Label ID="Label21" runat="server" Text="9.24 mi" /> 
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
+                </asp:TableCell></asp:TableRow><asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="Label22" runat="server" Text="1114 N Cameron Street, Harrisburg, PA 17103" /> 
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
+                </asp:TableCell></asp:TableRow><asp:TableRow>
                 <asp:TableCell RowSpan="2">
                     <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="img/wrench.png" CommandArgument="MikesStation" OnClick="OnListItemClick" Height="50" Width="50" />
-                </asp:TableCell>
-                <asp:TableCell>
+                </asp:TableCell><asp:TableCell>
                     <asp:Label ID="Label23" runat="server" Text="Buchek Auto Body Inc" Font-Size="X-Large" Font-Bold="true"/> 
-                </asp:TableCell>
-                <asp:TableCell RowSpan="2">
+                </asp:TableCell><asp:TableCell RowSpan="2">
                     <asp:Label ID="Label24" runat="server" Text="15.7 mi" /> 
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
+                </asp:TableCell></asp:TableRow><asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="Label25" runat="server" Text="1009 Russellton Road, Cheswick, PA 15024" />
-                </asp:TableCell>
-            </asp:TableRow>
-            
-
-
-
-
-
-
-
-        </asp:Table>
-    </div>
-    </form>
-</body>
-</html>
+                </asp:TableCell></asp:TableRow></asp:Table></div></form></body></html>
