@@ -96,6 +96,7 @@
     <Compile Include="ListView.aspx.designer.cs">
       <DependentUpon>ListView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LocationItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

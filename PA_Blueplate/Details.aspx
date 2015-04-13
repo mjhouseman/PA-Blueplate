@@ -276,6 +276,40 @@
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
+        <asp:Table ID="TireTable" runat="server">
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="LblVendorNumber" Text="PA Vendor Number:" runat="server" Font-Bold="true" />
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:Label ID="LblVendorNumberText" Text="0000" runat="server" />
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="LblDealerType" Text="Dealer Type:" runat="server" Font-Bold="true" />
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:Label ID="LblDealerTypeText" Text="xxxx" runat="server" />
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="LblTireBrand" Text="Tire Brand:" runat="server" Font-Bold="true" />
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:Label ID="LblTireBrandText" Text="xxxx" runat="server" />
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="LblFax" Text="Fax:" runat="server" Font-Bold="true" />
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:Label ID="LblFaxText" Text="xxxx" runat="server" />
+                </asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
     </div>
     </form>
 </body>

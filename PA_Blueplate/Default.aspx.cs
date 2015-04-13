@@ -50,7 +50,7 @@ namespace PA_Blueplate
             string test = userOS;
 
             ImageButton btn = (ImageButton)sender;
-            Response.Redirect("ListView.aspx?opt=" + btn.CommandArgument.ToString() + "&lat=" + userLongitude + "&long=" + userLatitude + "&os=" + userOS, false);
+            Response.Redirect("ListView.aspx?opt=" + btn.CommandArgument.ToString() + "&lon=" + userLongitude + "&lat=" + userLatitude + "&os=" + userOS, false);
         }
 
 }
