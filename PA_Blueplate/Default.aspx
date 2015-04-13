@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
-<script type="text/javascript" src="<%= ResolveUrl ("~/methods.js") %>"></script>
+<script type="text/javascript" src="<%= ResolveUrl ("methods.js") %>"></script>
 <link rel="stylesheet" href="style.css" />
     <title></title>
 </head>

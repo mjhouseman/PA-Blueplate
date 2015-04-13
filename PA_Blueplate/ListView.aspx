@@ -15,7 +15,7 @@
         <asp:Label id="label1" runat="server" Font-Bold="true"  />
     </div>
     <div>
-        <asp:DropDownList id="dropdown" runat="server" OnSelectedIndexChanged="OnDropDownChange" AutoPostBack="true">
+        <asp:DropDownList id="dropdown" runat="server" OnSelectedIndexChanged="OnDropDownChange" AutoPostBack="true" >
         </asp:DropDownList>
     </div>
     <div>
@@ -60,11 +60,6 @@
         </asp:ListView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ConnectionStrings:BlogEngineConnectionString %>" SelectCommand="SELECT * FROM [Comments]"></asp:SqlDataSource>
         --%>
-        
-
-
-
-
 
         <asp:Table ID="Table1" runat="server">
             <asp:TableRow>
