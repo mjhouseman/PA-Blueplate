@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="PA_Blueplate.Details" CodeFile="Details.aspx.cs" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="PA_Blueplate.Details" CodeBehind="Details.aspx.cs" %>
 
 <!DOCTYPE html>
 
