@@ -6,8 +6,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using LocationItem;
-
 
 namespace PA_Blueplate
 {
@@ -155,7 +153,7 @@ namespace PA_Blueplate
 
         public void PopulatePage(string table, string where)
         {
-            List<LocationItem.LocationItem> results = new List<LocationItem.LocationItem>();
+            List<LocationItem> results = new List<LocationItem>();
             try
             {
                 string connectionString = "Data Source=localhost;" + "initial catalog=PA_Blueplate_DB;" + "Integrated Security=SSPI;";
@@ -178,7 +176,7 @@ namespace PA_Blueplate
                             {
                                 //Save results into LocationItem and store in results array  
                                 // Slight bug with Street_Address1 and State.... why??
-                                results.Add(new LocationItem.LocationItem(reader["ID"].ToString(), reader["Business_Name"].ToString(), reader["Longitude_Coord"].ToString(), reader["Latitude_Coord"].ToString(), reader["Street_Address1"].ToString(), reader["City"].ToString(), reader["State"].ToString(), reader["Zip_Code"].ToString()));
+                                results.Add(new LocationItem(reader["ID"].ToString(), reader["Business_Name"].ToString(), reader["Longitude_Coord"].ToString(), reader["Latitude_Coord"].ToString(), reader["Street_Address1"].ToString(), reader["City"].ToString(), reader["State"].ToString(), reader["Zip_Code"].ToString()));
                             }
                         }
                         reader.Close();
@@ -206,7 +204,7 @@ namespace PA_Blueplate
 
                 }
 
-                List<LocationItem.LocationItem> displayResults = results.OrderBy(o=>o.distance).ToList();
+                List<LocationItem> displayResults = results.OrderBy(o=>o.distance).ToList();
 
                 ImageButton1.CommandArgument = displayResults[0].id.ToString(); //set ID to be passed to details page
                 Label11.Text = displayResults[0].businessName.ToString(); //1st name
@@ -234,6 +232,31 @@ namespace PA_Blueplate
                 Label25.Text = displayResults[4].fullAddress.ToString(); 
             }
 
+        }
+    }
+
+    public class LocationItem
+    {
+        public string id { get; set; }
+        public string objectType { get; set; }
+        public string businessName { get; set; }
+        public string otherName { get; set; }
+        public string fullAddress { get; set; }
+        public string longitude { get; set; }
+        public string latitude { get; set; }
+        public string distance { get; set; }
+        //... continue with remainder of fields from database
+
+        public LocationItem(string id, string businessName, string longitude, string latitude, string stAddress1, string city, string state, string zip)
+        {
+            this.id = id;
+            this.businessName = businessName;
+            this.longitude = longitude;
+            this.latitude = latitude;
+            this.fullAddress = (!string.IsNullOrEmpty(stAddress1) ? stAddress1 : "") + ", " +
+                               (!string.IsNullOrEmpty(city) ? city : "") + ", " +
+                               (!string.IsNullOrEmpty(state) ? state : "") + " " +
+                               (!string.IsNullOrEmpty(zip) ? zip : "");
         }
     }
 }
