@@ -15,7 +15,7 @@
         <asp:Label id="label1" runat="server" Font-Bold="true"  />
     </div>
     <div>
-        <asp:DropDownList id="dropdown" runat="server" >
+        <asp:DropDownList id="dropdown" runat="server" OnSelectedIndexChanged="OnDropDownChange" AutoPostBack="true">
         </asp:DropDownList>
     </div>
     <div>

@@ -6,6 +6,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using LocationItem;
+
 
 namespace PA_Blueplate
 {
@@ -19,59 +21,62 @@ namespace PA_Blueplate
             lat = !string.IsNullOrEmpty(Request.QueryString["lat"]) ? Request.QueryString["lat"] : "0";
             lon = !string.IsNullOrEmpty(Request.QueryString["lon"]) ? Request.QueryString["lon"] : "0";
 
-            string[] populateRepairArray = { "", "BODY REPAIR", "BODY PARTS", "COMPUTER DIAGNOSTICS", "DIESEL LABOR", "EMISSIONS INSPECTIONS", "GLASS PARTS",
+            string[] populateRepairArray = { "ALL REPAIRS", "BODY REPAIR", "BODY PARTS", "COMPUTER DIAGNOSTICS", "DIESEL LABOR", "EMISSIONS INSPECTIONS", "GLASS PARTS",
                                            "GLASS REPAIR", "LUBE OIL", "MECHANICAL LABOR", "MECHANICAL PARTS", "STATE INSPECTION", "TOWING", "24/7 TOWING"};
-            string[] populateTireArray = { "", "MICHELIN", "GOODYEAR", "RETAIL", "COMMERCIAL" };
+            string[] populateTireArray = { "ALL TIRES", "MICHELIN", "GOODYEAR", "RETAIL", "COMMERCIAL" };
 
-            switch (option)
+            if (option == "Towing_Vendors" || dropdown.Items.Count == 0)
             {
-                case "Service_Vendors":
-                    for (var i = 0; i < populateRepairArray.Length; i++)
-                    {
-                        var item = new ListItem
+                switch (option)
+                {
+                    case "Service_Vendors":
+                        for (var i = 0; i < populateRepairArray.Length; i++)
                         {
-                            Text = populateRepairArray[i].ToString(),
-                            Value = i.ToString()
-                        };
-                        dropdown.Items.Add(item);
-                    }
-                    PopulatePage("Service");
-                    label1.Text = "Repair Stations";
-                    break;
+                            var item = new ListItem
+                            {
+                                Text = populateRepairArray[i].ToString(),
+                                Value = i.ToString()
+                            };
+                            dropdown.Items.Add(item);
+                        }
+                        PopulatePage("Service", "");
+                        label1.Text = "Repair Stations";
+                        break;
 
-                case "Towing_Vendors":
-                    dropdown.Enabled = false;
-                    dropdown.Visible = false;
-                    label1.Text = "Towing Centers";
-                    PopulatePage("Towing");
-                    ImageButton1.ImageUrl = "img/towtruck.jpg";
-                    ImageButton2.ImageUrl = "img/towtruck.jpg";                   
-                    ImageButton2.ImageUrl = "img/towtruck.jpg";
-                    ImageButton3.ImageUrl = "img/towtruck.jpg";
-                    ImageButton4.ImageUrl = "img/towtruck.jpg";
-                    ImageButton5.ImageUrl = "img/towtruck.jpg";
-                    break;
+                    case "Towing_Vendors":
+                        dropdown.Enabled = false;
+                        dropdown.Visible = false;
+                        label1.Text = "Towing Centers";
+                        PopulatePage("Towing", "");
+                        ImageButton1.ImageUrl = "img/towtruck.jpg";
+                        ImageButton2.ImageUrl = "img/towtruck.jpg";
+                        ImageButton2.ImageUrl = "img/towtruck.jpg";
+                        ImageButton3.ImageUrl = "img/towtruck.jpg";
+                        ImageButton4.ImageUrl = "img/towtruck.jpg";
+                        ImageButton5.ImageUrl = "img/towtruck.jpg";
+                        break;
 
-                case "Tire_Vendors":
-                    label1.Text = "Tire Services";
-                    for (var i = 0; i < populateTireArray.Length; i++)
-                    {
-                        var item = new ListItem
+                    case "Tire_Vendors":
+                        label1.Text = "Tire Services";
+                        for (var i = 0; i < populateTireArray.Length; i++)
                         {
-                            Text = populateTireArray[i].ToString(),
-                            Value = i.ToString()
-                        };
-                        dropdown.Items.Add(item);
-                    }
+                            var item = new ListItem
+                            {
+                                Text = populateTireArray[i].ToString(),
+                                Value = i.ToString()
+                            };
+                            dropdown.Items.Add(item);
+                        }
 
-                    PopulatePage("Tire");
-                    ImageButton1.ImageUrl = "img/tire.png";
-                    ImageButton2.ImageUrl = "img/tire.png";
-                    ImageButton3.ImageUrl = "img/tire.png";
-                    ImageButton4.ImageUrl = "img/tire.png";
-                    ImageButton5.ImageUrl = "img/tire.png";
-                    break;
-            }  
+                        PopulatePage("Tire", "");
+                        ImageButton1.ImageUrl = "img/tire.png";
+                        ImageButton2.ImageUrl = "img/tire.png";
+                        ImageButton3.ImageUrl = "img/tire.png";
+                        ImageButton4.ImageUrl = "img/tire.png";
+                        ImageButton5.ImageUrl = "img/tire.png";
+                        break;
+                }  
+            } 
         }
 
         public void OnListItemClick(object sender, EventArgs e)
@@ -81,9 +86,76 @@ namespace PA_Blueplate
             Response.Redirect("Details.aspx?id=" + btn.CommandArgument.ToString() + "&opt=" + option + "&lat=" + lat + "&lon=" + lon + "&os=" + userOS, false);
         }
 
-        public void PopulatePage(string table)
+        public void OnDropDownChange(object sender, EventArgs e)
         {
-            List<LocationItem> results = new List<LocationItem>();
+            switch (dropdown.SelectedItem.Text)
+            {
+                case "":
+                    break;
+                case "ALL SERVICES":
+                    PopulatePage("Service", "");
+                    break;
+                case "BODY REPAIR":
+                    PopulatePage("Service", " WHERE Body_Repair = 1");
+                    break;
+                case "BODY PARTS":
+                    PopulatePage("Service", " WHERE Body_Parts = 1");
+                    break;
+                case "COMPUTER DIAGNOSTICS":
+                    PopulatePage("Service", " WHERE Computer_Diagnostics = 1");
+                    break;
+                case "DIESEL LABOR":
+                    PopulatePage("Service", " WHERE Diesel_Labor = 1");
+                    break;
+                case "EMISSIONS INSPECTIONS":
+                    PopulatePage("Service", " WHERE Emmissions_Inspections = 1");
+                    break;
+                case "GLASS PARTS":
+                    PopulatePage("Service", " WHERE Glass_Parts = 1");
+                    break;
+                case "GLASS REPAIR":
+                    PopulatePage("Service", " WHERE Glass_Repair = 1");
+                    break;
+                case "LUBE OIL":
+                    PopulatePage("Service", " WHERE Lube_Oil_Change = 1");
+                    break;
+                case "MECHANICAL LABOR":
+                    PopulatePage("Service", " WHERE Mechanical_Labor = 1");
+                    break;
+                case "MECHANICAL PARTS":
+                    PopulatePage("Service", " WHERE Mechanical_Parts = 1");
+                    break;
+                case "STATE INSPECTION":
+                    PopulatePage("Service", " WHERE State_Inspection = 1");
+                    break;
+                case "TOWING":
+                    PopulatePage("Service", " WHERE Towing = 1");
+                    break;
+                case "24/7 TOWING":
+                    PopulatePage("Service", " WHERE Towing_24 = 1");
+                    break;
+                case "ALL TIRES":
+                    PopulatePage("Tire", "");
+                    break;
+                case "MICHELIN":
+                    PopulatePage("Tire", " WHERE Tire_Brand = \'MICHELIN\'");
+                    break;
+                case "GOODYEAR":
+                    PopulatePage("Tire", " WHERE Tire_Brand = \'GOODYEAR\'");
+                    break;
+                case "RETAIL":
+                    PopulatePage("Tire", " WHERE Dealer_Type = \'RETAIL\'");
+                    break;
+                case "COMMERCIAL":
+                    PopulatePage("Tire", " WHERE Dealer_Type = \'COMMERCIAL\'");
+                    break;
+
+            }
+        }
+
+        public void PopulatePage(string table, string where)
+        {
+            List<LocationItem.LocationItem> results = new List<LocationItem.LocationItem>();
             try
             {
                 string connectionString = "Data Source=localhost;" + "initial catalog=PA_Blueplate_DB;" + "Integrated Security=SSPI;";
@@ -91,11 +163,13 @@ namespace PA_Blueplate
                 {
                     conn.Open();
                     
-                    string sql = "SELECT * FROM " + table + "_NearestCoordinates(@lat, @lon)"; // THIS NEEDS UPDATED TO PASS PARAMETERS FROM DROP DOWN MENU
+                    string sql = "SELECT TOP(10) * FROM " + table + "_NearestCoordinates(@lat, @lon, @rad)" + where; 
+                    //string sql = "SELECT TOP(10) * FROM " + "Test_Function(@lat, @lon, @rad)" + where;
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("@lon",lon);
                         cmd.Parameters.AddWithValue("@lat", lat);
+                        cmd.Parameters.AddWithValue("@rad", 1000); // THIS NEEDS UPDATED TO PASS RADIUS WHEN ADDED
                         SqlDataReader reader = cmd.ExecuteReader();
 
                         if (reader.HasRows)
@@ -104,7 +178,7 @@ namespace PA_Blueplate
                             {
                                 //Save results into LocationItem and store in results array  
                                 // Slight bug with Street_Address1 and State.... why??
-                                results.Add(new LocationItem(reader["ID"].ToString(), reader["Business_Name"].ToString(), reader["Longitude_Coord"].ToString(), reader["Latitude_Coord"].ToString(), reader["Street_Address1"].ToString(), reader["City"].ToString(), reader["State"].ToString(), reader["Zip_Code"].ToString()));
+                                results.Add(new LocationItem.LocationItem(reader["ID"].ToString(), reader["Business_Name"].ToString(), reader["Longitude_Coord"].ToString(), reader["Latitude_Coord"].ToString(), reader["Street_Address1"].ToString(), reader["City"].ToString(), reader["State"].ToString(), reader["Zip_Code"].ToString()));
                             }
                         }
                         reader.Close();
@@ -116,7 +190,7 @@ namespace PA_Blueplate
                 Console.WriteLine(ex.Message);
             }
 
-            if (results != null)
+            if (results != null && results.Count != 0)
             {
                 Random rnd = new Random();  //Remove once google distances are in
                 for (int i = 0; i < results.Count; i++)
@@ -132,7 +206,7 @@ namespace PA_Blueplate
 
                 }
 
-                List<LocationItem> displayResults = results.OrderBy(o=>o.distance).ToList();
+                List<LocationItem.LocationItem> displayResults = results.OrderBy(o=>o.distance).ToList();
 
                 ImageButton1.CommandArgument = displayResults[0].id.ToString(); //set ID to be passed to details page
                 Label11.Text = displayResults[0].businessName.ToString(); //1st name
