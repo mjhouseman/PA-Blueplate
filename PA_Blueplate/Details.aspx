@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=12.0, minimum-scale=.25, user-scalable=no"/>
 <link rel="stylesheet" href="style.css" />
@@ -19,7 +19,7 @@
         <asp:Label ID="LblOtherName" Text="Other Name: " runat="server" Font-Bold="true"  />
         <asp:Label ID="LblOtherNameText" Text="BOCHEK'S COLLISION CENTER" runat="server" />
         <br />
-        <asp:Table runat="server">
+        <asp:Table ID="Table1" runat="server">
 
             <asp:TableRow>
                 <asp:TableCell RowSpan="2">
@@ -34,7 +34,7 @@
             </asp:TableRow>
             
             <asp:TableRow>
-                <asp:TableCell><asp:Label runat="server"></asp:Label></asp:TableCell>
+                <asp:TableCell><asp:Label ID="Label1" runat="server"></asp:Label></asp:TableCell>
                 <asp:TableCell>
                     <asp:Label ID="lblCityText" Text="CHESWICK" runat="server" />, PA <asp:Label ID="lblZipText" Text="15024" runat="server" />
                 </asp:TableCell>
@@ -117,162 +117,162 @@
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="Label1" Text="Diesel Labor: " runat="server" Font-Bold="true"  />
+                    <asp:Label ID="lblDiselLabor" Text="Diesel Labor: " runat="server" Font-Bold="true"  />
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:Label ID="Label2" Text="Accepted" runat="server" />
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label ID="Label3" Text="Diesel Labor Rate: " runat="server" Font-Bold="true"  />
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:Label ID="Label4" Text="53" runat="server" />
+                    <asp:Label ID="lblDiselLaborText" Text="Accepted" runat="server" />
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="Label5" Text="Emisions Inspections: " runat="server" Font-Bold="true"  />
+                    <asp:Label ID="lblDiselLaborRate" Text="Diesel Labor Rate: " runat="server" Font-Bold="true"  />
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:Label ID="Label6" Text="Accepted" runat="server" />
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label ID="Label7" Text="Emmisions Inspections Rate: " runat="server" Font-Bold="true"  />
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:Label ID="Label8" Text="31" runat="server" />
+                    <asp:Label ID="lblDiselLaborRateText" Text="53" runat="server" />
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="Label9" Text="Glass Repair: " runat="server" Font-Bold="true"  />
+                    <asp:Label ID="lblEmisionsInspection" Text="Emisions Inspections: " runat="server" Font-Bold="true"  />
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:Label ID="Label10" Text="Accepted" runat="server" />
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label ID="Label11" Text="Glass Repair Rate: " runat="server" Font-Bold="true"  />
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:Label ID="Label12" Text="39" runat="server" />
+                    <asp:Label ID="lblEmisionsInspectionText" Text="Accepted" runat="server" />
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="Label13" Text="Glass Parts Discount: " runat="server" Font-Bold="true"  />
+                    <asp:Label ID="lblEmisionsInspectionRate" Text="Emmisions Inspections Rate: " runat="server" Font-Bold="true"  />
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:Label ID="Label14" Text="Accepted" runat="server" />
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label ID="Label15" Text="Glass Parts Discount Rate: " runat="server" Font-Bold="true"  />
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:Label ID="Label16" Text="20%" runat="server" />
+                    <asp:Label ID="lblEmisionsInspectionRateText" Text="31" runat="server" />
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="Label17" Text="Lube / Oil Change: " runat="server" Font-Bold="true"  />
+                    <asp:Label ID="lblGlassRepair" Text="Glass Repair: " runat="server" Font-Bold="true"  />
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:Label ID="Label18" Text="Accepted" runat="server" />
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label ID="Label19" Text="Lube / Oil Change Rate: " runat="server" Font-Bold="true"  />
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:Label ID="Label20" Text="29" runat="server" />
+                    <asp:Label ID="lblGlassRepairText" Text="Accepted" runat="server" />
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="Label21" Text="Syn Lube / Oil Change: " runat="server" Font-Bold="true"  />
+                    <asp:Label ID="lblGlassRepairRate" Text="Glass Repair Rate: " runat="server" Font-Bold="true"  />
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:Label ID="Label22" Text="50" runat="server" />
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label ID="Label23" Text="Mechanical Labor: " runat="server" Font-Bold="true"  />
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:Label ID="Label24" Text="Accepted" runat="server" />
+                    <asp:Label ID="lblGlassRepairRateText" Text="39" runat="server" />
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="Label25" Text="Mechanical Labor Rate: " runat="server" Font-Bold="true"  />
+                    <asp:Label ID="lblGlassPartsDiscount" Text="Glass Parts Discount: " runat="server" Font-Bold="true"  />
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:Label ID="Label26" Text="55" runat="server" />
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label ID="Label27" Text="Mechanical Parts: " runat="server" Font-Bold="true"  />
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:Label ID="Label28" Text="Accepted" runat="server" />
+                    <asp:Label ID="lblGlassPartsDiscountText" Text="Accepted" runat="server" />
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="Label29" Text="Mechanical Parts Discount Rate: " runat="server" Font-Bold="true"  />
+                    <asp:Label ID="lblGlassPartsDiscountRate" Text="Glass Parts Discount Rate: " runat="server" Font-Bold="true"  />
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:Label ID="Label30" Text="15%" runat="server" />
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label ID="Label31" Text="State Inspection: " runat="server" Font-Bold="true"  />
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:Label ID="Label32" Text="Accepted" runat="server" />
+                    <asp:Label ID="lblGlassPartsDiscountRateText" Text="20%" runat="server" />
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="Label33" Text="State Inspection Rate: " runat="server" Font-Bold="true"  />
+                    <asp:Label ID="lblLubeOilChange" Text="Lube / Oil Change: " runat="server" Font-Bold="true"  />
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:Label ID="Label34" Text="25" runat="server" />
-                </asp:TableCell>
-            </asp:TableRow>
-            <asp:TableRow>
-                <asp:TableCell>
-                    <asp:Label ID="Label35" Text="Towing: " runat="server" Font-Bold="true"  />
-                </asp:TableCell>
-                <asp:TableCell>
-                    <asp:Label ID="Label36" Text="Accepted" runat="server" />
+                    <asp:Label ID="lblLubeOilChangeText" Text="Accepted" runat="server" />
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="Label37" Text="Towing Rate: " runat="server" Font-Bold="true"  />
+                    <asp:Label ID="lblLubeOilChangeRate" Text="Lube / Oil Change Rate: " runat="server" Font-Bold="true"  />
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:Label ID="Label38" Text="110" runat="server" />
+                    <asp:Label ID="lblLubeOilChangeRateText" Text="29" runat="server" />
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="Label39" Text="24/7 Towing: " runat="server" Font-Bold="true"  />
+                    <asp:Label ID="lblSynLubeOilChange" Text="Syn Lube / Oil Change: " runat="server" Font-Bold="true"  />
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:Label ID="Label40" Text="Accepted" runat="server" />
+                    <asp:Label ID="lblSynLubeOilChangeText" Text="50" runat="server" />
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="lblMechanicalLabor" Text="Mechanical Labor: " runat="server" Font-Bold="true"  />
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:Label ID="lblMechanicalLaborText" Text="Accepted" runat="server" />
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="lblMechanicalLaborRate" Text="Mechanical Labor Rate: " runat="server" Font-Bold="true"  />
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:Label ID="lblMechanicalLaborRateText" Text="55" runat="server" />
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="lblMechanicalParts" Text="Mechanical Parts: " runat="server" Font-Bold="true"  />
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:Label ID="lblMechanicalPartsText" Text="Accepted" runat="server" />
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="lblMechanicalPartsRate" Text="Mechanical Parts Discount Rate: " runat="server" Font-Bold="true"  />
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:Label ID="lblMechanicalPartsRateText" Text="15%" runat="server" />
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="lblStateInspection" Text="State Inspection: " runat="server" Font-Bold="true"  />
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:Label ID="lblStateInspectionText" Text="Accepted" runat="server" />
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="lblStateInspectionRate" Text="State Inspection Rate: " runat="server" Font-Bold="true"  />
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:Label ID="lblStateInspectionRateText" Text="25" runat="server" />
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="lblTowing" Text="Towing: " runat="server" Font-Bold="true"  />
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:Label ID="lblTowingText" Text="Accepted" runat="server" />
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="lblTowingRate" Text="Towing Rate: " runat="server" Font-Bold="true"  />
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:Label ID="lblTowingRateText" Text="110" runat="server" />
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="lblTowing24" Text="24/7 Towing: " runat="server" Font-Bold="true"  />
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:Label ID="lblTowing24Text" Text="Accepted" runat="server" />
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
