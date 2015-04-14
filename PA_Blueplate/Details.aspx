@@ -31,6 +31,7 @@
                 <asp:TableCell>
                     <asp:Label ID="lblAddress1Text" Text="1009 RUSSELLTON ROAD" runat="server" />
                 </asp:TableCell>
+              
             </asp:TableRow>
             
             <asp:TableRow>
@@ -117,18 +118,18 @@
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="lblDiselLabor" Text="Diesel Labor: " runat="server" Font-Bold="true"  />
+                    <asp:Label ID="lblDieselLabor" Text="Diesel Labor: " runat="server" Font-Bold="true"  />
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:Label ID="lblDiselLaborText" Text="Accepted" runat="server" />
+                    <asp:Label ID="lblDieselLaborText" Text="Accepted" runat="server" />
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="lblDiselLaborRate" Text="Diesel Labor Rate: " runat="server" Font-Bold="true"  />
+                    <asp:Label ID="lblDieselLaborRate" Text="Diesel Labor Rate: " runat="server" Font-Bold="true"  />
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:Label ID="lblDiselLaborRateText" Text="53" runat="server" />
+                    <asp:Label ID="lblDieselLaborRateText" Text="53" runat="server" />
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -165,18 +166,18 @@
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="lblGlassPartsDiscount" Text="Glass Parts Discount: " runat="server" Font-Bold="true"  />
+                    <asp:Label ID="lblGlassParts" Text="Glass Parts: " runat="server" Font-Bold="true"  />
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:Label ID="lblGlassPartsDiscountText" Text="Accepted" runat="server" />
+                    <asp:Label ID="lblGlassPartsText" Text="Accepted" runat="server" />
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="lblGlassPartsDiscountRate" Text="Glass Parts Discount Rate: " runat="server" Font-Bold="true"  />
+                    <asp:Label ID="lblGlassPartsDiscount" Text="Glass Parts Discount : " runat="server" Font-Bold="true"  />
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:Label ID="lblGlassPartsDiscountRateText" Text="20%" runat="server" />
+                    <asp:Label ID="lblGlassPartsDiscountText" Text="20%" runat="server" />
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>

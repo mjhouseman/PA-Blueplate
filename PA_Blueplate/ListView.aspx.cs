@@ -37,8 +37,9 @@ namespace PA_Blueplate
                             };
                             dropdown.Items.Add(item);
                         }
-                        PopulatePage("Service", "");
                         label1.Text = "Repair Stations";
+                        PopulatePage("Service", "");
+                        
                         break;
 
                     case "Towing_Vendors":

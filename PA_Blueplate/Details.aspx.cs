@@ -88,6 +88,8 @@ namespace PA_Blueplate
                                         lblServices.Visible = false;
                                         tblServices.Visible = false;
                                         TireTable.Visible = false;
+                                        //lblAddress2.Visible = false;
+                                        
                                         break;
                                     case "Tire_Vendors":
                                         lblCompany.Text = !string.IsNullOrEmpty(reader["Business_Name"].ToString()) ? reader["Business_Name"].ToString() : "";
@@ -112,6 +114,7 @@ namespace PA_Blueplate
                                         LblDealerType.Visible = !string.IsNullOrEmpty(reader["Dealer_Type"].ToString()) ? true : false;
                                         LblFaxText.Text = !string.IsNullOrEmpty(reader["Fax"].ToString()) ? reader["Fax"].ToString() : "";
                                         LblFax.Visible = !string.IsNullOrEmpty(reader["Fax"].ToString()) ? true : false;
+                                       // lblAddress2.Visible = false;
                                         break;
                                     case "Service_Vendors":
                                         // ADD Street_Address2, 
@@ -120,6 +123,7 @@ namespace PA_Blueplate
                                         LblOtherNameText.Text = !string.IsNullOrEmpty(reader["Other_Name"].ToString()) ? reader["Other_Name"].ToString() : "";
                                         LblOtherNameText.Visible = !string.IsNullOrEmpty(reader["Other_Name"].ToString()) ? true : false;
                                         lblAddress1Text.Text = !string.IsNullOrEmpty(reader["Street_Address1"].ToString()) ? reader["Street_Address1"].ToString() : "";
+                                       // lblAddress2Text.Text = !string.IsNullOrEmpty(reader["Street_Address2"].ToString()) ? reader["Street_Address2"].ToString() : "";
                                         lblCityText.Text = !string.IsNullOrEmpty(reader["City"].ToString()) ? reader["City"].ToString() : "";
                                         lblZipText.Text = !string.IsNullOrEmpty(reader["Zip_Code"].ToString()) ? reader["Zip_Code"].ToString() : "";
                                         phoneNumCall.Text = !string.IsNullOrEmpty(reader["Phone"].ToString()) ? reader["Phone"].ToString() : "";
@@ -136,79 +140,77 @@ namespace PA_Blueplate
                                         lblBodyRepairRateText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
                                         lblBodyRepairRateText.Text = lblBodyRepair.Visible ? "$" + reader["Body_Repair_Rate"].ToString() + ".00" : "";
 
-                                        lblBodyPartDiscount.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblBodyPartDiscountText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblBodyPartDiscountRate.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblBodyPartDiscountRateText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
+                                        lblBodyPartDiscount.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Part")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Part"));
+                                        lblBodyPartDiscountText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Part")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Part"));
+                                        lblBodyPartDiscountRate.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Part")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Part"));
+                                        lblBodyPartDiscountRateText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Part")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Part"));
                                         lblBodyPartDiscountRateText.Text = lblBodyPartDiscount.Visible ? reader["Body_Part_Discount"].ToString() + "%" : "";
 
-                                        lblComputerDiagnostics.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblComputerDiagnosticsRate.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblComputerDiagnosticsRateText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblComputerDiagnosticsText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblComputerDiagnosticsText.Text = lblComputerDiagnostics.Visible ? reader["Computer_Diagnostics"].ToString() : "";
+                                        lblComputerDiagnostics.Visible = reader.IsDBNull(reader.GetOrdinal("Computer_Diagnostics")) ? false : reader.GetBoolean(reader.GetOrdinal("Computer_Diagnostics"));
+                                        lblComputerDiagnosticsRate.Visible = reader.IsDBNull(reader.GetOrdinal("Computer_Diagnostics")) ? false : reader.GetBoolean(reader.GetOrdinal("Computer_Diagnostics"));
+                                        lblComputerDiagnosticsRateText.Visible = reader.IsDBNull(reader.GetOrdinal("Computer_Diagnostics")) ? false : reader.GetBoolean(reader.GetOrdinal("Computer_Diagnostics"));
+                                        lblComputerDiagnosticsText.Visible = reader.IsDBNull(reader.GetOrdinal("Computer_Diagnostics")) ? false : reader.GetBoolean(reader.GetOrdinal("Computer_Diagnostics"));
+                                        lblComputerDiagnosticsRateText.Text = lblComputerDiagnostics.Visible ?"$"+ reader["Computer_Diagnostics_Rate"].ToString()+".00" : "";
 
-                                        lblDiselLabor.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblDiselLaborRate.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblDiselLaborRateText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblDiselLaborText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblDiselLaborText.Text = lblDiselLabor.Visible ? reader["Disel_Labor"].ToString() : "";
+                                        lblDieselLabor.Visible = reader.IsDBNull(reader.GetOrdinal("Diesel_Labor")) ? false : reader.GetBoolean(reader.GetOrdinal("Diesel_Labor"));
+                                        lblDieselLaborRate.Visible = reader.IsDBNull(reader.GetOrdinal("Diesel_Labor")) ? false : reader.GetBoolean(reader.GetOrdinal("Diesel_Labor"));
+                                        lblDieselLaborRateText.Visible = reader.IsDBNull(reader.GetOrdinal("Diesel_Labor")) ? false : reader.GetBoolean(reader.GetOrdinal("Diesel_Labor"));
+                                        lblDieselLaborText.Visible = reader.IsDBNull(reader.GetOrdinal("Diesel_Labor")) ? false : reader.GetBoolean(reader.GetOrdinal("Diesel_Labor"));
+                                        lblDieselLaborRateText.Text = lblDieselLabor.Visible ? "$"+reader["Diesel_Labor_Rate"].ToString()+".00" : "";
 
-                                        lblEmisionsInspection.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblEmisionsInspectionRate.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblEmisionsInspectionText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblEmisionsInspectionText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblEmisionsInspectionText.Text = lblEmisionsInspection.Visible ? reader["Emisions_Inspection"].ToString() : "";
+                                        lblEmisionsInspection.Visible = reader.IsDBNull(reader.GetOrdinal("Emmissions_Inspections")) ? false : reader.GetBoolean(reader.GetOrdinal("Emmissions_Inspections"));
+                                        lblEmisionsInspectionRate.Visible = reader.IsDBNull(reader.GetOrdinal("Emmissions_Inspections")) ? false : reader.GetBoolean(reader.GetOrdinal("Emmissions_Inspections"));
+                                        lblEmisionsInspectionText.Visible = reader.IsDBNull(reader.GetOrdinal("Emmissions_Inspections")) ? false : reader.GetBoolean(reader.GetOrdinal("Emmissions_Inspections"));
+                                        lblEmisionsInspectionRateText.Visible = reader.IsDBNull(reader.GetOrdinal("Emmissions_Inspections")) ? false : reader.GetBoolean(reader.GetOrdinal("Emmissions_Inspections"));
+                                        lblEmisionsInspectionRateText.Text = lblEmisionsInspection.Visible ?"$"+ reader["Emmissions_Inspections_Rate"].ToString()+".00" : "";
 
-                                        lblGlassRepair.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblGlassRepairRate.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblGlassRepairRateText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblGlassRepairText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblGlassRepairText.Text = lblGlassRepair.Visible ? reader["Glass_Repair"].ToString() : "";
+                                        lblGlassRepair.Visible = reader.IsDBNull(reader.GetOrdinal("Glass_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Glass_Repair"));
+                                        lblGlassRepairRate.Visible = reader.IsDBNull(reader.GetOrdinal("Glass_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Glass_Repair"));
+                                        lblGlassRepairRateText.Visible = reader.IsDBNull(reader.GetOrdinal("Glass_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Glass_Repair"));
+                                        lblGlassRepairText.Visible = reader.IsDBNull(reader.GetOrdinal("Glass_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Glass_Repair"));
+                                        lblGlassRepairRateText.Text = lblGlassRepair.Visible ?"$"+ reader["Glass_Repair_Rate"].ToString() +".00": "";
 
-                                        lblGlassPartsDiscount.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblGlassPartsDiscountRate.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblGlassPartsDiscountRateText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblGlassPartsDiscountText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblGlassPartsDiscountText.Text = lblGlassPartsDiscount.Visible ? reader["Glass_Repair"].ToString() : "";
+                                        lblGlassParts.Visible = reader.IsDBNull(reader.GetOrdinal("Glass_Parts")) ? false : reader.GetBoolean(reader.GetOrdinal("Glass_Parts"));
+                                        lblGlassPartsDiscount.Visible = reader.IsDBNull(reader.GetOrdinal("Glass_Parts")) ? false : reader.GetBoolean(reader.GetOrdinal("Glass_Parts"));
+                                        lblGlassPartsDiscountText.Visible = reader.IsDBNull(reader.GetOrdinal("Glass_Parts")) ? false : reader.GetBoolean(reader.GetOrdinal("Glass_Parts"));
+                                        lblGlassPartsText.Visible = reader.IsDBNull(reader.GetOrdinal("Glass_Parts")) ? false : reader.GetBoolean(reader.GetOrdinal("Glass_Parts"));
+                                        lblGlassPartsDiscountText.Text = lblGlassPartsDiscount.Visible ? reader["Glass_Parts_Discount"].ToString()+"%" : "";
 
-                                        lblLubeOilChange.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblLubeOilChangeRate.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblLubeOilChangeRateText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblLubeOilChangeText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblLubeOilChangeText.Text = lblLubeOilChange.Visible ? reader["Lube_Oil_Change"].ToString() : "";
+                                        lblLubeOilChange.Visible = reader.IsDBNull(reader.GetOrdinal("Lube_Oil_Change")) ? false : reader.GetBoolean(reader.GetOrdinal("Lube_Oil_Change"));
+                                        lblLubeOilChangeRate.Visible = reader.IsDBNull(reader.GetOrdinal("Lube_Oil_Change")) ? false : reader.GetBoolean(reader.GetOrdinal("Lube_Oil_Change"));
+                                        lblLubeOilChangeRateText.Visible = reader.IsDBNull(reader.GetOrdinal("Lube_Oil_Change")) ? false : reader.GetBoolean(reader.GetOrdinal("Lube_Oil_Change"));
+                                        lblLubeOilChangeText.Visible = reader.IsDBNull(reader.GetOrdinal("Lube_Oil_Change")) ? false : reader.GetBoolean(reader.GetOrdinal("Lube_Oil_Change"));
+                                        lblLubeOilChangeRateText.Text = lblLubeOilChange.Visible ?"$"+ reader["Lube_Oil_Change_Rate"].ToString()+".00" : "";
+                                        lblSynLubeOilChangeText.Visible = reader.IsDBNull(reader.GetOrdinal("Lube_Oil_Change")) ? false : reader.GetBoolean(reader.GetOrdinal("Lube_Oil_Change"));                                  
+                                        lblSynLubeOilChangeText.Text = lblSynLubeOilChange.Visible ? "$"+reader["Syn_Lube_Oil_Change_Rate"].ToString() +".00" : "";
 
-                                        lblSynLubeOilChange.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblSynLubeOilChangeText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblSynLubeOilChangeText.Text = lblSynLubeOilChange.Visible ? reader["Syn_Lube_Oil_Change"].ToString() : "";
+                                        lblMechanicalLabor.Visible = reader.IsDBNull(reader.GetOrdinal("Mechanical_Labor")) ? false : reader.GetBoolean(reader.GetOrdinal("Mechanical_Labor"));
+                                        lblMechanicalLaborRate.Visible = reader.IsDBNull(reader.GetOrdinal("Mechanical_Labor")) ? false : reader.GetBoolean(reader.GetOrdinal("Mechanical_Labor"));
+                                        lblMechanicalLaborRateText.Visible = reader.IsDBNull(reader.GetOrdinal("Mechanical_Labor")) ? false : reader.GetBoolean(reader.GetOrdinal("Mechanical_Labor"));
+                                        lblMechanicalLaborText.Visible = reader.IsDBNull(reader.GetOrdinal("Mechanical_Labor")) ? false : reader.GetBoolean(reader.GetOrdinal("Mechanical_Labor"));
+                                        lblMechanicalLaborRateText.Text = lblMechanicalLabor.Visible ?"$" +reader["Mechanical_Labor_Rate"].ToString()+".00" : "";
 
-                                        lblMechanicalLabor.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblMechanicalLaborRate.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblMechanicalLaborRateText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblMechanicalLaborText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblMechanicalLaborText.Text = lblMechanicalLabor.Visible ? reader["Mechanical_Labor"].ToString() : "";
+                                        lblMechanicalParts.Visible = reader.IsDBNull(reader.GetOrdinal("Mechanical_Parts")) ? false : reader.GetBoolean(reader.GetOrdinal("Mechanical_Parts"));
+                                        lblMechanicalPartsRate.Visible = reader.IsDBNull(reader.GetOrdinal("Mechanical_Parts")) ? false : reader.GetBoolean(reader.GetOrdinal("Mechanical_Parts"));
+                                        lblMechanicalPartsRateText.Visible = reader.IsDBNull(reader.GetOrdinal("Mechanical_Parts")) ? false : reader.GetBoolean(reader.GetOrdinal("Mechanical_Parts"));
+                                        lblMechanicalPartsText.Visible = reader.IsDBNull(reader.GetOrdinal("Mechanical_Parts")) ? false : reader.GetBoolean(reader.GetOrdinal("Mechanical_Parts"));
+                                        lblMechanicalPartsRateText.Text = lblMechanicalParts.Visible ? reader["Mechanical_Parts_Discount"].ToString()+"%" : "";
 
-                                        lblMechanicalParts.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblMechanicalPartsRate.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblMechanicalPartsRateText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblMechanicalPartsText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblMechanicalPartsText.Text = lblMechanicalParts.Visible ? reader["Mechanical_Parts"].ToString() : "";
+                                        lblStateInspection.Visible = reader.IsDBNull(reader.GetOrdinal("State_Inspection")) ? false : reader.GetBoolean(reader.GetOrdinal("State_Inspection"));
+                                        lblStateInspectionRate.Visible = reader.IsDBNull(reader.GetOrdinal("State_Inspection")) ? false : reader.GetBoolean(reader.GetOrdinal("State_Inspection"));
+                                        lblStateInspectionRateText.Visible = reader.IsDBNull(reader.GetOrdinal("State_Inspection")) ? false : reader.GetBoolean(reader.GetOrdinal("State_Inspection"));
+                                        lblStateInspectionText.Visible = reader.IsDBNull(reader.GetOrdinal("State_Inspection")) ? false : reader.GetBoolean(reader.GetOrdinal("State_Inspection"));
+                                        lblStateInspectionRateText.Text = lblStateInspection.Visible ? "$"+ reader["State_Inspection_Rate"].ToString()+".00" : "";
 
-                                        lblStateInspection.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblStateInspectionRate.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblStateInspectionRateText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblStateInspectionText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblStateInspectionText.Text = lblStateInspection.Visible ? reader["State_Inspection"].ToString() : "";
+                                        lblTowing.Visible = reader.IsDBNull(reader.GetOrdinal("Towing")) ? false : reader.GetBoolean(reader.GetOrdinal("Towing"));
+                                        lblTowingRate.Visible = reader.IsDBNull(reader.GetOrdinal("Towing")) ? false : reader.GetBoolean(reader.GetOrdinal("Towing"));
+                                        lblTowingRateText.Visible = reader.IsDBNull(reader.GetOrdinal("Towing")) ? false : reader.GetBoolean(reader.GetOrdinal("Towing"));
+                                        lblTowingText.Visible = reader.IsDBNull(reader.GetOrdinal("Towing")) ? false : reader.GetBoolean(reader.GetOrdinal("Towing"));
+                                        lblTowingRateText.Text = lblTowing.Visible ? "$"+ reader["Towing_Rate"].ToString()+".00" : "";
 
-                                        lblTowing.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblTowingRate.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblTowingRateText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblTowingText.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblTowingText.Text = lblTowing.Visible ? reader["Towing"].ToString() : "";
-
-                                        lblTowing24.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblTowing24Text.Visible = reader.IsDBNull(reader.GetOrdinal("Body_Repair")) ? false : reader.GetBoolean(reader.GetOrdinal("Body_Repair"));
-                                        lblTowing24Text.Text = lblTowing24.Visible ? reader["Towing_24"].ToString() : "";
+                                        lblTowing24.Visible = reader.IsDBNull(reader.GetOrdinal("Towing_24")) ? false : reader.GetBoolean(reader.GetOrdinal("Towing_24"));
+                                        lblTowing24Text.Visible = reader.IsDBNull(reader.GetOrdinal("Towing_24")) ? false : reader.GetBoolean(reader.GetOrdinal("Towing_24"));
+                                       // lblTowing24Text.Text = lblTowing24.Visible ? reader["Towing_24"].ToString() : "";
                                        
 
 

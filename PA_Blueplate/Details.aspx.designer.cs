@@ -301,40 +301,40 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label lblComputerDiagnosticsRateText;
         
         /// <summary>
-        /// lblDiselLabor control.
+        /// lblDieselLabor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDiselLabor;
+        protected global::System.Web.UI.WebControls.Label lblDieselLabor;
         
         /// <summary>
-        /// lblDiselLaborText control.
+        /// lblDieselLaborText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDiselLaborText;
+        protected global::System.Web.UI.WebControls.Label lblDieselLaborText;
         
         /// <summary>
-        /// lblDiselLaborRate control.
+        /// lblDieselLaborRate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDiselLaborRate;
+        protected global::System.Web.UI.WebControls.Label lblDieselLaborRate;
         
         /// <summary>
-        /// lblDiselLaborRateText control.
+        /// lblDieselLaborRateText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDiselLaborRateText;
+        protected global::System.Web.UI.WebControls.Label lblDieselLaborRateText;
         
         /// <summary>
         /// lblEmisionsInspection control.
@@ -409,6 +409,24 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label lblGlassRepairRateText;
         
         /// <summary>
+        /// lblGlassParts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblGlassParts;
+        
+        /// <summary>
+        /// lblGlassPartsText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblGlassPartsText;
+        
+        /// <summary>
         /// lblGlassPartsDiscount control.
         /// </summary>
         /// <remarks>
@@ -425,24 +443,6 @@ namespace PA_Blueplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblGlassPartsDiscountText;
-        
-        /// <summary>
-        /// lblGlassPartsDiscountRate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGlassPartsDiscountRate;
-        
-        /// <summary>
-        /// lblGlassPartsDiscountRateText control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblGlassPartsDiscountRateText;
         
         /// <summary>
         /// lblLubeOilChange control.
