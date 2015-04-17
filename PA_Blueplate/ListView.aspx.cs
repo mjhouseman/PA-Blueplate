@@ -6,6 +6,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text;
+using System.Net;
+using System.IO;
 
 namespace PA_Blueplate
 {
@@ -188,21 +191,48 @@ namespace PA_Blueplate
             {
                 Console.WriteLine(ex.Message);
             }
+            string apiUrl;
 
             if (results != null && results.Count != 0)
             {
-                Random rnd = new Random();  //Remove once google distances are in
+              //  Random rnd = new Random();  //Remove once google distances are in
                 for (int i = 0; i < results.Count; i++)
                 {
 
                     //Pass to google and calculate distance
+                    try
+                    {
+                        apiUrl = "http://maps.googleapis.com/maps/api/directions/json?origin="+results[i].latitude.ToString()+ ","+ results[i].longitude.ToString()+"&destination="+lat.ToString()+","+lon.ToString()+"&sensor=false";
+                        
+                        WebRequest request = HttpWebRequest.Create(apiUrl);
+                        WebResponse response = request.GetResponse();
+                        StreamReader reader = new StreamReader(response.GetResponseStream());
+                        System.Web.Script.Serialization.JavaScriptSerializer parser = new System.Web.Script.Serialization.JavaScriptSerializer();
+                        string responseStringData = reader.ReadToEnd();
+                        RootObject responseData = parser.Deserialize<RootObject>(responseStringData);
+                        if (responseData != null)
+                        {
+                            double distance = responseData.routes.Sum(r => r.legs.Sum(l => l.distance.value));
+                            if (distance == 0)
+                            {
+                                throw new Exception("Google cannot find road route");
+                            }
+                            results[i].distance = distance;
 
-                    //When receive results, store in distance field of object (ie. results[i].distance = "1.0"
-                    //For now, test data:
+                        }
+                        else
+                        {
+                            throw new Exception("Unable to get location from google");
+                        }
 
-                    double month = rnd.Next(1, 100) / 10.0; //Remove once google distances are in
-                    results[i].distance = month.ToString(); //Remove once google distances are in
+                    }
+                    finally
+                    {
 
+
+
+                        
+                    }
                 }
 
                 List<LocationItem> displayResults = results.OrderBy(o=>o.distance).ToList();
@@ -245,7 +275,7 @@ namespace PA_Blueplate
         public string fullAddress { get; set; }
         public string longitude { get; set; }
         public string latitude { get; set; }
-        public string distance { get; set; }
+        public double distance { get; set; }
         //... continue with remainder of fields from database
 
         public LocationItem(string id, string businessName, string longitude, string latitude, string stAddress1, string city, string state, string zip)
@@ -260,4 +290,120 @@ namespace PA_Blueplate
                                (!string.IsNullOrEmpty(zip) ? zip : "");
         }
     }
+    public class Northeast
+    {
+        public double lat { get; set; }
+        public double lng { get; set; }
+    }
+
+    public class Southwest
+    {
+        public double lat { get; set; }
+        public double lng { get; set; }
+    }
+
+    public class Bounds
+    {
+        public Northeast northeast { get; set; }
+        public Southwest southwest { get; set; }
+    }
+
+    public class Distance
+    {
+        public string text { get; set; }
+        public int value { get; set; }
+    }
+
+    public class Duration
+    {
+        public string text { get; set; }
+        public int value { get; set; }
+    }
+
+    public class EndLocation
+    {
+        public double lat { get; set; }
+        public double lng { get; set; }
+    }
+
+    public class StartLocation
+    {
+        public double lat { get; set; }
+        public double lng { get; set; }
+    }
+
+    public class Distance2
+    {
+        public string text { get; set; }
+        public int value { get; set; }
+    }
+
+    public class Duration2
+    {
+        public string text { get; set; }
+        public int value { get; set; }
+    }
+
+    public class EndLocation2
+    {
+        public double lat { get; set; }
+        public double lng { get; set; }
+    }
+
+    public class Polyline
+    {
+        public string points { get; set; }
+    }
+
+    public class StartLocation2
+    {
+        public double lat { get; set; }
+        public double lng { get; set; }
+    }
+
+    public class Step
+    {
+        public Distance2 distance { get; set; }
+        public Duration2 duration { get; set; }
+        public EndLocation2 end_location { get; set; }
+        public string html_instructions { get; set; }
+        public Polyline polyline { get; set; }
+        public StartLocation2 start_location { get; set; }
+        public string travel_mode { get; set; }
+        public string maneuver { get; set; }
+    }
+
+    public class Leg
+    {
+        public Distance distance { get; set; }
+        public Duration duration { get; set; }
+        public string end_address { get; set; }
+        public EndLocation end_location { get; set; }
+        public string start_address { get; set; }
+        public StartLocation start_location { get; set; }
+        public List<Step> steps { get; set; }
+        public List<object> via_waypoint { get; set; }
+    }
+
+    public class OverviewPolyline
+    {
+        public string points { get; set; }
+    }
+
+    public class Route
+    {
+        public Bounds bounds { get; set; }
+        public string copyrights { get; set; }
+        public List<Leg> legs { get; set; }
+        public OverviewPolyline overview_polyline { get; set; }
+        public string summary { get; set; }
+        public List<object> warnings { get; set; }
+        public List<object> waypoint_order { get; set; }
+    }
+
+    public class RootObject
+    {
+        public List<Route> routes { get; set; }
+        public string status { get; set; }
+    }  
 }
