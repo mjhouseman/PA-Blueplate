@@ -62,7 +62,7 @@
         --%>
 
         <asp:Table ID="Table1" runat="server">
-            <asp:TableRow>
+            <asp:TableRow OnClick = "OnListItemClick">
                 <asp:TableCell RowSpan="2">
                     <asp:ImageButton id="ImageButton1" runat="server" ImageUrl="img/wrench.png" CommandArgument="MikesStation" OnClick="OnListItemClick" Height="50" Width="50" />
                 </asp:TableCell>
