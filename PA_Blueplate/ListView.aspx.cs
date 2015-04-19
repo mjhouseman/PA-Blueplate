@@ -147,7 +147,7 @@ namespace PA_Blueplate
                 case "COMMERCIAL":
                     PopulatePage("Tire", " WHERE Dealer_Type = \'COMMERCIAL\'");
                     break;
-
+                //Response.Redirect(Request.RawUrl);
             }
         }
 
@@ -231,8 +231,9 @@ namespace PA_Blueplate
                 Label24.Text = displayResults[4].distance.ToString();
                 Label25.Text = displayResults[4].fullAddress.ToString(); 
             }
-
+            
         }
+        
     }
 
     public class LocationItem
