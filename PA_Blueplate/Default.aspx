@@ -7,7 +7,7 @@
 <script type="text/javascript" src="<%= ResolveUrl ("methods.js") %>"></script>
 <link rel="stylesheet" href="style.css" />
     <title></title>
-</head>
+</head> 
 <body style=" margin:0px; width:330px;" >
     <form id="form1" runat="server">
         <div style="text-align: center;">
@@ -18,8 +18,8 @@
         </div>
         <div>
             <asp:ImageButton ID="btnRepair" CommandArgument="Service_Vendors" ImageUrl="img/wrench.png" OnClick="MyImgBtnHandler" OnClientClick="getLocation()" runat="server"  Width="100" Height="100" />
-            <asp:ImageButton ID="btnTowing" CommandArgument="Towing_Vendors" ImageUrl="img/towtruck.jpg" OnClick="MyImgBtnHandler" runat="server" Width="100" Height="100" />
-            <asp:ImageButton ID="btnRental" CommandArgument="Tire_Vendors" ImageUrl="img/tire.png" OnClick="MyImgBtnHandler" runat="server" Width="100" Height="100" />
+            <asp:ImageButton ID="btnTowing" CommandArgument="Towing_Vendors" ImageUrl="img/towing.png" OnClick="MyImgBtnHandler" runat="server" Width="100" Height="100" />
+            <asp:ImageButton ID="btnRental" CommandArgument="Tire_Vendors" ImageUrl="img/tire1.png" OnClick="MyImgBtnHandler" runat="server" Width="100" Height="100" />
         </div>  
         <div style="text-align: center;">
             <asp:Label ID="lblRepair" Text="Repair" runat="server" Width="100" Font-Bold="true" />
