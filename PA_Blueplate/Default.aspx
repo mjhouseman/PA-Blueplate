@@ -8,9 +8,11 @@
 <link rel="stylesheet" href="style.css" />
     <title></title>
 </head> 
-<body style=" margin:0px; width:330px;" >
+<!-- <body style=" margin:0px; width:330px;" > -->
+<body>
     <form id="form1" runat="server">
-        <div style="text-align: center;">
+        <!-- <div style="text-align: center;"> -->
+          <!-- <div id="page-wrap"> -->
             <asp:Label ID="lblTitle" Text="Pennsylvania Department of General Services" runat="server" Font-Bold="true"  />
         </div>
         <div>
@@ -30,5 +32,7 @@
         <asp:HiddenField ID="hdnLongitude" runat="server" Value="long" />
         <asp:HiddenField ID="hdnOSType" runat="server" Value="OS" />
     </form>
+    
+        </div>
 </body>
 </html>
