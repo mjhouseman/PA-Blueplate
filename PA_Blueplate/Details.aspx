@@ -23,7 +23,7 @@
 
             <asp:TableRow>
                 <asp:TableCell RowSpan="2">
-                    <asp:ImageButton id="ImageButton1" runat="server" ImageUrl="img/address.png" OnClick="AddressClick" Height="50" Width="50" />
+                    <asp:ImageButton id="ImageButton1" runat="server" ImageUrl="img/travel_directions.png.png" OnClick="AddressClick" Height="50" Width="50" />
                 </asp:TableCell>
                 <asp:TableCell>
                     <asp:Label ID="lblAddress1" Text="Address: " runat="server" Font-Bold="true"  />
@@ -42,7 +42,7 @@
             </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell>
-                <asp:ImageButton id="btnPhone" runat="server" ImageUrl="img/phone.gif" OnClick="PhoneClick" Height="50" Width="50" />
+                <asp:ImageButton id="btnPhone" runat="server" ImageUrl="img/phone.png" OnClick="PhoneClick" Height="50" Width="50" />
             </asp:TableCell>
             <asp:TableCell>
                 <asp:Label ID="lblPhone" Text="Telephone: " runat="server" Font-Bold="true"  />
@@ -53,7 +53,7 @@
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell >
-                    <asp:ImageButton id="btnPhone24" runat="server" ImageUrl="img/phone.gif" OnClick="Phone24Click" Height="50" Width="50" />
+                    <asp:ImageButton id="btnPhone24" runat="server" ImageUrl="img/phone.png" OnClick="Phone24Click" Height="50" Width="50" />
             </asp:TableCell>
             <asp:TableCell>
                 <asp:Label ID="lblPhone247" Text="24/7 Telephone: " runat="server" Font-Bold="true"  />
