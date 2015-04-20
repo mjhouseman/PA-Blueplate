@@ -181,7 +181,6 @@ namespace PA_Blueplate
                             while (reader.Read())
                             {
                                 //Save results into LocationItem and store in results array  
-                                // Slight bug with Street_Address1 and State.... why??
                                 results.Add(new LocationItem(reader["ID"].ToString(), reader["Business_Name"].ToString(), reader["Longitude_Coord"].ToString(), reader["Latitude_Coord"].ToString(), reader["Street_Address1"].ToString(), reader["City"].ToString(), reader["State"].ToString(), reader["Zip_Code"].ToString()));
                             }
                         }
@@ -231,7 +230,7 @@ namespace PA_Blueplate
                         }
                         else
                         {
-                            throw new Exception("Unable to get location from google");
+                            //throw new Exception("Unable to get location from google");
                         }
 
                     }

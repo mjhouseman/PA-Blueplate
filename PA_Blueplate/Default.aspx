@@ -15,7 +15,6 @@
           <!-- <div id="page-wrap"> -->
             <!-- <asp:Label ID="lblTitle" Text="Pennsylvania Department of General Services" runat="server" Font-Bold="true"  /> -->
             <h1> The Pennsylvania Department of General Services </h1> 
-        </div>
         <div>
             <asp:Image ID="Image1" runat="server" Height="220px" Width="300px" ImageUrl="img/blueplate1.jpg" />
         </div>
