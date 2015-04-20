@@ -6,7 +6,7 @@
 <head id="Head1" runat="server">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=12.0, minimum-scale=.25, user-scalable=no"/>
-<!-- <link rel="stylesheet" href="style.css" /> -->
+ <!-- <link rel="stylesheet" href="style.css" /> -->
 </head>
 <body>
     <form id="form1" runat="server">
@@ -23,7 +23,7 @@
 
             <asp:TableRow>
                 <asp:TableCell RowSpan="2">
-                    <asp:ImageButton id="ImageButton1" runat="server" ImageUrl="img/travel_directions.png.png" OnClick="AddressClick" Height="50" Width="50" />
+                    <asp:ImageButton id="ImageButton1" runat="server" ImageUrl="img/travel_directions.png" OnClick="AddressClick" Height="50" Width="50" />
                 </asp:TableCell>
                 <asp:TableCell>
                     <asp:Label ID="lblAddress1" Text="Address: " runat="server" Font-Bold="true"  />
