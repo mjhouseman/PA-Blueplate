@@ -50,12 +50,12 @@ namespace PA_Blueplate
                         dropdown.Visible = false;
                         label1.Text = "Towing Centers";
                         PopulatePage("Towing", "");
-                        ImageButton1.ImageUrl = "img/towtruck.jpg";
-                        ImageButton2.ImageUrl = "img/towtruck.jpg";
-                        ImageButton2.ImageUrl = "img/towtruck.jpg";
-                        ImageButton3.ImageUrl = "img/towtruck.jpg";
-                        ImageButton4.ImageUrl = "img/towtruck.jpg";
-                        ImageButton5.ImageUrl = "img/towtruck.jpg";
+                        ImageButton1.ImageUrl = "img/towing.png";
+                        ImageButton2.ImageUrl = "img/towing.png";
+                        ImageButton2.ImageUrl = "img/towing.png";
+                        ImageButton3.ImageUrl = "img/towing.png";
+                        ImageButton4.ImageUrl = "img/towing.png";
+                        ImageButton5.ImageUrl = "img/towing.png";
                         break;
 
                     case "Tire_Vendors":
@@ -71,11 +71,11 @@ namespace PA_Blueplate
                         }
 
                         PopulatePage("Tire", "");
-                        ImageButton1.ImageUrl = "img/tire.png";
-                        ImageButton2.ImageUrl = "img/tire.png";
-                        ImageButton3.ImageUrl = "img/tire.png";
-                        ImageButton4.ImageUrl = "img/tire.png";
-                        ImageButton5.ImageUrl = "img/tire.png";
+                        ImageButton1.ImageUrl = "img/tire1.png";
+                        ImageButton2.ImageUrl = "img/tire1.png";
+                        ImageButton3.ImageUrl = "img/tire1.png";
+                        ImageButton4.ImageUrl = "img/tire1.png";
+                        ImageButton5.ImageUrl = "img/tire1.png";
                         break;
                 }  
             } 
