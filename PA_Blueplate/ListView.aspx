@@ -13,7 +13,7 @@
     <form id="form1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true" />
     <div>
-        <asp:Label id="label1" runat="server" Font-Bold="true" OnClick= "OnListItemClick" />
+        <asp:Label id="label1" runat="server" Font-Bold="true" OnClick="OnListItemClick" />
     </div>
     <div>
         <asp:DropDownList id="dropdown" runat="server" OnSelectedIndexChanged="OnDropDownChange" AutoPostBack="true" >
