@@ -55,7 +55,8 @@ namespace PA_Blueplate
         {
             try
             {
-                string connectionString = "Data Source=localhost;" + "initial catalog=PA_Blueplate_DB;" + "Integrated Security=SSPI;";
+                //string connectionString = "Data Source=localhost;" + "initial catalog=PA_Blueplate_DB;" + "Integrated Security=SSPI;";
+                string connectionString = "Data Source=CMPSC488-SERVER.CS.HBG.PSU.EDU;Initial Catalog=PA_Blueplate_DB;User Id=MasterUser;Password=Blueplate$$20;";
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();

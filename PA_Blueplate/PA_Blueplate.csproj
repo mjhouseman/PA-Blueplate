@@ -64,8 +64,12 @@
     <Content Include="Img\blueplate1.jpg" />
     <Content Include="Img\car.png" />
     <Content Include="Img\phone.gif" />
+    <Content Include="Img\phone.png" />
     <Content Include="Img\tire.png" />
+    <Content Include="Img\tire1.png" />
+    <Content Include="Img\towing.png" />
     <Content Include="Img\towtruck.jpg" />
+    <Content Include="Img\travel_directions.png" />
     <Content Include="Img\wrench.png" />
     <Content Include="ListView.aspx" />
     <Content Include="methods.js" />

@@ -160,12 +160,14 @@ namespace PA_Blueplate
             List<LocationItem> results = new List<LocationItem>();
             try
             {
-                string connectionString = "Data Source=localhost;" + "initial catalog=PA_Blueplate_DB;" + "Integrated Security=SSPI;";
+                //string connectionString = "Data Source=localhost;" + "initial catalog=PA_Blueplate_DB;" + "Integrated Security=SSPI;";
+                string connectionString = "Data Source=CMPSC488-SERVER.CS.HBG.PSU.EDU;Initial Catalog=PA_Blueplate_DB;User Id=MasterUser;Password=Blueplate$$20;";
+
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
                     
-                    string sql = "SELECT TOP(10) * FROM " + table + "_NearestCoordinates(@lat, @lon, @rad)" + where; 
+                    string sql = "SELECT TOP(10) * FROM " + table + "_NearestCoordinates(@lat, @lon, @rad)" + where + " ORDER BY Distance"; 
                     //string sql = "SELECT TOP(10) * FROM " + "Test_Function(@lat, @lon, @rad)" + where;
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
@@ -217,7 +219,14 @@ namespace PA_Blueplate
                             {
                                 throw new Exception("Google cannot find road route");
                             }
-                            results[i].distance = distance;
+                            try
+                            {
+                                results[i].distance = distance;
+                            }
+                            catch (Exception)
+                            {
+                            }
+                            
 
                         }
                         else
