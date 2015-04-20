@@ -14,6 +14,7 @@ body {
 </style>
 </head>
 <body>
+    <asp:Image ID="Image1" runat="server" Height="65px" Width="121px" ImageUrl="img/blueplate1.jpg" />
     <form id="form1" runat="server">
     <div>
         <asp:Label ID="lblCompany" Text="BOCHEK AUTO BODY INC" runat="server" Font-Bold="true"  />
@@ -316,6 +317,8 @@ body {
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
+        
+        <p><h2>Return to <a href="http://146.186.84.253/"> Main Menu</h2></a>
     </div>
     </form>
 </body>

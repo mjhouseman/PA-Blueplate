@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+     <asp:Image ID="Image1" runat="server" Height="65px" Width="121px" ImageUrl="img/blueplate1.jpg" />
     <form id="form1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true" />
     <div>
-        <asp:Label id="label1" runat="server" Font-Bold="true"  />
+        <asp:Label id="label1" runat="server" Font-Bold="true" OnClick="OnListItemClick" />
     </div>
     <div>
         <asp:DropDownList id="dropdown" runat="server" OnSelectedIndexChanged="OnDropDownChange" AutoPostBack="true" >
@@ -113,4 +114,6 @@
                 </asp:TableCell></asp:TableRow><asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="Label25" runat="server" Text="1009 Russellton Road, Cheswick, PA 15024" />
-                </asp:TableCell></asp:TableRow></asp:Table></div></form></body></html>
+                </asp:TableCell></asp:TableRow></asp:Table>
+                <p><h2>Return to <a href="http://146.186.84.253/"> Main Menu</h2></a>
+                </div></form></body></html>
