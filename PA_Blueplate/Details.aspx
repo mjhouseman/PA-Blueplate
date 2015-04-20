@@ -23,7 +23,7 @@
 
             <asp:TableRow>
                 <asp:TableCell RowSpan="2">
-                    <asp:ImageButton id="ImageButton1" runat="server" ImageUrl="img/travel_directions.png.png" OnClick="AddressClick" Height="50" Width="50" />
+                    <asp:ImageButton id="ImageButton1" runat="server" ImageUrl="img/travel_directions.png" OnClick="AddressClick" Height="50" Width="50" />
                 </asp:TableCell>
                 <asp:TableCell>
                     <asp:Label ID="lblAddress1" Text="Address: " runat="server" Font-Bold="true"  />
