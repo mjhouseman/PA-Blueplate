@@ -61,7 +61,7 @@
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ConnectionStrings:BlogEngineConnectionString %>" SelectCommand="SELECT * FROM [Comments]"></asp:SqlDataSource>
         --%>
 
-        <asp:Table ID="Table1" runat="server">
+        <asp:Table ID="Table1" runat="server" HorizontalAlign="Center">
             <asp:TableRow runat="server" OnClick = "OnListItemClick">
                 <asp:TableCell RowSpan="2">
                     <asp:ImageButton id="ImageButton1" runat="server" ImageUrl="img/tools.png" CommandArgument="MikesStation" OnClick="OnListItemClick" Height="50" Width="50" />
