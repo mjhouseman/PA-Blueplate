@@ -4,12 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Device.Location;
 
 namespace PA_Blueplate
 {
     public partial class Default : System.Web.UI.Page
     {
-        string userOS;
+        string userOS, lat, lon;
+        System.Device.Location.GeoCoordinateWatcher watcher;
         protected void Page_Load(object sender, EventArgs e)
         {
             // Get user location
@@ -38,13 +40,14 @@ namespace PA_Blueplate
             }
 
         }
+
         protected void MyImgBtnHandler(object sender, EventArgs e)
         {
             //string test = hdnOSType.Value;
-            //string userLongitude2 = hdnLongitude.Value;
-            //string userLatitude2 = hdnLatitude.Value;
-            string userLongitude = Request.Form["hdnLongitude"];
-            string userLatitude = Request.Form["hdnLatitude"];
+            //string userLongitude = hdnLongitude.Value;
+            //string userLatitude = hdnLatitude.Value;
+            string userLongitude = Request.Form["hdnLongitude"].ToString();
+            string userLatitude = Request.Form["hdnLatitude"].ToString();
             //string userOS = Request.Form["hdnOSType"];
             //hdnLatitude.Value = "dd";
             string test = userOS;

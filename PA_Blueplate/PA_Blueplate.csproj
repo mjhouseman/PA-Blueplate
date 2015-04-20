@@ -41,6 +41,7 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Device" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -63,6 +64,7 @@
     <Content Include="Img\blueplate.jpg" />
     <Content Include="Img\blueplate1.jpg" />
     <Content Include="Img\car.png" />
+    <Content Include="Img\generalserviceslogo_centered1c.jpg" />
     <Content Include="Img\phone.gif" />
     <Content Include="Img\phone.png" />
     <Content Include="Img\tire.png" />

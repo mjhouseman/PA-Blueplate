@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 using System.Text;
 using System.Net;
 using System.IO;
+using System.Device.Location;
 
 namespace PA_Blueplate
 {
@@ -17,6 +18,8 @@ namespace PA_Blueplate
         string option, userOS, lat, lon;
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+
             option = !string.IsNullOrEmpty(Request.QueryString["opt"]) ? Request.QueryString["opt"] : "none";
             userOS = !string.IsNullOrEmpty(Request.QueryString["os"]) ? Request.QueryString["os"] : "none";
             lat = !string.IsNullOrEmpty(Request.QueryString["lat"]) ? Request.QueryString["lat"] : "0";
@@ -80,6 +83,7 @@ namespace PA_Blueplate
                 }  
             } 
         }
+
 
         public void OnListItemClick(object sender, EventArgs e)
         {

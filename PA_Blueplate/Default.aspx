@@ -15,15 +15,16 @@
           <!-- <div id="page-wrap"> -->
             <!-- <asp:Label ID="lblTitle" Text="Pennsylvania Department of General Services" runat="server" Font-Bold="true"  /> -->
             <h1> The Pennsylvania Department of General Services </h1> 
-            <div><asp:Image ID="Image0" runat="server" Height="220px" Width="300px ImageUrl="img/generalserviceslogo_centered1c.jpg" />
-        
-        
+            <div>
+                <asp:Image ID="Image0" runat="server" Height="220px" Width="300px" ImageUrl="img/generalserviceslogo_centered1c.jpg" />
+            </div>
+        <div>
             <asp:Image ID="Image1" runat="server" Height="220px" Width="300px" ImageUrl="img/blueplate1.jpg" />
         </div>
         <div>
-            <asp:ImageButton ID="btnRepair" CommandArgument="Service_Vendors" ImageUrl="img/wrench.png" OnClick="MyImgBtnHandler" OnClientClick="getLocation()" runat="server"  Width="100" Height="100" />
-            <asp:ImageButton ID="btnTowing" CommandArgument="Towing_Vendors" ImageUrl="img/towing.png" OnClick="MyImgBtnHandler" OnClientClick="getLocation()" runat="server" Width="100" Height="100" />
-            <asp:ImageButton ID="btnRental" CommandArgument="Tire_Vendors" ImageUrl="img/tire1.png" OnClick="MyImgBtnHandler" OnClientClick="getLocation()" runat="server" Width="100" Height="100" />
+            <asp:ImageButton ID="btnRepair" CommandArgument="Service_Vendors" ImageUrl="img/wrench.png" OnClick="MyImgBtnHandler" runat="server"  Width="100" Height="100" />
+            <asp:ImageButton ID="btnTowing" CommandArgument="Towing_Vendors" ImageUrl="img/towing.png" OnClick="MyImgBtnHandler" runat="server" Width="100" Height="100" />
+            <asp:ImageButton ID="btnRental" CommandArgument="Tire_Vendors" ImageUrl="img/tire1.png" OnClick="MyImgBtnHandler" runat="server" Width="100" Height="100" />
         </div>  
         <div style="text-align: center;">
             <asp:Label ID="lblRepair" Text="Repair" runat="server" Width="100" Font-Bold="true" />
@@ -33,6 +34,8 @@
         <asp:HiddenField ID="hdnLatitude" runat="server" Value="lat" />
         <asp:HiddenField ID="hdnLongitude" runat="server" Value="long" />
         <asp:HiddenField ID="hdnOSType" runat="server" Value="OS" />
+        <asp:Label ID="lblGPSAvailability" runat="server" Text="Please enable JavaScript" />
+
     </form>
     
 </body>

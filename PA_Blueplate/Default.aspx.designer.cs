@@ -31,6 +31,15 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label lblTitle;
         
         /// <summary>
+        /// Image0 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image0;
+        
+        /// <summary>
         /// Image1 control.
         /// </summary>
         /// <remarks>
@@ -119,5 +128,14 @@ namespace PA_Blueplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hdnOSType;
+        
+        /// <summary>
+        /// lblGPSAvailability control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblGPSAvailability;
     }
 }
