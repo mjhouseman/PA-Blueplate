@@ -113,4 +113,6 @@
                 </asp:TableCell></asp:TableRow><asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="Label25" runat="server" Text="1009 Russellton Road, Cheswick, PA 15024" />
-                </asp:TableCell></asp:TableRow></asp:Table></div></form></body></html>
+                </asp:TableCell></asp:TableRow></asp:Table>
+                <p><h2>Return to <a href="http://146.186.84.253/"> Main Menu</h2></a>
+                </div></form></body></html>
