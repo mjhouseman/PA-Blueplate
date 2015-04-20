@@ -7,6 +7,11 @@
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=12.0, minimum-scale=.25, user-scalable=no"/>
  <!-- <link rel="stylesheet" href="style.css" /> -->
+ <style>
+body {
+    background-color: #6693BC;
+}
+</style>
 </head>
 <body>
     <form id="form1" runat="server">
