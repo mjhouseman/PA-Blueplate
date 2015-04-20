@@ -20,7 +20,7 @@
             <asp:Image ID="Image1" runat="server" Height="220px" Width="300px" ImageUrl="img/blueplate1.jpg" />
         </div>
         <div>
-            <asp:ImageButton ID="btnRepair" CommandArgument="Service_Vendors" ImageUrl="img/wrench.png" OnClick="MyImgBtnHandler" OnClientClick="getLocation()" runat="server"  Width="100" Height="100" />
+            <asp:ImageButton ID="btnRepair" CommandArgument="Service_Vendors" ImageUrl="img/tools.png" OnClick="MyImgBtnHandler" OnClientClick="getLocation()" runat="server"  Width="100" Height="100" />
             <asp:ImageButton ID="btnTowing" CommandArgument="Towing_Vendors" ImageUrl="img/towing.png" OnClick="MyImgBtnHandler" runat="server" Width="100" Height="100" />
             <asp:ImageButton ID="btnRental" CommandArgument="Tire_Vendors" ImageUrl="img/tire1.png" OnClick="MyImgBtnHandler" runat="server" Width="100" Height="100" />
         </div>  
