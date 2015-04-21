@@ -10,6 +10,10 @@ using System.Text;
 using System.Net;
 using System.IO;
 using System.Device.Location;
+using BingMapsSample.GeocodeService;
+using BingMapsSample.SearchService;
+using BingMapsSample.ImageryService;
+using BingMapsSample.RouteService;
 
 namespace PA_Blueplate
 {
