@@ -7,23 +7,43 @@
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=12.0, minimum-scale=.25, user-scalable=no"/>
  <link rel="stylesheet" href="style.css" />
- <style>
+<style>
+
+    /*TO DELETE LATER SINCE IT IS IN STYLE.CSS. Sujay's use only!*/
+    .fancy {
+    text-align:left; 
+    position: relative; min-height: 100%;
+		 border: 4px solid white;
+         padding:20px 0 20px 0;
+		 -webkit-border-radius: 12px;
+		    -moz-border-radius: 12px;
+		         border-radius: 12px;
+		 /* Safari 4 does not support an inset shadow */
+		 -webkit-box-shadow:       5px 5px 25px rgba(0,0,0,.5);
+		 /* Chrome 5 does, Safari 4 will ignore this declaration */
+		 -webkit-box-shadow: inset 5px 5px 25px rgba(0,0,0,.5);
+		    -moz-box-shadow: inset 5px 5px 25px rgba(0,0,0,.5);
+		         box-shadow: inset 5px 5px 25px rgba(0,0,0,.5);
+		 font: 13px/20px "Arial";
+		 background-color: #eee;
+}
 
 </style>
 </head>
 <body>
-    <asp:Image ID="Image1" runat="server" Height="65px" Width="121px" ImageUrl="img/blueplate1.jpg" />
+    <asp:Image ID="Image1" runat="server" Height="65px" Width="121px" ImageUrl="img/blueplate1.png" />
     <form id="form1" runat="server">
+       <!-- <div class="fancy"> -->
     <div>
-        <asp:Label ID="lblCompany" Text="BOCHEK AUTO BODY INC" runat="server" Font-Bold="true"  />
+        <asp:Label ID="lblCompany" Text="BOCHEK AUTO BODY INC" runat="server" Font-Bold="true" HorizontalAlign="Center"  />
         <br />
     </div>
     <div>
         <br />
-        <asp:Label ID="LblOtherName" Text="Other Name: " runat="server" Font-Bold="true"  />
-        <asp:Label ID="LblOtherNameText" Text="BOCHEK'S COLLISION CENTER" runat="server" />
+        <asp:Label ID="LblOtherName" Text="Other Name: " runat="server" Font-Bold="true" HorizontalAlign="Center" />
+        <asp:Label ID="LblOtherNameText" Text="BOCHEK'S COLLISION CENTER" runat="server" HorizontalAlign="Center"/>
         <br />
-        <asp:Table ID="Table1" runat="server">
+        <asp:Table ID="Table1" runat="server" HorizontalAlign="Center">
 
             <asp:TableRow>
                 <asp:TableCell RowSpan="2">
@@ -70,11 +90,17 @@
     </div>
     <div>
         <br />
-        <asp:Label ID="lblServices" Text="Services" runat="server" Font-Bold="true"  />
-        <asp:Table ID="tblServices" runat="server">
+        <div class="fancy"> 
+
+        <asp:Table ID="tblServices" runat="server" HorizontalAlign="Center">
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="lblBodyRepair" Text="Body Repair: " runat="server" Font-Bold="true"  />
+                    <asp:Label ID="lblServices" Text="Services:" runat="server" Font-Bold="true" />
+                </asp:TableCell>
+                </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="lblBodyRepair" Text="Body Repair: " runat="server" Font-Bold="true" HorizontalAlign="Left" />
                 </asp:TableCell>
                 <asp:TableCell>
                     <asp:Label ID="lblBodyRepairText" Text="Accepted" runat="server" />
@@ -281,7 +307,8 @@
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
-        <asp:Table ID="TireTable" runat="server">
+            <br>
+        <asp:Table ID="TireTable" runat="server" HorizontalAlign="Center">
             <asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="LblVendorNumber" Text="PA Vendor Number:" runat="server" Font-Bold="true" />
@@ -315,9 +342,9 @@
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
-        
+        </div>
+            </div>
         <p><h2>Return to <a href="http://146.186.84.253/"> Main Menu</h2></a>
-    </div>
     </form>
 </body>
 </html>
