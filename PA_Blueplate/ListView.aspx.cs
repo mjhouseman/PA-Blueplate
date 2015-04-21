@@ -445,6 +445,7 @@ namespace PA_Blueplate
                   geocodeResponse.Results[0].Locations[0].Longitude);
                 hdnLat.Value = geocodeResponse.Results[0].Locations[0].Latitude.ToString();
                 hdnLon.Value = geocodeResponse.Results[0].Locations[0].Longitude.ToString();
+                PopulatePage();
             }
             else
                 results = "NO RESULTS FOUND";
