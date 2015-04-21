@@ -14,6 +14,7 @@ using PA_Blueplate.GeocodeService;
 using PA_Blueplate.SearchService;
 using PA_Blueplate.ImageryService;
 using PA_Blueplate.RouteService;
+using System.Xml;
 
 namespace PA_Blueplate
 {
@@ -296,46 +297,27 @@ namespace PA_Blueplate
                 {
 
                     //Pass to google and calculate distance
-                    try
+                    string origin = results[i].latitude.ToString() + "," + results[i].longitude.ToString();
+                    string destination = lat.ToString() + "," + lon.ToString();
+                    string url = @"http://maps.googleapis.com/maps/api/distancematrix/xml?origins=" + origin + "&destinations=" + destination + "&mode=driving&sensor=false&language=en-EN&units=imperial";
+
+                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                    WebResponse response = request.GetResponse();
+                    Stream dataStream = response.GetResponseStream();
+                    StreamReader sreader = new StreamReader(dataStream);
+                    string responsereader = sreader.ReadToEnd();
+                    response.Close();
+
+                    XmlDocument xmldoc = new XmlDocument();
+                    xmldoc.LoadXml(responsereader);
+
+
+                    if (xmldoc.GetElementsByTagName("status")[0].ChildNodes[0].InnerText == "OK")
                     {
-                        apiUrl = "http://maps.googleapis.com/maps/api/directions/json?origin="+results[i].latitude.ToString()+ ","+ results[i].longitude.ToString()+"&destination="+lat.ToString()+","+lon.ToString()+"&sensor=false";
-                        
-                        WebRequest request = HttpWebRequest.Create(apiUrl);
-                        WebResponse response = request.GetResponse();
-                        StreamReader reader = new StreamReader(response.GetResponseStream());
-                        System.Web.Script.Serialization.JavaScriptSerializer parser = new System.Web.Script.Serialization.JavaScriptSerializer();
-                        string responseStringData = reader.ReadToEnd();
-                        RootObject responseData = parser.Deserialize<RootObject>(responseStringData);
-                        if (responseData != null)
-                        {
-                            double distance = responseData.routes.Sum(r => r.legs.Sum(l => l.distance.value));
-                            if (distance == 0)
-                            {
-                                throw new Exception("Google cannot find road route");
-                            }
-                            try
-                            {
-                                results[i].distance = distance;
-                            }
-                            catch (Exception)
-                            {
-                            }
-                            
-
-                        }
-                        else
-                        {
-                            //throw new Exception("Unable to get location from google");
-                        }
-
+                        XmlNodeList distance = xmldoc.GetElementsByTagName("distance");
+                        results[i].distance = Convert.ToDouble(distance[0].ChildNodes[1].InnerText.Replace(" mi", ""));
                     }
-                    finally
-                    {
-
-
-
                         
-                    }
                 }
 
                 List<LocationItem> displayResults = results.OrderBy(o=>o.distance).ToList();
