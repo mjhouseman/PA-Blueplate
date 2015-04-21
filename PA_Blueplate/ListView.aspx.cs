@@ -46,6 +46,7 @@ namespace PA_Blueplate
                 {
                     TxtManualLocation.Text = "CURRENT LOCATION";
                     hdnLat.Value = lat;
+                    hdnLon.Value = lon; //test commit
                     hdnLon.Value = lon;
                 }
             } 
