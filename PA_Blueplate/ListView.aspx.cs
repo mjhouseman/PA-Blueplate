@@ -30,8 +30,8 @@ namespace PA_Blueplate
             lat = !string.IsNullOrEmpty(Request.QueryString["lat"]) ? Request.QueryString["lat"] : "0";
             lon = !string.IsNullOrEmpty(Request.QueryString["lon"]) ? Request.QueryString["lon"] : "0";
 
-            hdnTable.Value = "";
-            hdnWhere.Value = "";
+            //hdnTable.Value = "";
+            //hdnWhere.Value = "";
             hdnRadius.Value = "1000";
 
             if (!IsPostBack) 
