@@ -382,7 +382,7 @@ namespace PA_Blueplate
 
         protected void OnManualLocationClick(object sender, EventArgs e)
         {
-
+            TxtManualLocation.Text = GeocodeAddress(TxtManualLocation.Text);
         }
 
         protected void OnRadiusDropDownChange(object sender, EventArgs e)
@@ -409,6 +409,47 @@ namespace PA_Blueplate
                     break;
             }
             PopulatePage();
+        }
+
+        public String GeocodeAddress(string address)
+        {
+            string results = "";
+            string key = "An7hQ9l8lVG2L68n1gzeHvWNqWlUoiGc-oxExfjCSTJhIFU4WPAIAjMXf3g03dcv";
+            GeocodeRequest geocodeRequest = new GeocodeRequest();
+
+            // Set the credentials using a valid Bing Maps key
+            geocodeRequest.Credentials = new GeocodeService.Credentials();
+            geocodeRequest.Credentials.ApplicationId = key;
+
+            // Set the full address query
+            geocodeRequest.Query = address;
+
+            // Set the options to only return high confidence results 
+            ConfidenceFilter[] filters = new ConfidenceFilter[1];
+            filters[0] = new ConfidenceFilter();
+            filters[0].MinimumConfidence = GeocodeService.Confidence.High;
+
+            // Add the filters to the options
+            GeocodeOptions geocodeOptions = new GeocodeOptions();
+            geocodeOptions.Filters = filters;
+            geocodeRequest.Options = geocodeOptions;
+
+            // Make the geocode request
+            GeocodeServiceClient geocodeService = new GeocodeServiceClient();
+            GeocodeResponse geocodeResponse = geocodeService.Geocode(geocodeRequest);
+
+            if (geocodeResponse.Results.Length > 0)
+            {
+                results = String.Format("{0}, {1}",
+                  geocodeResponse.Results[0].Locations[0].Latitude,
+                  geocodeResponse.Results[0].Locations[0].Longitude);
+                hdnLat.Value = geocodeResponse.Results[0].Locations[0].Latitude.ToString();
+                hdnLon.Value = geocodeResponse.Results[0].Locations[0].Longitude.ToString();
+            }
+            else
+                results = "NO RESULTS FOUND";
+
+            return results;
         }
         
     }

@@ -121,9 +121,9 @@
                 </asp:TableCell></asp:TableRow><asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="Label25" runat="server" Text="1009 Russellton Road, Cheswick, PA 15024" />
-                </asp:TableCell></asp:TableRow></asp:Table>
-                <p>Return to <a href="http://146.186.84.253/"> Main Menu</a></p>
-                <asp:HiddenField ID="hdnTable" runat="server" />
+                </asp:TableCell></asp:TableRow></asp:Table><p>Return to <a href="http://146.186.84.253/">Main Menu</a></p><asp:HiddenField ID="hdnTable" runat="server" />
                 <asp:HiddenField ID="hdnWhere" runat="server" />
                 <asp:HiddenField ID="hdnRadius" runat="server" />
+                <asp:HiddenField ID="hdnLat" runat="server" Value="" />
+                <asp:HiddenField ID="hdnLon" runat="server" Value="" />
                 </div></form></body></html>
