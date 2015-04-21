@@ -55,7 +55,7 @@ namespace PA_Blueplate
             string[] populateTireArray = { "ALL TIRES", "MICHELIN", "GOODYEAR", "RETAIL", "COMMERCIAL" };
             string[] radiusArray = { "NO LIMIT", "10 MILES", "25 MILES", "50 MILES", "75 MILES", "100 MILES" };
 
-            if (option == "Towing_Vendors" || dropdown.Items.Count == 0)
+            if (RadiusDropDown.Items.Count == 0)
             {
                 switch (option)
                 {
@@ -283,7 +283,7 @@ namespace PA_Blueplate
                     {
                         cmd.Parameters.AddWithValue("@lon",longitude);
                         cmd.Parameters.AddWithValue("@lat", latitude);
-                        cmd.Parameters.AddWithValue("@rad", radius); // THIS NEEDS UPDATED TO PASS RADIUS WHEN ADDED
+                        cmd.Parameters.AddWithValue("@rad", radius);
                         SqlDataReader reader = cmd.ExecuteReader();
 
                         if (reader.HasRows)
@@ -375,12 +375,14 @@ namespace PA_Blueplate
                 TxtManualLocation.Text = "CURRENT LOCATION";
                 hdnLat.Value = lat;  
                 hdnLon.Value = lon;
+                PopulatePage();
             }
         }
 
         protected void OnManualLocationClick(object sender, EventArgs e)
         {
             TxtManualLocation.Text = GeocodeAddress(TxtManualLocation.Text);
+            PopulatePage();
         }
 
         protected void OnRadiusDropDownChange(object sender, EventArgs e)
@@ -443,7 +445,6 @@ namespace PA_Blueplate
                   geocodeResponse.Results[0].Locations[0].Longitude);
                 hdnLat.Value = geocodeResponse.Results[0].Locations[0].Latitude.ToString();
                 hdnLon.Value = geocodeResponse.Results[0].Locations[0].Longitude.ToString();
-                PopulatePage();
             }
             else
                 results = "NO RESULTS FOUND";
