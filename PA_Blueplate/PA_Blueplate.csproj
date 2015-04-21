@@ -66,15 +66,15 @@
     <Content Include="Img\blueplate.jpg" />
     <Content Include="Img\blueplate1.png" />
     <Content Include="Img\car.png" />
-    <Content Include="Img\generalserviceslogo_centered1c.jpg" />
+    <Content Include="Img\generalserviceslogo_small.png" />
     <Content Include="Img\phone.gif" />
     <Content Include="Img\phone.png" />
     <Content Include="Img\tire.png" />
     <Content Include="Img\tire1.png" />
+    <Content Include="Img\tools.png" />
     <Content Include="Img\towing.png" />
     <Content Include="Img\towtruck.jpg" />
     <Content Include="Img\travel_directions.png" />
-    <Content Include="Img\wrench.png" />
     <Content Include="ListView.aspx" />
     <Content Include="methods.js" />
     <Content Include="Service References\GeocodeService\configuration91.svcinfo" />
