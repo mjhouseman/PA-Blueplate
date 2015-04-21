@@ -57,6 +57,19 @@
                 </asp:TableCell>
               
             </asp:TableRow>
+
+              <asp:TableRow>
+                <asp:TableCell RowSpan="2">
+                    <asp:ImageButton id="ImageButton2" runat="server" ImageUrl="img/travel_directions.png" OnClick="AddressClick" Height="50" Width="50" />
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:Label ID="lblAddress2" Text="Address: " runat="server" Font-Bold="true"  />
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:Label ID="lblAddress2Text" Text="1009 RUSSELLTON ROAD" runat="server" />
+                </asp:TableCell>
+              
+            </asp:TableRow>
             
             <asp:TableRow>
                 <asp:TableCell><asp:Label ID="Label1" runat="server"></asp:Label></asp:TableCell>
