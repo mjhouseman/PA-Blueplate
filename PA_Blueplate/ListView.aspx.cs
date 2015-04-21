@@ -34,14 +34,21 @@ namespace PA_Blueplate
             hdnWhere.Value = "";
             hdnRadius.Value = "1000";
 
-            if (lat.Equals("lat"))
+            if (!IsPostBack) 
             {
-                TxtManualLocation.Text = "GPS UNAVAILABLE";
-            }
-            else
-            {
-                TxtManualLocation.Text = "CURRENT LOCATION";
-            }
+                if (lat.Equals("lat"))
+                {
+                    TxtManualLocation.Text = "GPS UNAVAILABLE";
+                    hdnLat.Value = "";
+                    hdnLon.Value = "";
+                }
+                else
+                {
+                    TxtManualLocation.Text = "CURRENT LOCATION";
+                    hdnLat.Value = lat;
+                    hdnLon.Value = lon;
+                }
+            } 
 
             string[] populateRepairArray = { "ALL REPAIRS", "BODY REPAIR", "BODY PARTS", "COMPUTER DIAGNOSTICS", "DIESEL LABOR", "EMISSIONS INSPECTIONS", "GLASS PARTS",
                                            "GLASS REPAIR", "LUBE OIL", "MECHANICAL LABOR", "MECHANICAL PARTS", "STATE INSPECTION", "TOWING", "24/7 TOWING"};
@@ -252,6 +259,13 @@ namespace PA_Blueplate
             string table = hdnTable.Value;
             string where = hdnWhere.Value;
             string radius = hdnRadius.Value;
+            string latitude = hdnLat.Value;  
+            string longitude = hdnLon.Value;
+
+            if (TxtManualLocation.Text == "NO RESULTS FOUND" || TxtManualLocation.Text == "GPS UNAVAILABLE")  // ADDED!
+            {
+                TxtManualLocation.Text = (lat != "lat") ? "CURRENT LOCATION" : "GPS UNAVAILABLE";
+            }
 
             List<LocationItem> results = new List<LocationItem>();
             try
@@ -267,8 +281,8 @@ namespace PA_Blueplate
                     //string sql = "SELECT TOP(10) * FROM " + "Test_Function(@lat, @lon, @rad)" + where;
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
-                        cmd.Parameters.AddWithValue("@lon",lon);
-                        cmd.Parameters.AddWithValue("@lat", lat);
+                        cmd.Parameters.AddWithValue("@lon",longitude);
+                        cmd.Parameters.AddWithValue("@lat", latitude);
                         cmd.Parameters.AddWithValue("@rad", radius); // THIS NEEDS UPDATED TO PASS RADIUS WHEN ADDED
                         SqlDataReader reader = cmd.ExecuteReader();
 
@@ -351,7 +365,7 @@ namespace PA_Blueplate
         }
 
         protected void OnCurrentLocationClick(object sender, EventArgs e)
-        {            
+        {
             if (lat.Equals("lat"))
             {
                 TxtManualLocation.Text = "GPS UNAVAILABLE";
@@ -359,6 +373,8 @@ namespace PA_Blueplate
             else
             {
                 TxtManualLocation.Text = "CURRENT LOCATION";
+                hdnLat.Value = lat;  
+                hdnLon.Value = lon;
             }
         }
 
@@ -417,7 +433,7 @@ namespace PA_Blueplate
             geocodeRequest.Options = geocodeOptions;
 
             // Make the geocode request
-            GeocodeServiceClient geocodeService = new GeocodeServiceClient();
+            GeocodeServiceClient geocodeService = new GeocodeServiceClient("BasicHttpBinding_IGeocodeService");
             GeocodeResponse geocodeResponse = geocodeService.Geocode(geocodeRequest);
 
             if (geocodeResponse.Results.Length > 0)
