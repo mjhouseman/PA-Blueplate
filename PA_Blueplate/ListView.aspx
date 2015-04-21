@@ -13,11 +13,18 @@
     <form id="form1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true" />
     <div>
-        <asp:Label id="label1" runat="server" Font-Bold="true" OnClick="OnListItemClick" />
+        <asp:Label id="label1" runat="server" Font-Bold="true"  />
     </div>
     <div>
-        <asp:DropDownList id="dropdown" runat="server" OnSelectedIndexChanged="OnDropDownChange" AutoPostBack="true" >
-        </asp:DropDownList>
+        <asp:DropDownList id="dropdown" runat="server" OnSelectedIndexChanged="OnDropDownChange" AutoPostBack="true" />
+    </div>
+    <div>
+        <asp:TextBox ID ="TxtManualLocation" runat="server" />
+        <asp:Button ID="BtnSetCurrentLocation" runat="server" OnClick="OnCurrentLocationClick" Text="Here" CssClass="FormatListviewButtons"  />
+        <asp:Button ID="BtnManualLocation" runat="server" OnClick="OnManualLocationClick" Text="Find" CssClass="FormatListviewButtons" />
+    </div>
+    <div>
+        <asp:DropDownList id="RadiusDropDown" runat="server" OnSelectedIndexChanged="OnRadiusDropDownChange" AutoPostBack="true" />
     </div>
     <div>
         
@@ -63,12 +70,12 @@
         --%>
 
         <asp:Table ID="Table1" runat="server" HorizontalAlign="Center">
-            <asp:TableRow runat="server" OnClick = "OnListItemClick">
+            <asp:TableRow runat="server" >
                 <asp:TableCell RowSpan="2">
                     <asp:ImageButton id="ImageButton1" runat="server" ImageUrl="img/tools.png" CommandArgument="MikesStation" OnClick="OnListItemClick" Height="50" Width="50" />
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:Label ID="Label11" runat="server" Text="A-B-E Car Care Center LLC" Font-Size="X-Large" Font-Bold="true" OnClick= "OnListItemClick"/> 
+                    <asp:Label ID="Label11" runat="server" Text="A-B-E Car Care Center LLC" Font-Size="X-Large" Font-Bold="true" /> 
                 </asp:TableCell><asp:TableCell RowSpan="2">
                     <asp:Label ID="Label12" runat="server" Text="3.2 mi" /> 
                 </asp:TableCell></asp:TableRow><asp:TableRow>
@@ -78,7 +85,7 @@
                 <asp:TableCell RowSpan="2">
                     <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="img/tools.png" CommandArgument="MikesStation" OnClick="OnListItemClick" Height="50" Width="50" />
                 </asp:TableCell><asp:TableCell>
-                    <asp:Label ID="Label14" runat="server" Text="Modi Moters LLC" Font-Size="X-Large" Font-Bold="true" OnClick= "OnListItemClick"/> 
+                    <asp:Label ID="Label14" runat="server" Text="Modi Moters LLC" Font-Size="X-Large" Font-Bold="true" /> 
                 </asp:TableCell><asp:TableCell RowSpan="2">
                     <asp:Label ID="Label15" runat="server" Text="5.6 mi" /> 
                 </asp:TableCell></asp:TableRow><asp:TableRow>
@@ -88,7 +95,7 @@
                 <asp:TableCell RowSpan="2">
                     <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="img/tools.png" CommandArgument="MikesStation" OnClick="OnListItemClick" Height="50" Width="50" />
                 </asp:TableCell><asp:TableCell>
-                    <asp:Label ID="Label17" runat="server" Text="Rabold's Services" Font-Size="X-Large" Font-Bold="true" OnClick= "OnListItemClick"/> 
+                    <asp:Label ID="Label17" runat="server" Text="Rabold's Services" Font-Size="X-Large" Font-Bold="true" /> 
                 </asp:TableCell><asp:TableCell RowSpan="2">
                     <asp:Label ID="Label18" runat="server" Text="8.1 mi" /> 
                 </asp:TableCell></asp:TableRow><asp:TableRow>
@@ -98,7 +105,7 @@
                 <asp:TableCell RowSpan="2">
                     <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="img/tools.png" CommandArgument="MikesStation" OnClick="OnListItemClick" Height="50" Width="50" />
                 </asp:TableCell><asp:TableCell>
-                    <asp:Label ID="Label20" runat="server" Text="Rick's Auto Body" Font-Size="X-Large" Font-Bold="true" OnClick= "OnListItemClick"/> 
+                    <asp:Label ID="Label20" runat="server" Text="Rick's Auto Body" Font-Size="X-Large" Font-Bold="true"/> 
                 </asp:TableCell><asp:TableCell RowSpan="2">
                     <asp:Label ID="Label21" runat="server" Text="9.24 mi" /> 
                 </asp:TableCell></asp:TableRow><asp:TableRow>
@@ -108,12 +115,15 @@
                 <asp:TableCell RowSpan="2">
                     <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="img/tools.png" CommandArgument="MikesStation" OnClick="OnListItemClick" Height="50" Width="50" />
                 </asp:TableCell><asp:TableCell>
-                    <asp:Label ID="Label23" runat="server" Text="Buchek Auto Body Inc" Font-Size="X-Large" Font-Bold="true" OnClick= "OnListItemClick"/> 
+                    <asp:Label ID="Label23" runat="server" Text="Buchek Auto Body Inc" Font-Size="X-Large" Font-Bold="true"/> 
                 </asp:TableCell><asp:TableCell RowSpan="2">
                     <asp:Label ID="Label24" runat="server" Text="15.7 mi" /> 
                 </asp:TableCell></asp:TableRow><asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="Label25" runat="server" Text="1009 Russellton Road, Cheswick, PA 15024" />
                 </asp:TableCell></asp:TableRow></asp:Table>
-                <p><h2>Return to <a href="http://146.186.84.253/"> Main Menu</h2></a>
+                <p>Return to <a href="http://146.186.84.253/"> Main Menu</a></p>
+                <asp:HiddenField ID="hdnTable" runat="server" />
+                <asp:HiddenField ID="hdnWhere" runat="server" />
+                <asp:HiddenField ID="hdnRadius" runat="server" />
                 </div></form></body></html>

@@ -25,9 +25,23 @@ namespace PA_Blueplate
             lat = !string.IsNullOrEmpty(Request.QueryString["lat"]) ? Request.QueryString["lat"] : "0";
             lon = !string.IsNullOrEmpty(Request.QueryString["lon"]) ? Request.QueryString["lon"] : "0";
 
+            hdnTable.Value = "";
+            hdnWhere.Value = "";
+            hdnRadius.Value = "1000";
+
+            if (lat.Equals("lat"))
+            {
+                TxtManualLocation.Text = "GPS UNAVAILABLE";
+            }
+            else
+            {
+                TxtManualLocation.Text = "CURRENT LOCATION";
+            }
+
             string[] populateRepairArray = { "ALL REPAIRS", "BODY REPAIR", "BODY PARTS", "COMPUTER DIAGNOSTICS", "DIESEL LABOR", "EMISSIONS INSPECTIONS", "GLASS PARTS",
                                            "GLASS REPAIR", "LUBE OIL", "MECHANICAL LABOR", "MECHANICAL PARTS", "STATE INSPECTION", "TOWING", "24/7 TOWING"};
             string[] populateTireArray = { "ALL TIRES", "MICHELIN", "GOODYEAR", "RETAIL", "COMMERCIAL" };
+            string[] radiusArray = { "NO LIMIT", "10 MILES", "25 MILES", "50 MILES", "75 MILES", "100 MILES" };
 
             if (option == "Towing_Vendors" || dropdown.Items.Count == 0)
             {
@@ -43,16 +57,37 @@ namespace PA_Blueplate
                             };
                             dropdown.Items.Add(item);
                         }
+                        for (var i = 0; i < radiusArray.Length; i++)
+                        {
+                            var item = new ListItem
+                            {
+                                Text = radiusArray[i].ToString(),
+                                Value = i.ToString()
+                            };
+                            RadiusDropDown.Items.Add(item);
+                        }
+
                         label1.Text = "Repair Stations";
-                        PopulatePage("Service", "");
+                        hdnTable.Value = "Service";
+                        PopulatePage();
                         
                         break;
 
                     case "Towing_Vendors":
+                        for (var i = 0; i < radiusArray.Length; i++)
+                        {
+                            var item = new ListItem
+                            {
+                                Text = radiusArray[i].ToString(),
+                                Value = i.ToString()
+                            };
+                            RadiusDropDown.Items.Add(item);
+                        }
                         dropdown.Enabled = false;
                         dropdown.Visible = false;
                         label1.Text = "Towing Centers";
-                        PopulatePage("Towing", "");
+                        hdnTable.Value = "Towing";
+                        PopulatePage();
                         ImageButton1.ImageUrl = "img/towing.png";
                         ImageButton2.ImageUrl = "img/towing.png";
                         ImageButton2.ImageUrl = "img/towing.png";
@@ -72,8 +107,17 @@ namespace PA_Blueplate
                             };
                             dropdown.Items.Add(item);
                         }
-
-                        PopulatePage("Tire", "");
+                        for (var i = 0; i < radiusArray.Length; i++)
+                        {
+                            var item = new ListItem
+                            {
+                                Text = radiusArray[i].ToString(),
+                                Value = i.ToString()
+                            };
+                            RadiusDropDown.Items.Add(item);
+                        }
+                        hdnTable.Value = "Tire";
+                        PopulatePage();
                         ImageButton1.ImageUrl = "img/tire1.png";
                         ImageButton2.ImageUrl = "img/tire1.png";
                         ImageButton3.ImageUrl = "img/tire1.png";
@@ -99,68 +143,111 @@ namespace PA_Blueplate
                 case "":
                     break;
                 case "ALL SERVICES":
-                    PopulatePage("Service", "");
+                    //PopulatePage("Service", "");
+                    hdnTable.Value = "Service";
+                    hdnWhere.Value = "";
                     break;
                 case "BODY REPAIR":
-                    PopulatePage("Service", " WHERE Body_Repair = 1");
+                    //PopulatePage("Service", " WHERE Body_Repair = 1");
+                    hdnTable.Value = "Service";
+                    hdnWhere.Value = " WHERE Body_Repair = 1";
                     break;
                 case "BODY PARTS":
-                    PopulatePage("Service", " WHERE Body_Parts = 1");
+                    //PopulatePage("Service", " WHERE Body_Parts = 1");
+                    hdnTable.Value = "Service";
+                    hdnWhere.Value = " WHERE Body_Parts = 1";
                     break;
                 case "COMPUTER DIAGNOSTICS":
-                    PopulatePage("Service", " WHERE Computer_Diagnostics = 1");
+                    //PopulatePage("Service", " WHERE Computer_Diagnostics = 1");
+                    hdnTable.Value = "Service";
+                    hdnWhere.Value = " WHERE Computer_Diagnostics = 1";
                     break;
                 case "DIESEL LABOR":
-                    PopulatePage("Service", " WHERE Diesel_Labor = 1");
+                    //PopulatePage("Service", " WHERE Diesel_Labor = 1");
+                    hdnTable.Value = "Service";
+                    hdnWhere.Value = " WHERE Diesel_Labor = 1";
                     break;
                 case "EMISSIONS INSPECTIONS":
-                    PopulatePage("Service", " WHERE Emmissions_Inspections = 1");
+                    //PopulatePage("Service", " WHERE Emmissions_Inspections = 1");
+                    hdnTable.Value = "Service";
+                    hdnWhere.Value = " WHERE Emmissions_Inspections = 1";
                     break;
                 case "GLASS PARTS":
-                    PopulatePage("Service", " WHERE Glass_Parts = 1");
+                    //PopulatePage("Service", " WHERE Glass_Parts = 1");
+                    hdnTable.Value = "Service";
+                    hdnWhere.Value = " WHERE Glass_Parts = 1";
                     break;
                 case "GLASS REPAIR":
-                    PopulatePage("Service", " WHERE Glass_Repair = 1");
+                    //PopulatePage("Service", " WHERE Glass_Repair = 1");
+                    hdnTable.Value = "Service";
+                    hdnWhere.Value = " WHERE Glass_Repair = 1";
                     break;
                 case "LUBE OIL":
-                    PopulatePage("Service", " WHERE Lube_Oil_Change = 1");
+                    //PopulatePage("Service", " WHERE Lube_Oil_Change = 1");
+                    hdnTable.Value = "Service";
+                    hdnWhere.Value = " WHERE Lube_Oil_Change = 1";
                     break;
                 case "MECHANICAL LABOR":
-                    PopulatePage("Service", " WHERE Mechanical_Labor = 1");
+                    //PopulatePage("Service", " WHERE Mechanical_Labor = 1");
+                    hdnTable.Value = "Service";
+                    hdnWhere.Value = " WHERE Mechanical_Labor = 1";
                     break;
                 case "MECHANICAL PARTS":
-                    PopulatePage("Service", " WHERE Mechanical_Parts = 1");
+                    //PopulatePage("Service", " WHERE Mechanical_Parts = 1");
+                    hdnTable.Value = "Service";
+                    hdnWhere.Value = " WHERE Mechanical_Parts = 1";
                     break;
                 case "STATE INSPECTION":
-                    PopulatePage("Service", " WHERE State_Inspection = 1");
+                    //PopulatePage("Service", " WHERE State_Inspection = 1");
+                    hdnTable.Value = "Service";
+                    hdnWhere.Value = " WHERE State_Inspection = 1";
                     break;
                 case "TOWING":
-                    PopulatePage("Service", " WHERE Towing = 1");
+                    //PopulatePage("Service", " WHERE Towing = 1");
+                    hdnTable.Value = "Service";
+                    hdnWhere.Value = " WHERE Towing = 1";
                     break;
                 case "24/7 TOWING":
-                    PopulatePage("Service", " WHERE Towing_24 = 1");
+                    //PopulatePage("Service", " WHERE Towing_24 = 1");
+                    hdnTable.Value = "Service";
+                    hdnWhere.Value = " WHERE Towing_24 = 1";
                     break;
                 case "ALL TIRES":
-                    PopulatePage("Tire", "");
+                    //PopulatePage("Tire", "");
+                    hdnTable.Value = "Tire";
+                    hdnWhere.Value = "";
                     break;
                 case "MICHELIN":
-                    PopulatePage("Tire", " WHERE Tire_Brand = \'MICHELIN\'");
+                    //PopulatePage("Tire", " WHERE Tire_Brand = \'MICHELIN\'");
+                    hdnTable.Value = "Tire";
+                    hdnWhere.Value = " WHERE Tire_Brand = \'MICHELIN\'";
                     break;
                 case "GOODYEAR":
-                    PopulatePage("Tire", " WHERE Tire_Brand = \'GOODYEAR\'");
+                    //PopulatePage("Tire", " WHERE Tire_Brand = \'GOODYEAR\'");
+                    hdnTable.Value = "Tire";
+                    hdnWhere.Value = " WHERE Tire_Brand = \'GOODYEAR\'";
                     break;
                 case "RETAIL":
-                    PopulatePage("Tire", " WHERE Dealer_Type = \'RETAIL\'");
+                    //PopulatePage("Tire", " WHERE Dealer_Type = \'RETAIL\'");
+                    hdnTable.Value = "Tire";
+                    hdnWhere.Value = " WHERE Dealer_Type = \'RETAIL\'";
                     break;
                 case "COMMERCIAL":
-                    PopulatePage("Tire", " WHERE Dealer_Type = \'COMMERCIAL\'");
+                    //PopulatePage("Tire", " WHERE Dealer_Type = \'COMMERCIAL\'");
+                    hdnTable.Value = "Tire";
+                    hdnWhere.Value = " WHERE Dealer_Type = \'COMMERCIAL\'";
                     break;
                 //Response.Redirect(Request.RawUrl);
             }
+            PopulatePage();
         }
 
-        public void PopulatePage(string table, string where)
+        public void PopulatePage()
         {
+            string table = hdnTable.Value;
+            string where = hdnWhere.Value;
+            string radius = hdnRadius.Value;
+
             List<LocationItem> results = new List<LocationItem>();
             try
             {
@@ -177,7 +264,7 @@ namespace PA_Blueplate
                     {
                         cmd.Parameters.AddWithValue("@lon",lon);
                         cmd.Parameters.AddWithValue("@lat", lat);
-                        cmd.Parameters.AddWithValue("@rad", 1000); // THIS NEEDS UPDATED TO PASS RADIUS WHEN ADDED
+                        cmd.Parameters.AddWithValue("@rad", radius); // THIS NEEDS UPDATED TO PASS RADIUS WHEN ADDED
                         SqlDataReader reader = cmd.ExecuteReader();
 
                         if (reader.HasRows)
@@ -276,6 +363,49 @@ namespace PA_Blueplate
             }
             
         }
+
+        protected void OnCurrentLocationClick(object sender, EventArgs e)
+        {            
+            if (lat.Equals("lat"))
+            {
+                TxtManualLocation.Text = "GPS UNAVAILABLE";
+            }
+            else
+            {
+                TxtManualLocation.Text = "CURRENT LOCATION";
+            }
+        }
+
+        protected void OnManualLocationClick(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void OnRadiusDropDownChange(object sender, EventArgs e)
+        {
+            switch (RadiusDropDown.SelectedItem.Text)
+            {
+                case "NO LIMIT":
+                    hdnRadius.Value = "1000";
+                    break;
+                case "10 MILES":
+                    hdnRadius.Value = "10";
+                    break;
+                case "25 MILES":
+                    hdnRadius.Value = "25";
+                    break;
+                case "50 MILES":
+                    hdnRadius.Value = "50";
+                    break;
+                case "75 MILES":
+                    hdnRadius.Value = "75";
+                    break;
+                case "100 MILES":
+                    hdnRadius.Value = "100";
+                    break;
+            }
+            PopulatePage();
+        }
         
     }
 
@@ -303,6 +433,7 @@ namespace PA_Blueplate
                                (!string.IsNullOrEmpty(zip) ? zip : "");
         }
     }
+
     public class Northeast
     {
         public double lat { get; set; }

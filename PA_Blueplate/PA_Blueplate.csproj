@@ -62,7 +62,7 @@
     <Content Include="Details.aspx" />
     <Content Include="Img\address.png" />
     <Content Include="Img\blueplate.jpg" />
-    <Content Include="Img\blueplate1.jpg" />
+    <Content Include="Img\blueplate1.png" />
     <Content Include="Img\car.png" />
     <Content Include="Img\generalserviceslogo_centered1c.jpg" />
     <Content Include="Img\phone.gif" />
