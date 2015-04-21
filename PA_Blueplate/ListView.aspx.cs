@@ -311,8 +311,8 @@ namespace PA_Blueplate
                 {
 
                     //Pass to google and calculate distance
-                    string origin = results[i].latitude.ToString() + "," + results[i].longitude.ToString();
-                    string destination = lat.ToString() + "," + lon.ToString();
+                    string destination= results[i].latitude.ToString() + "," + results[i].longitude.ToString();
+                    string origin = hdnLat.Value.ToString() + "," + hdnLon.Value.ToString();
                     string url = @"http://maps.googleapis.com/maps/api/distancematrix/xml?origins=" + origin + "&destinations=" + destination + "&mode=driving&sensor=false&language=en-EN&units=imperial";
 
                     HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
@@ -359,7 +359,45 @@ namespace PA_Blueplate
                 ImageButton5.CommandArgument = displayResults[4].id.ToString();
                 Label23.Text = displayResults[4].businessName.ToString();
                 Label24.Text = displayResults[4].distance.ToString();
-                Label25.Text = displayResults[4].fullAddress.ToString(); 
+                Label25.Text = displayResults[4].fullAddress.ToString();
+                Console.WriteLine(hdnRadius.Value);
+
+                if(displayResults[0].distance > Convert.ToDouble(hdnRadius.Value))
+                {
+                    ImageButton1.Visible = false;
+                    Label11.Visible = false;
+                    Label12.Visible = false;
+                    Label13.Visible = false;
+                }
+                if (displayResults[1].distance > Convert.ToDouble(hdnRadius.Value))
+                {
+                    ImageButton2.Visible = false;
+                    Label14.Visible = false;
+                    Label15.Visible = false;
+                    Label16.Visible = false;
+                }
+                if (displayResults[2].distance > Convert.ToDouble(hdnRadius.Value))
+                {
+                    ImageButton3.Visible = false;
+                    Label17.Visible = false;
+                    Label18.Visible = false;
+                    Label19.Visible = false;
+                }
+                if (displayResults[3].distance > Convert.ToDouble(hdnRadius.Value))
+                {
+                    ImageButton4.Visible = false;
+                    Label20.Visible = false;
+                    Label21.Visible = false;
+                    Label22.Visible = false;
+                }
+                if (displayResults[4].distance > Convert.ToDouble(hdnRadius.Value))
+                {
+                    ImageButton5.Visible = false;
+                    Label23.Visible = false;
+                    Label24.Visible = false;
+                    Label25.Visible = false;
+                }
+
             }
             
         }
