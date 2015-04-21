@@ -9,3 +9,7 @@ body{
   margin: 0 auto;
 }
 */
+
+.FormatListviewButtons label {
+    margin-right: 15px;
+}
