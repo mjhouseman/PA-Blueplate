@@ -59,8 +59,6 @@ namespace PA_Blueplate
                 Label23.Visible = false;
                 Label24.Visible = false;
                 Label25.Visible = false;
-
-                lblGPSAvailability.Visible = true;
             }
 
             
@@ -441,11 +439,6 @@ namespace PA_Blueplate
                     Label24.Visible = false;
                     Label25.Visible = false;
                 }
-
-            }
-            else
-            {
-                lblGPSAvailability.Visible = false;
             }
         }
 

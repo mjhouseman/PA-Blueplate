@@ -52,9 +52,6 @@
         <asp:DropDownList id="RadiusDropDown" runat="server" OnSelectedIndexChanged="OnRadiusDropDownChange" AutoPostBack="true" Height="40" />
     </div>
     <div>
-        <asp:Label ID="lblGPSAvailability" runat="server" Text="GPS Location Unavailable" Font-Bold="true"/>
-    </div>
-    <div>
         
         <br />
 
