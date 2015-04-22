@@ -36,11 +36,14 @@
 <body>
     <asp:Image ID="Image1" runat="server" Height="65px" Width="121px" ImageUrl="img/blueplate1.png" />
     <form id="form1" runat="server">
-        <div class="fancy">
+  
             <div class="T">
                 <asp:Label ID="lblCompany" Text="BOCHEK AUTO BODY INC" runat="server" Font-Bold="true" Font-Size="Large" />
                 <br />
+                
             </div>
+        <br />
+        <div class="fancy">
             <div>
                 <br />
                 <div class="T">
@@ -75,26 +78,7 @@
 
 
 
-                    <asp:TableRow>
-                         <asp:TableCell RowSpan="2">
-                            <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="img/travel_directions.png" OnClick="AddressClick" Height="50" Width="50" />
-                        </asp:TableCell>
-                        <asp:TableCell>
-                            <asp:Label ID="lblAddress2" Text="Address2: " runat="server" Font-Bold="true" />
-                        </asp:TableCell>
-                        <asp:TableCell>
-                            <asp:Label ID="lblAddress2Text" Text="1009 RUSSELLTON ROAD" runat="server" />
-                        </asp:TableCell>
-    
-
-                    </asp:TableRow>
-                    <asp:TableRow>
-                        <asp:TableCell></asp:TableCell>
-                        <asp:TableCell>
-                        <asp:Label ID="lblCityText2" Text="CHESWICK" runat="server" />, PA
-                            <asp:Label ID="lblZipText2" Text="15024" runat="server" />
-                        </asp:TableCell>
-                    </asp:TableRow>
+                   
 
 
 
@@ -131,7 +115,7 @@
                 <asp:Table ID="tblServices" runat="server" HorizontalAlign="Center">
                     <asp:TableRow>
                         <asp:TableCell>
-                            <asp:Label ID="lblServices" Text="Services:" runat="server" Font-Bold="true" />
+                            <asp:Label ID="lblServices" Text="Services:" runat="server" Font-Bold="true" Font-Size="Medium" />
                         </asp:TableCell>
                     </asp:TableRow>
                     <asp:TableRow>

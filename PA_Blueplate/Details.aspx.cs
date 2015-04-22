@@ -89,7 +89,7 @@ namespace PA_Blueplate
                                         lblServices.Visible = false;
                                         tblServices.Visible = false;
                                         TireTable.Visible = false;
-                                        lblAddress2.Visible = false;
+                                        //lblAddress2.Visible = false;
                                         
                                         break;
                                     case "Tire_Vendors":
@@ -115,7 +115,7 @@ namespace PA_Blueplate
                                         LblDealerType.Visible = !string.IsNullOrEmpty(reader["Dealer_Type"].ToString()) ? true : false;
                                         LblFaxText.Text = !string.IsNullOrEmpty(reader["Fax"].ToString()) ? reader["Fax"].ToString() : "";
                                         LblFax.Visible = !string.IsNullOrEmpty(reader["Fax"].ToString()) ? true : false;
-                                        lblAddress2.Visible = false;
+                                        //lblAddress2.Visible = false;
                                         break;
                                     case "Service_Vendors":
                                         // ADD Street_Address2, 
@@ -124,7 +124,7 @@ namespace PA_Blueplate
                                         LblOtherNameText.Text = !string.IsNullOrEmpty(reader["Other_Name"].ToString()) ? reader["Other_Name"].ToString() : "";
                                         LblOtherNameText.Visible = !string.IsNullOrEmpty(reader["Other_Name"].ToString()) ? true : false;
                                         lblAddress1Text.Text = !string.IsNullOrEmpty(reader["Street_Address1"].ToString()) ? reader["Street_Address1"].ToString() : "";
-                                        lblAddress2Text.Text = !string.IsNullOrEmpty(reader["Street_Address2"].ToString()) ? reader["Street_Address2"].ToString() : "";
+                                        //lblAddress2Text.Text = !string.IsNullOrEmpty(reader["Street_Address2"].ToString()) ? reader["Street_Address2"].ToString() : "";
                                         lblCityText.Text = !string.IsNullOrEmpty(reader["City"].ToString()) ? reader["City"].ToString() : "";
                                         lblZipText.Text = !string.IsNullOrEmpty(reader["Zip_Code"].ToString()) ? reader["Zip_Code"].ToString() : "";
                                         phoneNumCall.Text = !string.IsNullOrEmpty(reader["Phone"].ToString()) ? reader["Phone"].ToString() : "";

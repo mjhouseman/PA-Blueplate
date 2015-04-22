@@ -100,8 +100,15 @@
         </asp:Table>
         </div>
            <p>Bureau of Vehicle Management Customer Service 
-               <br />    
-               877.347.9966 or 717.787.6034   
+               <br />  
+               <asp:ImageButton id="ImageButton3" runat="server" ImageUrl="img/phone.png" OnClick="PhoneClick" Height="50" Width="50" />
+               <asp:Label ID="Label5" Text="877.347.9966" runat="server" />
+               <br />
+
+                <h3>or</h3>
+              
+                <asp:ImageButton id="ImageButton4" runat="server" ImageUrl="img/phone.png" OnClick="PhoneClick" Height="50" Width="50" />
+               <asp:Label ID="Label6" Text="717.787.6034" runat="server" />  
                <br />
                Hours: Monday – Friday, 7:00 am to 5:00 pm</p>
     

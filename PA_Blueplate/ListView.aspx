@@ -11,6 +11,40 @@
     <style>
             /*TO DELETE LATER SINCE IT IS IN STYLE.CSS. Sujay's use only!*/
 
+            .button {
+   border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 6px 12px;
+   -webkit-border-radius: 40px;
+   -moz-border-radius: 40px;
+   border-radius: 40px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+.button:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
+
+
+
         .fancy {
     text-align:left; 
     position: relative; min-height: 100%;
@@ -28,26 +62,25 @@
 		 background-color: #eee;
 }
 
-        .fancy2:hover {
-            background-color: red;
-        }
     </style>
 </head>
 <body>
      <asp:Image ID="Image1" runat="server" Height="65px" Width="121px" ImageUrl="img/blueplate1.png" />
     <form id="form1" runat="server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true" />
+    <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true"  />
     <div>
-        <asp:Label id="label1" runat="server" Font-Bold="true" Font-Size="Large" />
+        <asp:Label id="label1" runat="server" Font-Bold="true" Font-Size="X-Large" />
     </div>
     <div>
         <asp:DropDownList id="dropdown" runat="server" OnSelectedIndexChanged="OnDropDownChange" AutoPostBack="true" Height="40"/>
     </div>
     <div>
         <asp:TextBox ID ="TxtManualLocation" runat="server" Height="40" />
+      
         <asp:Button ID="BtnSetCurrentLocation" runat="server" OnClick="OnCurrentLocationClick" Text="Here" CssClass="FormatListviewButtons" Height="40" Width="40" />
         <asp:Button ID="BtnManualLocation" runat="server" OnClick="OnManualLocationClick" Text="Find" CssClass="FormatListviewButtons" Height="40" Width="40" />
     </div>
+
     <div>
         <asp:DropDownList id="RadiusDropDown" runat="server" OnSelectedIndexChanged="OnRadiusDropDownChange" AutoPostBack="true" Height="40" />
     </div>
