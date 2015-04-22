@@ -59,6 +59,8 @@ namespace PA_Blueplate
                 Label23.Visible = false;
                 Label24.Visible = false;
                 Label25.Visible = false;
+
+                lblGPSAvailability.Visible = true;
             }
 
             
@@ -315,12 +317,12 @@ namespace PA_Blueplate
 
             if (results != null && results.Count != 0)
             {
-              //  Random rnd = new Random();  //Remove once google distances are in
+                //  Random rnd = new Random();  //Remove once google distances are in
                 for (int i = 0; i < results.Count; i++)
                 {
 
                     //Pass to google and calculate distance
-                    string destination= results[i].latitude.ToString() + "," + results[i].longitude.ToString();
+                    string destination = results[i].latitude.ToString() + "," + results[i].longitude.ToString();
                     string origin = hdnLat.Value.ToString() + "," + hdnLon.Value.ToString();
                     string url = @"http://maps.googleapis.com/maps/api/distancematrix/xml?origins=" + origin + "&destinations=" + destination + "&mode=driving&sensor=false&language=en-EN&units=imperial";
 
@@ -340,10 +342,10 @@ namespace PA_Blueplate
                         XmlNodeList distance = xmldoc.GetElementsByTagName("distance");
                         results[i].distance = Convert.ToDouble(distance[0].ChildNodes[1].InnerText.Replace(" mi", ""));
                     }
-                        
+
                 }
 
-                List<LocationItem> displayResults = results.OrderBy(o=>o.distance).ToList();
+                List<LocationItem> displayResults = results.OrderBy(o => o.distance).ToList();
 
                 if (displayResults.Count > 0)
                 {
@@ -363,7 +365,7 @@ namespace PA_Blueplate
                     Label12.Visible = false;
                     Label13.Visible = false;
                 }
-                
+
                 if (displayResults.Count > 1)
                 {
                     ImageButton2.Visible = true;
@@ -372,7 +374,7 @@ namespace PA_Blueplate
                     Label16.Visible = true;
                     ImageButton2.CommandArgument = displayResults[1].id.ToString();
                     Label14.Text = displayResults[1].businessName.ToString();
-                    Label15.Text = displayResults[1].distance.ToString() +" mi";
+                    Label15.Text = displayResults[1].distance.ToString() + " mi";
                     Label16.Text = displayResults[1].fullAddress.ToString();
                 }
                 else
@@ -401,7 +403,7 @@ namespace PA_Blueplate
                     Label18.Visible = false;
                     Label19.Visible = false;
                 }
-                
+
                 if (displayResults.Count > 3)
                 {
                     ImageButton4.Visible = true;
@@ -420,7 +422,7 @@ namespace PA_Blueplate
                     Label21.Visible = false;
                     Label22.Visible = false;
                 }
-                
+
                 if (displayResults.Count > 4)
                 {
                     ImageButton5.Visible = true;
@@ -440,7 +442,11 @@ namespace PA_Blueplate
                     Label25.Visible = false;
                 }
 
-            }   
+            }
+            else
+            {
+                lblGPSAvailability.Visible = false;
+            }
         }
 
         protected void OnCurrentLocationClick(object sender, EventArgs e)

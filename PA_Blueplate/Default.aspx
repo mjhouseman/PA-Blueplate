@@ -56,7 +56,7 @@
         <asp:HiddenField ID="hdnLatitude" runat="server" Value="lat" />
         <asp:HiddenField ID="hdnLongitude" runat="server" Value="long" />
         <asp:HiddenField ID="hdnOSType" runat="server" Value="OS" />
-        <asp:Label ID="lblGPSAvailability" runat="server" Text="Please enable JavaScript" />
+        
 
 
           <p><h2>Roadside Assistance</h2></p>

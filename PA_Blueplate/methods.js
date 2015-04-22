@@ -9,7 +9,5 @@
 
             document.getElementById('lblGPSAvailability').innerHTML = position.coords.latitude + ", " + position.coords.longitude;
         });
-    } else {
-        document.getElementById('lblGPSAvailability').innerHTML = "GPS unavailable";
     }
 }
