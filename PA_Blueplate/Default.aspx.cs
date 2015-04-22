@@ -55,6 +55,12 @@ namespace PA_Blueplate
             ImageButton btn = (ImageButton)sender;
             Response.Redirect("ListView.aspx?opt=" + btn.CommandArgument.ToString() + "&lon=" + userLongitude + "&lat=" + userLatitude + "&os=" + userOS, false);
         }
+        public void PhoneClick(object sender, EventArgs e)
+        {
+            string tel = phoneNumCall.Text.ToString();
+            tel = "tel:" + tel.Replace("-", "");
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "dsadas", "window.open('" + tel + "');", true);
+        }
 
 }
 }

@@ -311,7 +311,7 @@ namespace PA_Blueplate
             {
                 Console.WriteLine(ex.Message);
             }
-            string apiUrl;
+           // string apiUrl;
 
             if (results != null && results.Count != 0)
             {

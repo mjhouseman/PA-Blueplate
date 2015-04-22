@@ -103,6 +103,24 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label lblAddress1Text;
         
         /// <summary>
+        /// lblCityText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCityText;
+        
+        /// <summary>
+        /// lblZipText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblZipText;
+        
+        /// <summary>
         /// ImageButton2 control.
         /// </summary>
         /// <remarks>
@@ -130,31 +148,22 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label lblAddress2Text;
         
         /// <summary>
-        /// Label1 control.
+        /// lblCityText2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label lblCityText2;
         
         /// <summary>
-        /// lblCityText control.
+        /// lblZipText2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCityText;
-        
-        /// <summary>
-        /// lblZipText control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblZipText;
+        protected global::System.Web.UI.WebControls.Label lblZipText2;
         
         /// <summary>
         /// btnPhone control.
