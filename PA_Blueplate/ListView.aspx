@@ -41,126 +41,80 @@
         <asp:Label id="label1" runat="server" Font-Bold="true"  />
     </div>
     <div>
-        <asp:DropDownList id="dropdown" runat="server" OnSelectedIndexChanged="OnDropDownChange" AutoPostBack="true" />
+        <asp:DropDownList id="dropdown" runat="server" OnSelectedIndexChanged="OnDropDownChange" AutoPostBack="true" Height="40"/>
     </div>
     <div>
-        <asp:TextBox ID ="TxtManualLocation" runat="server" />
-        <asp:Button ID="BtnSetCurrentLocation" runat="server" OnClick="OnCurrentLocationClick" Text="Here" CssClass="FormatListviewButtons"  />
-        <asp:Button ID="BtnManualLocation" runat="server" OnClick="OnManualLocationClick" Text="Find" CssClass="FormatListviewButtons" />
+        <asp:TextBox ID ="TxtManualLocation" runat="server" Height="40" />
+        <asp:Button ID="BtnSetCurrentLocation" runat="server" OnClick="OnCurrentLocationClick" Text="Here" CssClass="FormatListviewButtons" Height="40" Width="40" />
+        <asp:Button ID="BtnManualLocation" runat="server" OnClick="OnManualLocationClick" Text="Find" CssClass="FormatListviewButtons" Height="40" Width="40" />
     </div>
     <div>
-        <asp:DropDownList id="RadiusDropDown" runat="server" OnSelectedIndexChanged="OnRadiusDropDownChange" AutoPostBack="true" />
+        <asp:DropDownList id="RadiusDropDown" runat="server" OnSelectedIndexChanged="OnRadiusDropDownChange" AutoPostBack="true" Height="40" />
     </div>
     <div>
         
         <br />
-        <%-- 
-        <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1"> 
-            <LayoutTemplate> 
-                <table id="Table1" runat="server" class="TableCSS"> 
-                    <tr id="ItemPlaceholder" runat="server" onclick="onListItemClick"> 
-                    </tr> 
-                    <tr id="Tr2" runat="server"> 
-                        <td id="Td6" runat="server" colspan="2"> 
-                            <asp:DataPager ID="DataPager1" runat="server"> 
-                                <Fields> 
-                                    <asp:NextPreviousPagerField ButtonType="Link" /> 
-                                    <asp:NumericPagerField /> 
-                                    <asp:NextPreviousPagerField ButtonType="Link" /> 
-                                </Fields> 
-                            </asp:DataPager> 
-                        </td> 
-                    </tr> 
-                </table> 
-            </LayoutTemplate> 
-            <ItemTemplate> 
-                <tr class="TableData"> 
-                    <td> 
-                        <asp:Label ID="Label1" runat="server" Text="Mike's Station                " Font-Size="Large" Font-Bold="true"/> 
-                    </td> 
-                    <td>
-                        <asp:Label ID="Label3" runat="server" Text="3.2 mi" />
-                    </td>
-                </tr>
-                <tr>
-                    <td> 
-                        <asp:Label ID="Label2" runat="server" Text="1234 Railroad Blvd, Harrisburg, PA 17110          "> 
-                        </asp:Label> 
-                    </td>  
-                </tr>                 
-            </ItemTemplate> 
-              
-        </asp:ListView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ConnectionStrings:BlogEngineConnectionString %>" SelectCommand="SELECT * FROM [Comments]"></asp:SqlDataSource>
-        --%>
+
         <div class="fancy">
         <asp:Table ID="Table1" runat="server" HorizontalAlign="Center" >
             <asp:TableRow runat="server" >
                 <asp:TableCell RowSpan="2" >
-                    <asp:ImageButton id="ImageButton1" runat="server" ImageUrl="img/tools.png" CommandArgument="MikesStation" OnClick="OnListItemClick" Height="50" Width="50" />
+                    <asp:ImageButton id="ImageButton1" runat="server" ImageUrl="img/tools.png" CommandArgument="" OnClick="OnListItemClick" Height="50" Width="50" />
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:Label ID="Label11" runat="server" Text="A-B-E Car Care Center LLC" Font-Size="X-Large" Font-Bold="true" /> 
+                    <asp:Label ID="Label11" runat="server" Font-Size="X-Large" Font-Bold="true" /> 
                 </asp:TableCell><asp:TableCell RowSpan="2">
-                    <asp:Label ID="Label12" runat="server" Text="3.2 mi"  /> 
+                    <asp:Label ID="Label12" runat="server" Font-Bold="true" /> 
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="Label13" runat="server" Text="1302 W Tilghman Street, Allentown, PA 18102" /> 
+                    <asp:Label ID="Label13" runat="server" /> 
                 </asp:TableCell>
             </asp:TableRow>
-            
-
-
-
-
-
-
-
             <asp:TableRow>
                 <asp:TableCell RowSpan="2">
-                    <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="img/tools.png" CommandArgument="MikesStation" OnClick="OnListItemClick" Height="50" Width="50" />
+                    <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="img/tools.png" CommandArgument="" OnClick="OnListItemClick" Height="50" Width="50" />
                 </asp:TableCell><asp:TableCell>
-                    <asp:Label ID="Label14" runat="server" Text="Modi Moters LLC" Font-Size="X-Large" Font-Bold="true" /> 
+                    <asp:Label ID="Label14" runat="server" Font-Size="X-Large" Font-Bold="true" /> 
                 </asp:TableCell><asp:TableCell RowSpan="2">
-                    <asp:Label ID="Label15" runat="server" Text="5.6 mi" /> 
+                    <asp:Label ID="Label15" runat="server" Font-Bold="true"/> 
                 </asp:TableCell></asp:TableRow><asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="Label16" runat="server" Text="2530 Walnut Street, Harrisburg, PA 17103" /> 
+                    <asp:Label ID="Label16" runat="server" /> 
                 </asp:TableCell></asp:TableRow><asp:TableRow>
                 <asp:TableCell RowSpan="2">
-                    <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="img/tools.png" CommandArgument="MikesStation" OnClick="OnListItemClick" Height="50" Width="50" />
+                    <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="img/tools.png" CommandArgument="" OnClick="OnListItemClick" Height="50" Width="50" />
                 </asp:TableCell><asp:TableCell>
-                    <asp:Label ID="Label17" runat="server" Text="Rabold's Services" Font-Size="X-Large" Font-Bold="true" /> 
+                    <asp:Label ID="Label17" runat="server" Font-Size="X-Large" Font-Bold="true" /> 
                 </asp:TableCell><asp:TableCell RowSpan="2">
-                    <asp:Label ID="Label18" runat="server" Text="8.1 mi" /> 
+                    <asp:Label ID="Label18" runat="server" Font-Bold="true"/> 
                 </asp:TableCell></asp:TableRow><asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="Label19" runat="server" Text="2034 Boas Street, Harrisburg, PA 17103" /> 
+                    <asp:Label ID="Label19" runat="server"  /> 
                 </asp:TableCell></asp:TableRow><asp:TableRow>
                 <asp:TableCell RowSpan="2">
-                    <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="img/tools.png" CommandArgument="MikesStation" OnClick="OnListItemClick" Height="50" Width="50" />
+                    <asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="img/tools.png" CommandArgument="" OnClick="OnListItemClick" Height="50" Width="50" />
                 </asp:TableCell><asp:TableCell>
-                    <asp:Label ID="Label20" runat="server" Text="Rick's Auto Body" Font-Size="X-Large" Font-Bold="true"/> 
+                    <asp:Label ID="Label20" runat="server" Font-Size="X-Large" Font-Bold="true"/> 
                 </asp:TableCell><asp:TableCell RowSpan="2">
-                    <asp:Label ID="Label21" runat="server" Text="9.24 mi" /> 
+                    <asp:Label ID="Label21" runat="server" Font-Bold="true" /> 
                 </asp:TableCell></asp:TableRow><asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="Label22" runat="server" Text="1114 N Cameron Street, Harrisburg, PA 17103" /> 
+                    <asp:Label ID="Label22" runat="server"  /> 
                 </asp:TableCell></asp:TableRow><asp:TableRow>
                 <asp:TableCell RowSpan="2">
-                    <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="img/tools.png" CommandArgument="MikesStation" OnClick="OnListItemClick" Height="50" Width="50" />
+                    <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="img/tools.png" CommandArgument="" OnClick="OnListItemClick" Height="50" Width="50" />
                 </asp:TableCell><asp:TableCell>
-                    <asp:Label ID="Label23" runat="server" Text="Buchek Auto Body Inc" Font-Size="X-Large" Font-Bold="true"/> 
+                    <asp:Label ID="Label23" runat="server"  Font-Size="X-Large" Font-Bold="true"/> 
                 </asp:TableCell><asp:TableCell RowSpan="2">
-                    <asp:Label ID="Label24" runat="server" Text="15.7 mi" /> 
+                    <asp:Label ID="Label24" runat="server" Font-Bold="true"/> 
                 </asp:TableCell></asp:TableRow><asp:TableRow>
                 <asp:TableCell>
-                    <asp:Label ID="Label25" runat="server" Text="1009 Russellton Road, Cheswick, PA 15024" />
-                </asp:TableCell></asp:TableRow>
-
-                </asp:Table>
+                    <asp:Label ID="Label25" runat="server"  />
+                </asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
                 <p align="center">Return to <a href="http://146.186.84.253/">Main Menu</a></p><asp:HiddenField ID="hdnTable" runat="server" />
                 <asp:HiddenField ID="hdnWhere" runat="server" />
                 <asp:HiddenField ID="hdnRadius" runat="server" />

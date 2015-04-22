@@ -21,6 +21,12 @@ namespace PA_Blueplate
     public partial class ListView : System.Web.UI.Page
     {
         string option, userOS, lat, lon;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -30,9 +36,32 @@ namespace PA_Blueplate
             lat = !string.IsNullOrEmpty(Request.QueryString["lat"]) ? Request.QueryString["lat"] : "0";
             lon = !string.IsNullOrEmpty(Request.QueryString["lon"]) ? Request.QueryString["lon"] : "0";
 
-            //hdnTable.Value = "";
-            //hdnWhere.Value = "";
-            hdnRadius.Value = "1000";
+            if (lat == "lat" || lat == "0")
+            {
+                // Make everything invisible
+                ImageButton1.Visible = false;
+                ImageButton2.Visible = false;
+                ImageButton3.Visible = false;
+                ImageButton4.Visible = false;
+                ImageButton5.Visible = false;
+                Label11.Visible = false;
+                Label12.Visible = false;
+                Label13.Visible = false;
+                Label14.Visible = false;
+                Label15.Visible = false;
+                Label16.Visible = false;
+                Label17.Visible = false;
+                Label18.Visible = false;
+                Label19.Visible = false;
+                Label20.Visible = false;
+                Label21.Visible = false;
+                Label22.Visible = false;
+                Label23.Visible = false;
+                Label24.Visible = false;
+                Label25.Visible = false;
+            }
+
+            
 
             if (!IsPostBack) 
             {
@@ -58,6 +87,7 @@ namespace PA_Blueplate
 
             if (RadiusDropDown.Items.Count == 0)
             {
+                hdnRadius.Value = "1000";
                 switch (option)
                 {
                     case "Service_Vendors":
@@ -153,104 +183,82 @@ namespace PA_Blueplate
         {
             switch (dropdown.SelectedItem.Text)
             {
-                case "":
-                    break;
-                case "ALL SERVICES":
-                    //PopulatePage("Service", "");
+                case "ALL REPAIRS":
                     hdnTable.Value = "Service";
                     hdnWhere.Value = "";
                     break;
                 case "BODY REPAIR":
-                    //PopulatePage("Service", " WHERE Body_Repair = 1");
                     hdnTable.Value = "Service";
                     hdnWhere.Value = " WHERE Body_Repair = 1";
                     break;
                 case "BODY PARTS":
-                    //PopulatePage("Service", " WHERE Body_Parts = 1");
                     hdnTable.Value = "Service";
                     hdnWhere.Value = " WHERE Body_Parts = 1";
                     break;
                 case "COMPUTER DIAGNOSTICS":
-                    //PopulatePage("Service", " WHERE Computer_Diagnostics = 1");
                     hdnTable.Value = "Service";
                     hdnWhere.Value = " WHERE Computer_Diagnostics = 1";
                     break;
                 case "DIESEL LABOR":
-                    //PopulatePage("Service", " WHERE Diesel_Labor = 1");
                     hdnTable.Value = "Service";
                     hdnWhere.Value = " WHERE Diesel_Labor = 1";
                     break;
                 case "EMISSIONS INSPECTIONS":
-                    //PopulatePage("Service", " WHERE Emmissions_Inspections = 1");
                     hdnTable.Value = "Service";
                     hdnWhere.Value = " WHERE Emmissions_Inspections = 1";
                     break;
                 case "GLASS PARTS":
-                    //PopulatePage("Service", " WHERE Glass_Parts = 1");
                     hdnTable.Value = "Service";
                     hdnWhere.Value = " WHERE Glass_Parts = 1";
                     break;
                 case "GLASS REPAIR":
-                    //PopulatePage("Service", " WHERE Glass_Repair = 1");
                     hdnTable.Value = "Service";
                     hdnWhere.Value = " WHERE Glass_Repair = 1";
                     break;
                 case "LUBE OIL":
-                    //PopulatePage("Service", " WHERE Lube_Oil_Change = 1");
                     hdnTable.Value = "Service";
                     hdnWhere.Value = " WHERE Lube_Oil_Change = 1";
                     break;
                 case "MECHANICAL LABOR":
-                    //PopulatePage("Service", " WHERE Mechanical_Labor = 1");
                     hdnTable.Value = "Service";
                     hdnWhere.Value = " WHERE Mechanical_Labor = 1";
                     break;
                 case "MECHANICAL PARTS":
-                    //PopulatePage("Service", " WHERE Mechanical_Parts = 1");
                     hdnTable.Value = "Service";
                     hdnWhere.Value = " WHERE Mechanical_Parts = 1";
                     break;
                 case "STATE INSPECTION":
-                    //PopulatePage("Service", " WHERE State_Inspection = 1");
                     hdnTable.Value = "Service";
                     hdnWhere.Value = " WHERE State_Inspection = 1";
                     break;
                 case "TOWING":
-                    //PopulatePage("Service", " WHERE Towing = 1");
                     hdnTable.Value = "Service";
                     hdnWhere.Value = " WHERE Towing = 1";
                     break;
                 case "24/7 TOWING":
-                    //PopulatePage("Service", " WHERE Towing_24 = 1");
                     hdnTable.Value = "Service";
                     hdnWhere.Value = " WHERE Towing_24 = 1";
                     break;
                 case "ALL TIRES":
-                    //PopulatePage("Tire", "");
                     hdnTable.Value = "Tire";
                     hdnWhere.Value = "";
                     break;
                 case "MICHELIN":
-                    //PopulatePage("Tire", " WHERE Tire_Brand = \'MICHELIN\'");
                     hdnTable.Value = "Tire";
                     hdnWhere.Value = " WHERE Tire_Brand = \'MICHELIN\'";
                     break;
                 case "GOODYEAR":
-                    //PopulatePage("Tire", " WHERE Tire_Brand = \'GOODYEAR\'");
                     hdnTable.Value = "Tire";
                     hdnWhere.Value = " WHERE Tire_Brand = \'GOODYEAR\'";
                     break;
                 case "RETAIL":
-                    //PopulatePage("Tire", " WHERE Dealer_Type = \'RETAIL\'");
                     hdnTable.Value = "Tire";
                     hdnWhere.Value = " WHERE Dealer_Type = \'RETAIL\'";
                     break;
                 case "COMMERCIAL":
-                    //PopulatePage("Tire", " WHERE Dealer_Type = \'COMMERCIAL\'");
                     hdnTable.Value = "Tire";
                     hdnWhere.Value = " WHERE Dealer_Type = \'COMMERCIAL\'";
                     break;
-                //Response.Redirect(Request.RawUrl);
             }
             PopulatePage();
         }
@@ -337,61 +345,94 @@ namespace PA_Blueplate
 
                 List<LocationItem> displayResults = results.OrderBy(o=>o.distance).ToList();
 
-                ImageButton1.CommandArgument = displayResults[0].id.ToString(); //set ID to be passed to details page
-                Label11.Text = displayResults[0].businessName.ToString(); //1st name
-                Label12.Text = displayResults[0].distance.ToString(); //1st distance
-                Label13.Text = displayResults[0].fullAddress.ToString(); //1st address  
-
-                ImageButton2.CommandArgument = displayResults[1].id.ToString();
-                Label14.Text = displayResults[1].businessName.ToString();
-                Label15.Text = displayResults[1].distance.ToString();
-                Label16.Text = displayResults[1].fullAddress.ToString();
-
-                ImageButton3.CommandArgument = displayResults[2].id.ToString();
-                Label17.Text = displayResults[2].businessName.ToString();
-                Label18.Text = displayResults[2].distance.ToString();
-                Label19.Text = displayResults[2].fullAddress.ToString();
-
-                ImageButton4.CommandArgument = displayResults[3].id.ToString();
-                Label20.Text = displayResults[3].businessName.ToString();
-                Label21.Text = displayResults[3].distance.ToString();
-                Label22.Text = displayResults[3].fullAddress.ToString();
-
-                ImageButton5.CommandArgument = displayResults[4].id.ToString();
-                Label23.Text = displayResults[4].businessName.ToString();
-                Label24.Text = displayResults[4].distance.ToString();
-                Label25.Text = displayResults[4].fullAddress.ToString();
-                Console.WriteLine(hdnRadius.Value);
-
-                if(displayResults[0].distance > Convert.ToDouble(hdnRadius.Value))
+                if (displayResults.Count > 0)
+                {
+                    ImageButton1.Visible = true;
+                    Label11.Visible = true;
+                    Label12.Visible = true;
+                    Label13.Visible = true;
+                    ImageButton1.CommandArgument = displayResults[0].id.ToString(); //set ID to be passed to details page
+                    Label11.Text = displayResults[0].businessName.ToString(); //1st name
+                    Label12.Text = displayResults[0].distance.ToString() + " mi"; //1st distance
+                    Label13.Text = displayResults[0].fullAddress.ToString(); //1st address  
+                }
+                else
                 {
                     ImageButton1.Visible = false;
                     Label11.Visible = false;
                     Label12.Visible = false;
                     Label13.Visible = false;
                 }
-                if (displayResults[1].distance > Convert.ToDouble(hdnRadius.Value))
+                
+                if (displayResults.Count > 1)
+                {
+                    ImageButton2.Visible = true;
+                    Label14.Visible = true;
+                    Label15.Visible = true;
+                    Label16.Visible = true;
+                    ImageButton2.CommandArgument = displayResults[1].id.ToString();
+                    Label14.Text = displayResults[1].businessName.ToString();
+                    Label15.Text = displayResults[1].distance.ToString() +" mi";
+                    Label16.Text = displayResults[1].fullAddress.ToString();
+                }
+                else
                 {
                     ImageButton2.Visible = false;
                     Label14.Visible = false;
                     Label15.Visible = false;
                     Label16.Visible = false;
                 }
-                if (displayResults[2].distance > Convert.ToDouble(hdnRadius.Value))
+
+                if (displayResults.Count > 2)
+                {
+                    ImageButton3.Visible = true;
+                    Label17.Visible = true;
+                    Label18.Visible = true;
+                    Label19.Visible = true;
+                    ImageButton3.CommandArgument = displayResults[2].id.ToString();
+                    Label17.Text = displayResults[2].businessName.ToString();
+                    Label18.Text = displayResults[2].distance.ToString() + " mi";
+                    Label19.Text = displayResults[2].fullAddress.ToString();
+                }
+                else
                 {
                     ImageButton3.Visible = false;
                     Label17.Visible = false;
                     Label18.Visible = false;
                     Label19.Visible = false;
                 }
-                if (displayResults[3].distance > Convert.ToDouble(hdnRadius.Value))
+                
+                if (displayResults.Count > 3)
+                {
+                    ImageButton4.Visible = true;
+                    Label20.Visible = true;
+                    Label21.Visible = true;
+                    Label22.Visible = true;
+                    ImageButton4.CommandArgument = displayResults[3].id.ToString();
+                    Label20.Text = displayResults[3].businessName.ToString();
+                    Label21.Text = displayResults[3].distance.ToString() + " mi";
+                    Label22.Text = displayResults[3].fullAddress.ToString();
+                }
+                else
                 {
                     ImageButton4.Visible = false;
                     Label20.Visible = false;
                     Label21.Visible = false;
                     Label22.Visible = false;
                 }
-                if (displayResults[4].distance > Convert.ToDouble(hdnRadius.Value))
+                
+                if (displayResults.Count > 4)
+                {
+                    ImageButton5.Visible = true;
+                    Label23.Visible = true;
+                    Label24.Visible = true;
+                    Label25.Visible = true;
+                    ImageButton5.CommandArgument = displayResults[4].id.ToString();
+                    Label23.Text = displayResults[4].businessName.ToString();
+                    Label24.Text = displayResults[4].distance.ToString() + " mi";
+                    Label25.Text = displayResults[4].fullAddress.ToString();
+                }
+                else
                 {
                     ImageButton5.Visible = false;
                     Label23.Visible = false;
@@ -399,8 +440,7 @@ namespace PA_Blueplate
                     Label25.Visible = false;
                 }
 
-            }
-            
+            }   
         }
 
         protected void OnCurrentLocationClick(object sender, EventArgs e)
