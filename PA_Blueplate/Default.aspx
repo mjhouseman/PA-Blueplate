@@ -52,7 +52,8 @@
         <asp:HiddenField ID="hdnLongitude" runat="server" Value="long" />
         <asp:HiddenField ID="hdnOSType" runat="server" Value="OS" />
         <div>
-            <asp:Label ID="Label12" runat="server" Text="Roadside Assistance" Font-Bold="true" />     
+            <br />
+            <asp:Label ID="Label12" runat="server" Text="Roadside Assistance" Font-Bold="true" Font-Size="Large" />     
         </div>
         <asp:Table ID="Table1" runat="server" HorizontalAlign="Center">            
             <asp:TableRow>

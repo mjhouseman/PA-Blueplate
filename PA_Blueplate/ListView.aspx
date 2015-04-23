@@ -10,8 +10,25 @@
 
     <style>
             /*TO DELETE LATER SINCE IT IS IN STYLE.CSS. Sujay's use only!*/
+.fancy {
+    text-align:left; 
+    position: relative; min-height: 100%;
+    padding: 20px 0 20px 0;
+		 border: 4px solid white;
+		 -webkit-border-radius: 12px;
+		    -moz-border-radius: 12px;
+		         border-radius: 12px;
+		 /* Safari 4 does not support an inset shadow */
+		 -webkit-box-shadow:       5px 5px 25px rgba(0,0,0,.5);
+		 /* Chrome 5 does, Safari 4 will ignore this declaration */
+		 -webkit-box-shadow: inset 5px 5px 25px rgba(0,0,0,.5);
+		    -moz-box-shadow: inset 5px 5px 25px rgba(0,0,0,.5);
+		         box-shadow: inset 5px 5px 25px rgba(0,0,0,.5);
+		 font: 13px/20px "Arial";
+		 background-color: #eee;
+}
 
-            .button {
+.button {
    border-top: 1px solid #96d1f8;
    background: #65a9d7;
    background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
@@ -33,34 +50,22 @@
    text-decoration: none;
    vertical-align: middle;
    }
+
 .button:hover {
    border-top-color: #28597a;
    background: #28597a;
    color: #ccc;
    }
+
 .button:active {
    border-top-color: #1b435e;
    background: #1b435e;
    }
+            
 
 
 
-        .fancy {
-    text-align:left; 
-    position: relative; min-height: 100%;
-		 border: 4px solid white;
-		 -webkit-border-radius: 12px;
-		    -moz-border-radius: 12px;
-		         border-radius: 12px;
-		 /* Safari 4 does not support an inset shadow */
-		 -webkit-box-shadow:       5px 5px 25px rgba(0,0,0,.5);
-		 /* Chrome 5 does, Safari 4 will ignore this declaration */
-		 -webkit-box-shadow: inset 5px 5px 25px rgba(0,0,0,.5);
-		    -moz-box-shadow: inset 5px 5px 25px rgba(0,0,0,.5);
-		         box-shadow: inset 5px 5px 25px rgba(0,0,0,.5);
-		 font: 13px/20px "Arial";
-		 background-color: #eee;
-}
+        
 
     </style>
 </head>
@@ -81,7 +86,7 @@
         <asp:TableRow>
             <asp:TableCell>
                 <asp:Panel ID="Panel1" runat="server" DefaultButton="Button1">
-                    <asp:TextBox ID="TxtManualLocation" runat="server" Height="40" />    
+                    <asp:TextBox ID="TxtManualLocation" runat="server" Height="40"  />    
                     <asp:Button ID="Button1" runat="server" style="display:none" OnClick="OnManualLocationClick" Width="0" />
                 </asp:Panel>
             </asp:TableCell>
@@ -101,7 +106,7 @@
     </div>
     <div>
         <br />
-        <div class="fancy">
+        <div class="fancy" runat="server">
         <asp:Table ID="Table1" runat="server" HorizontalAlign="Center" >
             <asp:TableRow runat="server" >
                 <asp:TableCell RowSpan="2" >

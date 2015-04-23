@@ -45,11 +45,10 @@
         <br />
         <div class="fancy">
             <div>
-                <div class="T" id="dvOtherName">
-                    <br />
+                <div class="T">
                     <asp:Label ID="LblOtherName" Text="Other Name: " runat="server" Font-Bold="true"  />
                     <asp:Label ID="LblOtherNameText" Text="BOCHEK'S COLLISION CENTER" runat="server"  />
-                    <br />
+                    <br /> <br />
                  </div>
                 <asp:Table ID="Table1" runat="server" HorizontalAlign="Center">
                     <asp:TableRow ID="trAddress1">
@@ -354,11 +353,11 @@
                 </asp:Table>
             </div>
         </div>
-        <p>
-            Return to <a href="http://146.186.84.253/">Main Menu
-                
-        </a>
-            </p>
+    <div>
+        <br />
+        <asp:Label ID="Label2" runat="server" Text="Return to " />
+        <a href="http://146.186.84.253/">Main Menu</a>
+    </div>
     </form>
 </body>
 </html>
