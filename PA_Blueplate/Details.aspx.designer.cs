@@ -76,6 +76,24 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Table Table1;
         
         /// <summary>
+        /// trAddress1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trAddress1;
+        
+        /// <summary>
+        /// tcAddressImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableCell tcAddressImage;
+        
+        /// <summary>
         /// ImageButton1 control.
         /// </summary>
         /// <remarks>
@@ -83,6 +101,15 @@ namespace PA_Blueplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
+        
+        /// <summary>
+        /// tcAddressLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableCell tcAddressLabel;
         
         /// <summary>
         /// lblAddress1 control.
@@ -101,6 +128,24 @@ namespace PA_Blueplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAddress1Text;
+        
+        /// <summary>
+        /// trAddress2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trAddress2;
+        
+        /// <summary>
+        /// lblAddress2Text control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAddress2Text;
         
         /// <summary>
         /// lblCityText control.
@@ -193,6 +238,15 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label lblServices;
         
         /// <summary>
+        /// trBodyRepair control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trBodyRepair;
+        
+        /// <summary>
         /// lblBodyRepair control.
         /// </summary>
         /// <remarks>
@@ -209,6 +263,15 @@ namespace PA_Blueplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblBodyRepairText;
+        
+        /// <summary>
+        /// trBodyRepairRate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trBodyRepairRate;
         
         /// <summary>
         /// lblBodyRepairRate control.
@@ -229,6 +292,15 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label lblBodyRepairRateText;
         
         /// <summary>
+        /// trBodyPartDiscount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trBodyPartDiscount;
+        
+        /// <summary>
         /// lblBodyPartDiscount control.
         /// </summary>
         /// <remarks>
@@ -245,6 +317,15 @@ namespace PA_Blueplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblBodyPartDiscountText;
+        
+        /// <summary>
+        /// trBodyPartDiscountRate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trBodyPartDiscountRate;
         
         /// <summary>
         /// lblBodyPartDiscountRate control.
@@ -265,6 +346,15 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label lblBodyPartDiscountRateText;
         
         /// <summary>
+        /// trComputerDiagnostics control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trComputerDiagnostics;
+        
+        /// <summary>
         /// lblComputerDiagnostics control.
         /// </summary>
         /// <remarks>
@@ -281,6 +371,15 @@ namespace PA_Blueplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblComputerDiagnosticsText;
+        
+        /// <summary>
+        /// trComputerDiagnosticsRate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trComputerDiagnosticsRate;
         
         /// <summary>
         /// lblComputerDiagnosticsRate control.
@@ -301,6 +400,15 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label lblComputerDiagnosticsRateText;
         
         /// <summary>
+        /// trDieselLabor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trDieselLabor;
+        
+        /// <summary>
         /// lblDieselLabor control.
         /// </summary>
         /// <remarks>
@@ -317,6 +425,15 @@ namespace PA_Blueplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDieselLaborText;
+        
+        /// <summary>
+        /// trDieselLaborRate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trDieselLaborRate;
         
         /// <summary>
         /// lblDieselLaborRate control.
@@ -337,6 +454,15 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label lblDieselLaborRateText;
         
         /// <summary>
+        /// trEmissionsInspection control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trEmissionsInspection;
+        
+        /// <summary>
         /// lblEmisionsInspection control.
         /// </summary>
         /// <remarks>
@@ -353,6 +479,15 @@ namespace PA_Blueplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblEmisionsInspectionText;
+        
+        /// <summary>
+        /// trEmisionsInspectionRate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trEmisionsInspectionRate;
         
         /// <summary>
         /// lblEmisionsInspectionRate control.
@@ -373,6 +508,15 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label lblEmisionsInspectionRateText;
         
         /// <summary>
+        /// trGlassRepair control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trGlassRepair;
+        
+        /// <summary>
         /// lblGlassRepair control.
         /// </summary>
         /// <remarks>
@@ -389,6 +533,15 @@ namespace PA_Blueplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblGlassRepairText;
+        
+        /// <summary>
+        /// trGlassRepairRate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trGlassRepairRate;
         
         /// <summary>
         /// lblGlassRepairRate control.
@@ -409,6 +562,15 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label lblGlassRepairRateText;
         
         /// <summary>
+        /// trGlassParts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trGlassParts;
+        
+        /// <summary>
         /// lblGlassParts control.
         /// </summary>
         /// <remarks>
@@ -425,6 +587,15 @@ namespace PA_Blueplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblGlassPartsText;
+        
+        /// <summary>
+        /// trGlassPartsDiscount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trGlassPartsDiscount;
         
         /// <summary>
         /// lblGlassPartsDiscount control.
@@ -445,6 +616,15 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label lblGlassPartsDiscountText;
         
         /// <summary>
+        /// trLubeOilChange control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trLubeOilChange;
+        
+        /// <summary>
         /// lblLubeOilChange control.
         /// </summary>
         /// <remarks>
@@ -461,6 +641,15 @@ namespace PA_Blueplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblLubeOilChangeText;
+        
+        /// <summary>
+        /// trLubeOilChangeRate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trLubeOilChangeRate;
         
         /// <summary>
         /// lblLubeOilChangeRate control.
@@ -481,6 +670,15 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label lblLubeOilChangeRateText;
         
         /// <summary>
+        /// trSynLubeOilChange control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trSynLubeOilChange;
+        
+        /// <summary>
         /// lblSynLubeOilChange control.
         /// </summary>
         /// <remarks>
@@ -497,6 +695,15 @@ namespace PA_Blueplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSynLubeOilChangeText;
+        
+        /// <summary>
+        /// trMechanicalLabor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trMechanicalLabor;
         
         /// <summary>
         /// lblMechanicalLabor control.
@@ -517,6 +724,15 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label lblMechanicalLaborText;
         
         /// <summary>
+        /// trMechanicalLaborRate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trMechanicalLaborRate;
+        
+        /// <summary>
         /// lblMechanicalLaborRate control.
         /// </summary>
         /// <remarks>
@@ -533,6 +749,15 @@ namespace PA_Blueplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMechanicalLaborRateText;
+        
+        /// <summary>
+        /// trMechanicalParts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trMechanicalParts;
         
         /// <summary>
         /// lblMechanicalParts control.
@@ -553,6 +778,15 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label lblMechanicalPartsText;
         
         /// <summary>
+        /// trMechanicalPartsRate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trMechanicalPartsRate;
+        
+        /// <summary>
         /// lblMechanicalPartsRate control.
         /// </summary>
         /// <remarks>
@@ -569,6 +803,15 @@ namespace PA_Blueplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMechanicalPartsRateText;
+        
+        /// <summary>
+        /// trStateInspection control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trStateInspection;
         
         /// <summary>
         /// lblStateInspection control.
@@ -589,6 +832,15 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label lblStateInspectionText;
         
         /// <summary>
+        /// trStateInspectionRate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trStateInspectionRate;
+        
+        /// <summary>
         /// lblStateInspectionRate control.
         /// </summary>
         /// <remarks>
@@ -605,6 +857,15 @@ namespace PA_Blueplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblStateInspectionRateText;
+        
+        /// <summary>
+        /// trTowing control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trTowing;
         
         /// <summary>
         /// lblTowing control.
@@ -625,6 +886,15 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label lblTowingText;
         
         /// <summary>
+        /// trTowingRate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trTowingRate;
+        
+        /// <summary>
         /// lblTowingRate control.
         /// </summary>
         /// <remarks>
@@ -641,6 +911,15 @@ namespace PA_Blueplate {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTowingRateText;
+        
+        /// <summary>
+        /// trTowing24 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableRow trTowing24;
         
         /// <summary>
         /// lblTowing24 control.

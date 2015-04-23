@@ -72,22 +72,35 @@
         <asp:Label id="label1" runat="server" Font-Bold="true" Font-Size="X-Large" />
     </div>
     <div>
-        <asp:DropDownList id="dropdown" runat="server" OnSelectedIndexChanged="OnDropDownChange" AutoPostBack="true" Height="40"/>
+    <asp:Table runat="server" HorizontalAlign="Center">
+        <asp:TableRow>
+            <asp:TableCell ColumnSpan="3">
+                <asp:DropDownList id="dropdown" runat="server" OnSelectedIndexChanged="OnDropDownChange" AutoPostBack="true" Height="40"/>
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:Panel ID="Panel1" runat="server" DefaultButton="Button1">
+                    <asp:TextBox ID="TxtManualLocation" runat="server" Height="40" />    
+                    <asp:Button ID="Button1" runat="server" style="display:none" OnClick="OnManualLocationClick" Width="0" />
+                </asp:Panel>
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:Button ID="BtnSetCurrentLocation" runat="server" OnClick="OnCurrentLocationClick" Text="Here" CssClass="FormatListviewButtons" Height="40" Width="40" />
+            </asp:TableCell>
+            <asp:TableCell>
+                <asp:Button ID="BtnManualLocation" runat="server" OnClick="OnManualLocationClick" Text="Find" CssClass="FormatListviewButtons" Height="40" Width="40" />
+            </asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell ColumnSpan="3">
+                <asp:DropDownList id="RadiusDropDown" runat="server" OnSelectedIndexChanged="OnRadiusDropDownChange" AutoPostBack="true" Height="40" />
+            </asp:TableCell>
+        </asp:TableRow>
+    </asp:Table>
     </div>
     <div>
-        <asp:TextBox ID ="TxtManualLocation" runat="server" Height="40" />
-      
-        <asp:Button ID="BtnSetCurrentLocation" runat="server" OnClick="OnCurrentLocationClick" Text="Here" CssClass="FormatListviewButtons" Height="40" Width="40" />
-        <asp:Button ID="BtnManualLocation" runat="server" OnClick="OnManualLocationClick" Text="Find" CssClass="FormatListviewButtons" Height="40" Width="40" />
-    </div>
-
-    <div>
-        <asp:DropDownList id="RadiusDropDown" runat="server" OnSelectedIndexChanged="OnRadiusDropDownChange" AutoPostBack="true" Height="40" />
-    </div>
-    <div>
-        
         <br />
-
         <div class="fancy">
         <asp:Table ID="Table1" runat="server" HorizontalAlign="Center" >
             <asp:TableRow runat="server" >
@@ -148,12 +161,18 @@
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
-                <p align="center">Return to <a href="http://146.186.84.253/">Main Menu</a></p><asp:HiddenField ID="hdnTable" runat="server" />
-                <asp:HiddenField ID="hdnWhere" runat="server" />
-                <asp:HiddenField ID="hdnRadius" runat="server" />
-                <asp:HiddenField ID="hdnLat" runat="server" Value="" />
-                <asp:HiddenField ID="hdnLon" runat="server" Value="" />
-
-
-                </div>
-                </div></form></body></html>
+        <asp:HiddenField ID="hdnTable" runat="server" />
+        <asp:HiddenField ID="hdnWhere" runat="server" />
+        <asp:HiddenField ID="hdnRadius" runat="server" />
+        <asp:HiddenField ID="hdnLat" runat="server" Value="" />
+        <asp:HiddenField ID="hdnLon" runat="server" Value="" />
+    </div>
+    <div>
+        <br />
+        <asp:Label ID="Label2" runat="server" Text="Return to " />
+        <a href="http://146.186.84.253/">Main Menu</a>
+    </div>
+    </div>
+    </form>
+    </body>
+</html>

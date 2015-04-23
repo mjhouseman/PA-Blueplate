@@ -22,15 +22,6 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitle;
-        
-        /// <summary>
         /// Image0 control.
         /// </summary>
         /// <remarks>
@@ -130,6 +121,15 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.HiddenField hdnOSType;
         
         /// <summary>
+        /// Label12 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label12;
+        
+        /// <summary>
         /// Table1 control.
         /// </summary>
         /// <remarks>
@@ -139,13 +139,13 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Table Table1;
         
         /// <summary>
-        /// btnPhone control.
+        /// btnPhone1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnPhone;
+        protected global::System.Web.UI.WebControls.ImageButton btnPhone1;
         
         /// <summary>
         /// lblPhone control.
@@ -166,13 +166,13 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label phoneNumCall;
         
         /// <summary>
-        /// ImageButton1 control.
+        /// btnPhone2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
+        protected global::System.Web.UI.WebControls.ImageButton btnPhone2;
         
         /// <summary>
         /// Label1 control.
@@ -193,13 +193,13 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// ImageButton2 control.
+        /// btnPhone3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton2;
+        protected global::System.Web.UI.WebControls.ImageButton btnPhone3;
         
         /// <summary>
         /// Label3 control.
@@ -220,39 +220,30 @@ namespace PA_Blueplate {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// ImageButton3 control.
+        /// Label7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton3;
+        protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
-        /// Label5 control.
+        /// Label15 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label Label15;
         
         /// <summary>
-        /// ImageButton4 control.
+        /// Label11 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton4;
-        
-        /// <summary>
-        /// Label6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
+        protected global::System.Web.UI.WebControls.Label Label11;
     }
 }

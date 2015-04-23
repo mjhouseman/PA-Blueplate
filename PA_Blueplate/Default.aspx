@@ -33,21 +33,16 @@
 <!-- <body style=" margin:0px; width:330px;" > -->
 <body>
     <form id="form1" runat="server">
-        <!-- <div style="text-align: center;"> -->
-          <!-- <div id="page-wrap"> -->
-            <!-- <asp:Label ID="lblTitle" Text="Pennsylvania Department of General Services" runat="server" Font-Bold="true"  /> -->
-           <!-- <h1> The Pennsylvania Department of General Services </h1> -->
-            <div><asp:Image ID="Image0" runat="server" ImageUrl="img/generalserviceslogo_small.png" />
-            </div>
-            <div>
+        <div>
+            <asp:Image ID="Image0" runat="server" ImageUrl="img/generalserviceslogo_small.png" />
+        </div>
+         <div>
             <asp:Image ID="Image1" runat="server" Height="149px" Width="289px" ImageUrl="img/blueplate1.png" />
         </div>
-        
         <div class="fancy">
             <asp:ImageButton ID="btnRepair" CommandArgument="Service_Vendors" ImageUrl="img/tools.png" OnClick="MyImgBtnHandler" runat="server"  Width="100" Height="100" />
             <asp:ImageButton ID="btnTowing" CommandArgument="Towing_Vendors" ImageUrl="img/towing.png" OnClick="MyImgBtnHandler" runat="server" Width="100" Height="100" />
             <asp:ImageButton ID="btnRental" CommandArgument="Tire_Vendors" ImageUrl="img/tire1.png" OnClick="MyImgBtnHandler" runat="server" Width="100" Height="100" />
-
         <div style="text-align: center;">
             <asp:Label ID="lblRepair" Text="Repair" runat="server" Width="100" Font-Bold="true" />
             <asp:Label ID="lblTowing" Text="Towing" runat="server" Width="100" Font-Bold="true" />
@@ -56,14 +51,13 @@
         <asp:HiddenField ID="hdnLatitude" runat="server" Value="lat" />
         <asp:HiddenField ID="hdnLongitude" runat="server" Value="long" />
         <asp:HiddenField ID="hdnOSType" runat="server" Value="OS" />
-        
-
-
-          <p><h2>Roadside Assistance</h2></p>
+        <div>
+            <asp:Label ID="Label12" runat="server" Text="Roadside Assistance" Font-Bold="true" />     
+        </div>
         <asp:Table ID="Table1" runat="server" HorizontalAlign="Center">            
             <asp:TableRow>
                 <asp:TableCell>
-                <asp:ImageButton id="btnPhone" runat="server" ImageUrl="img/phone.png" OnClick="PhoneClick" Height="50" Width="50" />
+                <asp:ImageButton id="btnPhone1" runat="server" ImageUrl="img/phone.png" OnClick="PhoneClick" Height="50" Width="50" />
             </asp:TableCell>
             <asp:TableCell>
                 <asp:Label ID="lblPhone" Text="Ford: " runat="server" Font-Bold="true"  />
@@ -72,11 +66,10 @@
                 <asp:Label ID="phoneNumCall" Text="1.800.367.3221" runat="server" />
             </asp:TableCell>
         </asp:TableRow>
-
-            <asp:TableRow>
-               <asp:TableCell>
-                 <asp:ImageButton id="ImageButton1" runat="server" ImageUrl="img/phone.png" OnClick="PhoneClick" Height="50" Width="50" />
-               </asp:TableCell>
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:ImageButton id="btnPhone2" runat="server" ImageUrl="img/phone.png" OnClick="PhoneClick" Height="50" Width="50" />
+            </asp:TableCell>
             <asp:TableCell>
                 <asp:Label ID="Label1" Text="GM: " runat="server" Font-Bold="true"  />
             </asp:TableCell>
@@ -84,11 +77,9 @@
                 <asp:Label ID="Label2" Text="1.800.243.8872" runat="server" />
             </asp:TableCell>
         </asp:TableRow>
-
-
-            <asp:TableRow>
-                <asp:TableCell>
-                <asp:ImageButton id="ImageButton2" runat="server" ImageUrl="img/phone.png" OnClick="PhoneClick" Height="50" Width="50" />
+        <asp:TableRow>
+            <asp:TableCell>
+                <asp:ImageButton id="btnPhone3" runat="server" ImageUrl="img/phone.png" OnClick="PhoneClick" Height="50" Width="50" />
             </asp:TableCell>
             <asp:TableCell>
                 <asp:Label ID="Label3" Text="Chrysler: " runat="server" Font-Bold="true"  />
@@ -98,23 +89,19 @@
             </asp:TableCell>
         </asp:TableRow>
         </asp:Table>
+    </div>
+        <div>
+            <br />
+            <asp:Label ID="Label7" runat="server" Text="Bureau of Vehicle Management Customer Service" />
         </div>
-           <p>Bureau of Vehicle Management Customer Service 
-               <br />  
-               <asp:ImageButton id="ImageButton3" runat="server" ImageUrl="img/phone.png" OnClick="PhoneClick" Height="50" Width="50" />
-               <asp:Label ID="Label5" Text="877.347.9966" runat="server" />
-               <br />
-
-                <h3>or</h3>
-              
-                <asp:ImageButton id="ImageButton4" runat="server" ImageUrl="img/phone.png" OnClick="PhoneClick" Height="50" Width="50" />
-               <asp:Label ID="Label6" Text="717.787.6034" runat="server" />  
-               <br />
-               Hours: Monday – Friday, 7:00 am to 5:00 pm</p>
-    
-
-        
+        <div>
+            <a href="tel:+1-877-347-9966">877.347.9966</a>
+            <asp:Label ID="Label15" runat="server" Text=" or " />
+            <a href="tel:+1-717-787-6034">717.787.6034</a>
+        </div>
+        <div>
+            <asp:Label ID="Label11" runat="server" Text="Hours: Monday - Friday, 7:00 am to 5:00 pm" />
+        </div>    
     </form>
-
 </body>
 </html>
