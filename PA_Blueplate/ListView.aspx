@@ -63,10 +63,6 @@
    }
             
 
-
-
-        
-
     </style>
 </head>
 <body>
@@ -86,7 +82,7 @@
         <asp:TableRow>
             <asp:TableCell>
                 <asp:Panel ID="Panel1" runat="server" DefaultButton="Button1">
-                    <asp:TextBox ID="TxtManualLocation" runat="server" Height="40"  />    
+                    <asp:TextBox ID="TxtManualLocation" runat="server" Height="40" />    
                     <asp:Button ID="Button1" runat="server" style="display:none" OnClick="OnManualLocationClick" Width="0" />
                 </asp:Panel>
             </asp:TableCell>

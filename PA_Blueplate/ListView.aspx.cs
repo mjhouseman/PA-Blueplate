@@ -67,16 +67,15 @@ namespace PA_Blueplate
             {
                 if (lat.Equals("lat"))
                 {
-                    TxtManualLocation.Text = "GPS UNAVAILABLE";
+                    TxtManualLocation.Attributes.Add("placeholder", "GPS UNAVAILABLE");
                     hdnLat.Value = "";
                     hdnLon.Value = "";
                 }
                 else
                 {
-                    TxtManualLocation.Text = "CURRENT LOCATION";
+                    TxtManualLocation.Attributes.Add("placeholder", "CURRENT LOCATION");
                     hdnLat.Value = lat;
-                    hdnLon.Value = lon; //test commit
-                    hdnLon.Value = lon;
+                    hdnLon.Value = lon; 
                 }
             } 
 
@@ -267,15 +266,23 @@ namespace PA_Blueplate
         {
             string table = hdnTable.Value;
             string where = hdnWhere.Value;
-            string radius = hdnRadius.Value;
+            string radius =  hdnRadius.Value;
             string latitude = hdnLat.Value;  
             string longitude = hdnLon.Value;
 
-            if (TxtManualLocation.Text == "NO RESULTS FOUND" || TxtManualLocation.Text == "GPS UNAVAILABLE")  // ADDED!
+            /*
+            if (TxtManualLocation.Text == "")
             {
-                TxtManualLocation.Text = (lat != "lat") ? "CURRENT LOCATION" : "GPS UNAVAILABLE";
+                if (lat != "lat")
+                {
+                    TxtManualLocation.Attributes.Add("placeholder", "CURRENT LOCATION");
+                }
+                else
+                {
+                    TxtManualLocation.Attributes.Add("placeholder", "GPS UNAVAILABLE");
+                }
             }
-
+            */
             List<LocationItem> results = new List<LocationItem>();
             try
             {
@@ -345,7 +352,7 @@ namespace PA_Blueplate
 
                 List<LocationItem> displayResults = results.OrderBy(o => o.distance).ToList();
 
-                if (displayResults.Count > 0)
+                if (displayResults.Count > 0 && displayResults[0].distance < Double.Parse(radius))
                 {
                     ImageButton1.Visible = true;
                     Label11.Visible = true;
@@ -364,7 +371,7 @@ namespace PA_Blueplate
                     Label13.Visible = false;
                 }
 
-                if (displayResults.Count > 1)
+                if (displayResults.Count > 1 && displayResults[1].distance < Double.Parse(radius))
                 {
                     ImageButton2.Visible = true;
                     Label14.Visible = true;
@@ -383,7 +390,7 @@ namespace PA_Blueplate
                     Label16.Visible = false;
                 }
 
-                if (displayResults.Count > 2)
+                if (displayResults.Count > 2 && displayResults[2].distance < Double.Parse(radius))
                 {
                     ImageButton3.Visible = true;
                     Label17.Visible = true;
@@ -402,7 +409,7 @@ namespace PA_Blueplate
                     Label19.Visible = false;
                 }
 
-                if (displayResults.Count > 3)
+                if (displayResults.Count > 3 && displayResults[3].distance < Double.Parse(radius))
                 {
                     ImageButton4.Visible = true;
                     Label20.Visible = true;
@@ -421,7 +428,7 @@ namespace PA_Blueplate
                     Label22.Visible = false;
                 }
 
-                if (displayResults.Count > 4)
+                if (displayResults.Count > 4 && displayResults[4].distance < Double.Parse(radius))
                 {
                     ImageButton5.Visible = true;
                     Label23.Visible = true;
@@ -446,11 +453,11 @@ namespace PA_Blueplate
         {
             if (lat.Equals("lat"))
             {
-                TxtManualLocation.Text = "GPS UNAVAILABLE";
+                TxtManualLocation.Attributes.Add("placeholder", "GPS UNAVAILABLE");
             }
             else
             {
-                TxtManualLocation.Text = "CURRENT LOCATION";
+                TxtManualLocation.Attributes.Add("placeholder", "CURRENT LOCATION");
                 hdnLat.Value = lat;  
                 hdnLon.Value = lon;
                 PopulatePage();
@@ -459,8 +466,11 @@ namespace PA_Blueplate
 
         protected void OnManualLocationClick(object sender, EventArgs e)
         {
+            TxtManualLocation.Attributes.Add("placeholder", TxtManualLocation.Text);
             TxtManualLocation.Text = GeocodeAddress(TxtManualLocation.Text);
             PopulatePage();
+            TxtManualLocation.Text = "";
+
         }
 
         protected void OnRadiusDropDownChange(object sender, EventArgs e)
