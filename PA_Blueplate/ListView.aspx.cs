@@ -325,29 +325,34 @@ namespace PA_Blueplate
                 //  Random rnd = new Random();  //Remove once google distances are in
                 for (int i = 0; i < results.Count; i++)
                 {
-
-                    //Pass to google and calculate distance
-                    string destination = results[i].latitude.ToString() + "," + results[i].longitude.ToString();
-                    string origin = hdnLat.Value.ToString() + "," + hdnLon.Value.ToString();
-                    string url = @"http://maps.googleapis.com/maps/api/distancematrix/xml?origins=" + origin + "&destinations=" + destination + "&mode=driving&sensor=false&language=en-EN&units=imperial";
-
-                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-                    WebResponse response = request.GetResponse();
-                    Stream dataStream = response.GetResponseStream();
-                    StreamReader sreader = new StreamReader(dataStream);
-                    string responsereader = sreader.ReadToEnd();
-                    response.Close();
-
-                    XmlDocument xmldoc = new XmlDocument();
-                    xmldoc.LoadXml(responsereader);
-
-
-                    if (xmldoc.GetElementsByTagName("status")[0].ChildNodes[0].InnerText == "OK")
+                    try
                     {
-                        XmlNodeList distance = xmldoc.GetElementsByTagName("distance");
-                        results[i].distance = Convert.ToDouble(distance[0].ChildNodes[1].InnerText.Replace(" mi", ""));
-                    }
+                        //Pass to google and calculate distance
+                        string destination = results[i].latitude.ToString() + "," + results[i].longitude.ToString();
+                        string origin = hdnLat.Value.ToString() + "," + hdnLon.Value.ToString();
+                        string url = @"http://maps.googleapis.com/maps/api/distancematrix/xml?origins=" + origin + "&destinations=" + destination + "&mode=driving&sensor=false&language=en-EN&units=imperial";
 
+                        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                        WebResponse response = request.GetResponse();
+                        Stream dataStream = response.GetResponseStream();
+                        StreamReader sreader = new StreamReader(dataStream);
+                        string responsereader = sreader.ReadToEnd();
+                        response.Close();
+
+                        XmlDocument xmldoc = new XmlDocument();
+                        xmldoc.LoadXml(responsereader);
+
+
+                        if (xmldoc.GetElementsByTagName("status")[0].ChildNodes[0].InnerText == "OK")
+                        {
+                            XmlNodeList distance = xmldoc.GetElementsByTagName("distance");
+                            results[i].distance = Convert.ToDouble(distance[0].ChildNodes[1].InnerText.Replace(" mi", ""));
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        // Google API call errors can be ignored
+                    }
                 }
 
                 List<LocationItem> displayResults = results.OrderBy(o => o.distance).ToList();
@@ -564,123 +569,7 @@ namespace PA_Blueplate
                                (!string.IsNullOrEmpty(city) ? city : "") + ", " +
                                (!string.IsNullOrEmpty(state) ? state : "") + " " +
                                (!string.IsNullOrEmpty(zip) ? zip : "");
+            this.distance = 10000.00;
         }
     }
-
-    public class Northeast
-    {
-        public double lat { get; set; }
-        public double lng { get; set; }
-    }
-
-    public class Southwest
-    {
-        public double lat { get; set; }
-        public double lng { get; set; }
-    }
-
-    public class Bounds
-    {
-        public Northeast northeast { get; set; }
-        public Southwest southwest { get; set; }
-    }
-
-    public class Distance
-    {
-        public string text { get; set; }
-        public int value { get; set; }
-    }
-
-    public class Duration
-    {
-        public string text { get; set; }
-        public int value { get; set; }
-    }
-
-    public class EndLocation
-    {
-        public double lat { get; set; }
-        public double lng { get; set; }
-    }
-
-    public class StartLocation
-    {
-        public double lat { get; set; }
-        public double lng { get; set; }
-    }
-
-    public class Distance2
-    {
-        public string text { get; set; }
-        public int value { get; set; }
-    }
-
-    public class Duration2
-    {
-        public string text { get; set; }
-        public int value { get; set; }
-    }
-
-    public class EndLocation2
-    {
-        public double lat { get; set; }
-        public double lng { get; set; }
-    }
-
-    public class Polyline
-    {
-        public string points { get; set; }
-    }
-
-    public class StartLocation2
-    {
-        public double lat { get; set; }
-        public double lng { get; set; }
-    }
-
-    public class Step
-    {
-        public Distance2 distance { get; set; }
-        public Duration2 duration { get; set; }
-        public EndLocation2 end_location { get; set; }
-        public string html_instructions { get; set; }
-        public Polyline polyline { get; set; }
-        public StartLocation2 start_location { get; set; }
-        public string travel_mode { get; set; }
-        public string maneuver { get; set; }
-    }
-
-    public class Leg
-    {
-        public Distance distance { get; set; }
-        public Duration duration { get; set; }
-        public string end_address { get; set; }
-        public EndLocation end_location { get; set; }
-        public string start_address { get; set; }
-        public StartLocation start_location { get; set; }
-        public List<Step> steps { get; set; }
-        public List<object> via_waypoint { get; set; }
-    }
-
-    public class OverviewPolyline
-    {
-        public string points { get; set; }
-    }
-
-    public class Route
-    {
-        public Bounds bounds { get; set; }
-        public string copyrights { get; set; }
-        public List<Leg> legs { get; set; }
-        public OverviewPolyline overview_polyline { get; set; }
-        public string summary { get; set; }
-        public List<object> warnings { get; set; }
-        public List<object> waypoint_order { get; set; }
-    }
-
-    public class RootObject
-    {
-        public List<Route> routes { get; set; }
-        public string status { get; set; }
-    }  
 }
